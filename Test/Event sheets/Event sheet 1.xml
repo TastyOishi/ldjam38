@@ -16,33 +16,57 @@
                     </conditions>
                     <actions>
                         <action behavior="Pathfinding" id="0" name="Find path" sid="175926320559332" type="Blinker">
-                            <param id="0" name="X">EnemyTarget.X</param>
-                            <param id="1" name="Y">EnemyTarget.Y</param>
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
                         </action>
                         <action behavior="Pathfinding" id="0" name="Find path" sid="371130967234495" type="Enemy">
-                            <param id="0" name="X">EnemyTarget.X</param>
-                            <param id="1" name="Y">EnemyTarget.Y</param>
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
                         </action>
                         <action behavior="Pathfinding" id="1" name="Move along path" sid="498646676431617" type="Blinker" />
                     </actions>
                     <sub-events>
+                        <event-block sid="753134438174027">
+                            <conditions>
+                                <condition id="-4" name="Is outside layout" sid="448748819788408" type="BlinkerTargeter" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="542395621356183" type="BlinkerTargeter">
+                                    <param id="0" name="X">352</param>
+                                    <param id="1" name="Y">384</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block any="1" sid="686351396658572">
                             <conditions>
-                                <condition id="0" name="On collision with another object" sid="636101003895859" type="BlinkerTargeter">
-                                    <param id="0" name="Object">Wall</param>
-                                </condition>
                                 <condition id="-1" name="Every tick" sid="590925906895220" type="System" />
                             </conditions>
                             <actions>
                                 <action id="-3" name="Set position" sid="595215568202696" type="BlinkerTargeter">
-                                    <param id="0" name="X">blinker.X + (random(400) -200 )</param>
-                                    <param id="1" name="Y">blinker.Y + (random(400) -200 )</param>
+                                    <param id="0" name="X">round((blinker.X + (random(64) -32 ) - 16) / 32) * 32 + 16</param>
+                                    <param id="1" name="Y">round((blinker.Y + (random(64) -32 ) - 16) / 32) * 32 + 16</param>
                                 </action>
                                 <action behavior="Pathfinding" id="0" name="Find path" sid="568092106230876" type="Blinker">
-                                    <param id="0" name="X">EnemyTarget.X</param>
-                                    <param id="1" name="Y">EnemyTarget.Y</param>
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action behavior="Pathfinding" id="1" name="Move along path" sid="863265099879720" type="Blinker" />
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="594603560883737">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="898622456130221" type="BlinkerTargeter">
+                                    <param id="0" name="Object">Wall</param>
+                                </condition>
+                                <condition id="0" name="On collision with another object" sid="224548924009260" type="Blinker">
+                                    <param id="0" name="Object">Wall</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="432204346125176" type="BlinkerTargeter">
+                                    <param id="0" name="X">round((blinker.X + (random(64) -32 ) - 16) / 32) * 32 + 16</param>
+                                    <param id="1" name="Y">round((blinker.Y + (random(64) -32 ) - 16) / 32) * 32 + 16</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="756260475054545">
@@ -62,8 +86,8 @@
                                     <param id="1" name="Y">BlinkerTargeter.Y</param>
                                 </action>
                                 <action behavior="Pathfinding" id="0" name="Find path" sid="802309685850949" type="Blinker">
-                                    <param id="0" name="X">EnemyTarget.X</param>
-                                    <param id="1" name="Y">EnemyTarget.Y</param>
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action behavior="Pathfinding" id="1" name="Move along path" sid="758622288512561" type="Blinker" />
                             </actions>
@@ -83,22 +107,22 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Spawn another object" sid="181906523663710" type="EnemySpawner">
+                        <action id="0" name="Spawn another object" sid="181906523663710" type="Spawner">
                             <param id="0" name="Object">Enemy</param>
                             <param id="1" name="Layer">&quot;Game&quot;</param>
                             <param id="2" name="Image point">0</param>
                         </action>
                         <action behavior="Pathfinding" id="0" name="Find path" sid="325473751946420" type="Enemy">
-                            <param id="0" name="X">EnemyTarget.X</param>
-                            <param id="1" name="Y">EnemyTarget.Y</param>
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
                         </action>
                         <action id="-10" name="Add to" sid="971573002378319" type="System">
                             <param id="0" name="Variable">EnemiesSpawned</param>
                             <param id="1" name="Value">1</param>
                         </action>
                         <action behavior="Pathfinding" id="0" name="Find path" sid="678628332380709" type="Blinker">
-                            <param id="0" name="X">EnemyTarget.X</param>
-                            <param id="1" name="Y">EnemyTarget.Y</param>
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -204,7 +228,7 @@
                         <condition id="-19" name="On destroyed" sid="765276853621749" type="Enemy" />
                     </conditions>
                     <actions>
-                        <action id="-12" name="Subtract from" sid="417716394751714" type="EnemySpawner">
+                        <action id="-12" name="Subtract from" sid="417716394751714" type="Spawner">
                             <param id="0" name="Instance variable">EnemiesSpawned</param>
                             <param id="1" name="Value">1</param>
                         </action>
@@ -217,7 +241,7 @@
                 <event-block sid="147003879173569">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="753898055129871" type="Enemy">
-                            <param id="0" name="Object">EnemyTarget</param>
+                            <param id="0" name="Object">Player</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -339,8 +363,8 @@
                     </conditions>
                     <actions>
                         <action id="-3" name="Set position" sid="219154218844165" type="SpawnerCircle">
-                            <param id="0" name="X">EnemyTarget.X</param>
-                            <param id="1" name="Y">EnemyTarget.Y</param>
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
                         </action>
                     </actions>
                 </event-block>
@@ -362,7 +386,7 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-3" name="Set position" sid="146814042666317" type="EnemyTarget">
+                        <action id="-3" name="Set position" sid="146814042666317" type="Player">
                             <param id="0" name="X">Touch.X</param>
                             <param id="1" name="Y">Touch.Y</param>
                         </action>
@@ -374,10 +398,10 @@
             <sub-events>
                 <event-block sid="497666335221538">
                     <conditions>
-                        <condition id="1" name="Is overlapping another object" sid="375944282364465" type="EnemyTarget">
-                            <param id="0" name="Object">EnemySpawner</param>
+                        <condition id="1" name="Is overlapping another object" sid="375944282364465" type="Player">
+                            <param id="0" name="Object">Spawner</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="560116739920425" type="EnemySpawner">
+                        <condition id="-7" name="Compare instance variable" sid="560116739920425" type="Spawner">
                             <param id="0" name="Instance variable">EnemiesSpawned</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
@@ -398,32 +422,50 @@
         <event-group description="" sid="765236128460593" title="Player Actions">
             <sub-events>
                 <event-block sid="267999968213907">
-                    <conditions>
-                        <condition id="0" name="On clicked" sid="844603206942602" type="Button" />
-                    </conditions>
+                    <conditions />
                     <actions>
-                        <action id="0" name="Spawn another object" sid="102738931190916" type="EnemyTarget">
+                        <action id="0" name="Spawn another object" sid="102738931190916" type="Player">
                             <param id="0" name="Object">powerblast</param>
-                            <param id="1" name="Layer">0</param>
+                            <param id="1" name="Layer">1</param>
                             <param id="2" name="Image point">0</param>
                         </action>
                         <action id="-18" name="Rotate clockwise" sid="463217192076418" type="powerblast">
                             <param id="0" name="Degrees">random(0,5) - 10</param>
                         </action>
+                        <action id="-24" name="Move to top" sid="197542145965892" type="powerblast" />
+                    </actions>
+                </event-block>
+                <event-block sid="686850599906066">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="826384079141969" type="powerblast" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="314642734858995" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="103443474444443" type="powerblast" />
+                    </actions>
+                </event-block>
+                <event-block sid="516500981288355">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="734559390334372" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="384354679585768" type="ManaBar">
+                            <param id="0" name="Width">Player.Mana</param>
+                        </action>
+                        <action id="0" name="Set text" sid="669320820846068" type="Text2">
+                            <param id="0" name="Text">&quot;Mana: &quot; &amp; str(Player.Mana)</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="686850599906066">
+        <event-block sid="813884612763928">
             <conditions>
-                <condition id="-18" name="On created" sid="826384079141969" type="powerblast" />
+                <condition id="-2" name="On start of layout" sid="477721428160626" type="System" />
             </conditions>
-            <actions>
-                <action id="-16" name="Wait" sid="314642734858995" type="System">
-                    <param id="0" name="Seconds">1.0</param>
-                </action>
-                <action id="-9" name="Destroy" sid="103443474444443" type="powerblast" />
-            </actions>
+            <actions />
         </event-block>
     </events>
 </c2eventsheet>
