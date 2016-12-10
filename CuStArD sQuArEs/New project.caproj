@@ -16,8 +16,10 @@
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -99,6 +101,40 @@
         </object-type>
         <object-type name="Text" sid="265140963116555">
             <plugin id="Text" />
+        </object-type>
+        <object-type name="Sprite" sid="768013844118610">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="BoundToLayout" sid="385297507904668">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="LineOfSight" sid="976127061581198">
+                    <behavior id="LOS" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="970990835392996">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="217771004599955" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.804" y="0.752" />
+                            <point x="0.328" y="0.808" />
+                            <point x="0.228" y="0.212" />
+                            <point x="0.564" y="0.288" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.42" y="0.28" />
+                            <point x="0.748" y="0.188" />
+                            <point x="0.704" y="0.816" />
+                            <point x="0.22" y="0.796" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />

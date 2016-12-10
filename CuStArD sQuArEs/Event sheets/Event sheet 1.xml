@@ -104,5 +104,32 @@
                 <action id="-26" name="Restart layout" sid="870415367903801" type="System" />
             </actions>
         </event-block>
+        <event-block sid="868196305990672">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="321025566121563" type="Player">
+                    <param id="0" name="Object">Sprite</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="837232477799822" type="Player" />
+                <action id="-26" name="Restart layout" sid="818997611025035" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="577418636487611">
+            <conditions>
+                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="302329985096218" type="Sprite">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="791144828205876" type="Sprite">
+                    <param id="0" name="X">Player.X</param>
+                    <param id="1" name="Y">Player.Y</param>
+                </action>
+                <action id="-17" name="Move forward" sid="249732946303439" type="Sprite">
+                    <param id="0" name="Distance">2</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
