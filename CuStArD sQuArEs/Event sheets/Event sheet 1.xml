@@ -107,7 +107,7 @@
         <event-block sid="868196305990672">
             <conditions>
                 <condition id="0" name="On collision with another object" sid="321025566121563" type="Player">
-                    <param id="0" name="Object">Sprite</param>
+                    <param id="0" name="Object">Dick</param>
                 </condition>
             </conditions>
             <actions>
@@ -117,16 +117,16 @@
         </event-block>
         <event-block sid="577418636487611">
             <conditions>
-                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="302329985096218" type="Sprite">
+                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="302329985096218" type="Dick">
                     <param id="0" name="Object">Player</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-22" name="Set angle toward position" sid="791144828205876" type="Sprite">
+                <action id="-22" name="Set angle toward position" sid="791144828205876" type="Dick">
                     <param id="0" name="X">Player.X</param>
                     <param id="1" name="Y">Player.Y</param>
                 </action>
-                <action id="-17" name="Move forward" sid="249732946303439" type="Sprite">
+                <action id="-17" name="Move forward" sid="249732946303439" type="Dick">
                     <param id="0" name="Distance">2</param>
                 </action>
             </actions>

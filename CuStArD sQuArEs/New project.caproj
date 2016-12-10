@@ -102,7 +102,7 @@
         <object-type name="Text" sid="265140963116555">
             <plugin id="Text" />
         </object-type>
-        <object-type name="Sprite" sid="768013844118610">
+        <object-type name="Dick" sid="768013844118610">
             <plugin id="Sprite" />
             <behaviors>
                 <behavior-type name="BoundToLayout" sid="385297507904668">
@@ -133,6 +133,14 @@
                             <point x="0.22" y="0.796" />
                         </collision-poly>
                     </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Replacebgtest" sid="972556578218092">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="674669621010380" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Desktop\New folder\Replace-bg-test.jpg" />
                 </animation>
             </animation-folder>
         </object-type>
