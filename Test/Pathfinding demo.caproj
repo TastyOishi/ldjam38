@@ -242,6 +242,21 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="WallVariation2" sid="178808870447782">
+            <plugin id="Tilemap" />
+            <texture original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Wall-Variation.jpg" />
+            <tiles />
+        </object-type>
+        <object-type name="Floortiles2" sid="663248459611165">
+            <plugin id="Tilemap" />
+            <texture original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\FloorTIles2.png" />
+            <tiles />
+        </object-type>
+        <object-type name="Shadows" sid="190208979678054">
+            <plugin id="Tilemap" />
+            <texture original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Shadows.png" />
+            <tiles />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
