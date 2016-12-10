@@ -34,5 +34,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Bullet/" />
         <folder expanded="1" path="animation-folder/EnemySpawner/" />
         <folder expanded="1" path="animation-folder/SpawnerCircle/" />
+        <folder expanded="1" path="animation-folder/Blinker/" />
+        <folder expanded="1" path="animation-folder/BlinkerTargeter/" />
+        <folder expanded="1" path="animation-folder/SpikeTrap/" />
+        <folder expanded="1" path="animation-folder/powerblast/" />
     </folders-expanded>
 </c2uistate>

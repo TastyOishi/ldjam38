@@ -10,6 +10,7 @@
     <unique-id>uzos4ezzjulo</unique-id>
     <saved-with-version>23900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
@@ -27,7 +28,9 @@
         <behavior author="Scirra" id="shadowcaster" version="1">Shadow Caster</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
-    <used-effects />
+    <used-effects>
+        <effect author="Scirra" id="brightness">Brightness</effect>
+    </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -73,7 +76,7 @@
         </object-type>
         <object-type name="GridBackground" sid="145802020905594">
             <plugin id="TiledBg" />
-            <texture original-source="C:\Users\admin\Desktop\New folder\One Room Project\Background.jpg" />
+            <texture />
         </object-type>
         <object-type name="Wall" sid="127760289259213">
             <plugin id="TiledBg" />
@@ -85,7 +88,7 @@
                     <behavior id="shadowcaster" />
                 </behavior-type>
             </behaviors>
-            <texture original-source="C:\Users\admin\Desktop\New folder\One Room Project\Wall.jpg" />
+            <texture />
         </object-type>
         <object-type name="EnemyTarget" sid="236762041132486">
             <plugin id="Sprite" />
@@ -145,6 +148,9 @@
         </object-type>
         <object-type name="EnemySpawner" sid="624231162642636">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="EnemiesSpawned" sid="690288616048132" type="number" />
+            </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="779493516878958" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -175,31 +181,66 @@
         <object-type name="SpawnerCircle" sid="221705946322875">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="970899876894365" speed="0.2">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Desktop\New folder\One Room Project\Build-Radius.png">
-                        <collision-poly>
-                            <point x="0.146667" y="0.146667" />
-                            <point x="0.5" y="0" />
-                            <point x="0.84" y="0.133333" />
-                            <point x="1" y="0.473333" />
-                            <point x="0.846667" y="0.846667" />
-                            <point x="0.5" y="1" />
-                            <point x="0.146667" y="0.853333" />
-                            <point x="0" y="0.5" />
-                        </collision-poly>
-                    </frame>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="970899876894365" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="FloorTIles" sid="287411070200052">
-            <plugin id="Tilemap" />
-            <texture original-source="C:\Users\admin\Desktop\New folder\One Room Project\floor-tiles.png" />
-            <tiles />
+        <object-type name="Blinker" sid="494518964807040">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="health" sid="978985619432225" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pathfinding" sid="263250527367718">
+                    <behavior id="Pathfinding" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="254271523027883">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="192237831868498" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
-        <object-type name="WallVariation" sid="843986761358673">
-            <plugin id="Tilemap" />
-            <texture original-source="C:\Users\admin\Desktop\New folder\One Room Project\Wall-Variation.jpg" />
-            <tiles />
+        <object-type name="BlinkerTargeter" sid="401063771808175">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="763041106157341" speed="5">
+                    <frame duration="1" hotspotX="25.7188" hotspotY="9" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Button" sid="935228653857519">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="SpikeTrap" sid="658709513140790">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="787496930855715" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="powerblast" sid="566364071181090">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="615516940250979">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="Brightness">
+                    <effect id="brightness" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="449125185267794" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
