@@ -116,10 +116,6 @@
                             <param id="0" name="X">Player.X</param>
                             <param id="1" name="Y">Player.Y</param>
                         </action>
-                        <action id="-10" name="Add to" sid="971573002378319" type="System">
-                            <param id="0" name="Variable">EnemiesSpawned</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
                         <action behavior="Pathfinding" id="0" name="Find path" sid="678628332380709" type="Blinker">
                             <param id="0" name="X">Player.X</param>
                             <param id="1" name="Y">Player.Y</param>
@@ -201,6 +197,19 @@
                     <actions>
                         <action id="-12" name="Subtract from" sid="330908381112629" type="Enemy">
                             <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="637730892504347">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="704772992022019" type="powerblast">
+                            <param id="0" name="Object">Spawner</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="549955727179525" type="Spawner">
+                            <param id="0" name="Instance variable">EnemiesSpawned</param>
                             <param id="1" name="Value">1</param>
                         </action>
                     </actions>
@@ -223,18 +232,21 @@
                         <action id="-9" name="Destroy" sid="586920033380111" type="Enemy" />
                     </actions>
                 </event-block>
-                <event-block sid="131357702519488">
+                <event-block sid="651275502591320">
                     <conditions>
-                        <condition id="-19" name="On destroyed" sid="765276853621749" type="Enemy" />
+                        <condition id="-7" name="Compare instance variable" sid="944780281749393" type="Spawner">
+                            <param id="0" name="Instance variable">EnemiesSpawned</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action id="-12" name="Subtract from" sid="417716394751714" type="Spawner">
-                            <param id="0" name="Instance variable">EnemiesSpawned</param>
-                            <param id="1" name="Value">1</param>
+                        <action id="0" name="Spawn another object" sid="203754057787914" type="Spawner">
+                            <param id="0" name="Object">EnemyDeadParticles</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
                         </action>
-                        <action id="0" name="Set text" sid="871175644169314" type="Text">
-                            <param id="0" name="Text">EnemiesLeft</param>
-                        </action>
+                        <action id="-9" name="Destroy" sid="791346133335554" type="Spawner" />
                     </actions>
                 </event-block>
                 <comment>When an enemy reaches the target, destroy it, but also pick a random turret and destroy that.</comment>
@@ -245,25 +257,12 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-12" name="Subtract from" sid="785957528917325" type="Player">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                         <action id="-9" name="Destroy" sid="849294342525647" type="Enemy" />
                     </actions>
-                    <sub-events>
-                        <event-block sid="516966662606467">
-                            <conditions>
-                                <condition id="-16" name="Pick random instance" sid="405364515132806" type="System">
-                                    <param id="0" name="Object">Turret</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Destroy" sid="377981302070947" type="Turret" />
-                                <action id="0" name="Spawn another object" sid="284579063418364" type="Turret">
-                                    <param id="0" name="Object">EnemyDeadParticles</param>
-                                    <param id="1" name="Layer">&quot;Game&quot;</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -277,24 +276,15 @@
                         <condition id="-2" name="On start of layout" sid="986818192653127" type="System" />
                     </conditions>
                     <actions>
-                        <action behavior="Turret" id="1" name="Add object to target" sid="311655370160428" type="Turret">
-                            <param id="0" name="Target">Enemy</param>
+                        <action id="0" name="Play" sid="139739160248861" type="Audio">
+                            <param id="0" name="Audio file">song</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                     </actions>
                 </event-block>
                 <comment>When shooting, spawn a bullet.</comment>
-                <event-block sid="326073289693776">
-                    <conditions>
-                        <condition behavior="Turret" id="1" name="On shoot" sid="111910142638479" type="Turret" />
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Spawn another object" sid="436916024763654" type="Turret">
-                            <param id="0" name="Object">Bullet</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="Image point">1</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <comment>To prevent bullets that miss flying across the whole screen, destroy them when they&apos;ve travelled out of range.</comment>
                 <event-block sid="374283464922141">
                     <conditions>
@@ -308,33 +298,17 @@
                     </actions>
                 </event-block>
                 <comment>Create new turrets by touching the walls.</comment>
-                <event-block sid="773181788388248">
-                    <conditions>
-                        <condition id="3" name="On touched object" sid="500705364647251" type="Touch">
-                            <param id="0" name="Object">Wall</param>
-                        </condition>
-                        <condition id="4" name="Is touching object" sid="301139834851095" type="Touch">
-                            <param id="0" name="Object">SpawnerCircle</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Create object" sid="406227411960016" type="System">
-                            <param id="0" name="Object to create">Turret</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">round((Touch.X - 16) / 32) * 32 + 16</param>
-                            <param id="3" name="Y">round((Touch.Y - 16) / 32) * 32 + 16</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="911149896133819">
                     <conditions>
-                        <condition id="3" name="On touched object" sid="449674129658138" type="Touch">
-                            <param id="0" name="Object">GridBackground</param>
+                        <condition id="6" name="On object clicked" sid="449674129658138" type="Mouse">
+                            <param id="0" name="Mouse button">2</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">GridBackground</param>
                         </condition>
-                        <condition id="4" name="Is touching object" sid="410459379076016" type="Touch">
+                        <condition id="7" name="Cursor is over object" sid="410459379076016" type="Mouse">
                             <param id="0" name="Object">SpawnerCircle</param>
                         </condition>
-                        <condition id="4" inverted="1" name="Is touching object" sid="547907859283652" type="Touch">
+                        <condition id="7" inverted="1" name="Cursor is over object" sid="547907859283652" type="Mouse">
                             <param id="0" name="Object">Wall</param>
                         </condition>
                     </conditions>
@@ -345,16 +319,6 @@
                             <param id="2" name="X">round((Touch.X - 16) / 32) * 32 + 16</param>
                             <param id="3" name="Y">round((Touch.Y - 16) / 32) * 32 + 16</param>
                         </action>
-                    </actions>
-                </event-block>
-                <event-block sid="518287092252030">
-                    <conditions>
-                        <condition id="1" name="Is overlapping another object" sid="243900864178756" type="Turret">
-                            <param id="0" name="Object">Turret</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="131368139951769" type="Turret" />
                     </actions>
                 </event-block>
                 <event-block sid="665949367833562">
@@ -370,6 +334,118 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="447915897578092">
+            <conditions>
+                <condition id="-18" name="On created" sid="485471190307076" type="SpikeTrap" />
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="527393256201970" type="Player">
+                    <param id="0" name="Instance variable">Mana</param>
+                    <param id="1" name="Value">50</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="274432826521220">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="576758805401247" type="Player">
+                            <param id="0" name="Instance variable">Mana</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="818323928237042" type="SpikeTrap" />
+                        <action id="-11" name="Add to" sid="367779500815121" type="Player">
+                            <param id="0" name="Instance variable">Mana</param>
+                            <param id="1" name="Value">50</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="904865670633124">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="742570934830785" type="Player">
+                            <param id="0" name="Instance variable">Mana</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Start" sid="275916370584496" type="SpikeTrap">
+                            <param id="0" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="203094568964717" type="System">
+                            <param id="0" name="Seconds">5</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="789580457681473" type="SpikeTrap">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="603303930683042" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="997407814662977" type="SpikeTrap">
+                            <param id="0" name="Opacity">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="313355556139671" type="System">
+                            <param id="0" name="Seconds">0.55</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="929528321723516" type="SpikeTrap">
+                            <param id="0" name="Opacity">25</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="565614148349672" type="SpikeTrap" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="939506666144603">
+            <conditions>
+                <condition id="4" name="On finished" sid="610051836971076" type="SpikeTrap">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="179440881763920" type="SpikeTrap">
+                    <param id="0" name="Animation">&quot;default2&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="3" name="Start" sid="753055928732983" type="SpikeTrap">
+                    <param id="0" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="156896767877688">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="778941269026315" type="System">
+                    <param id="0" name="Interval (seconds)">0.5</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="797465973024200" type="Player">
+                    <param id="0" name="Instance variable">Mana</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="987452377487796" type="Player">
+                    <param id="0" name="Instance variable">Mana</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="993898500760949">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="808237850791570" type="Enemy" />
+                <condition id="-7" name="Compare instance variable" sid="198600076561895" type="Player">
+                    <param id="0" name="Instance variable">Mana</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">80</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="983278252270782" type="Player">
+                    <param id="0" name="Instance variable">Mana</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+            </actions>
+        </event-block>
         <event-group description="" sid="575625819645034" title="Blink">
             <sub-events>
                 <comment>Do A Jump</comment>
@@ -383,6 +459,9 @@
                         </condition>
                         <condition id="4" inverted="1" name="Is touching object" sid="840912888497373" type="Touch">
                             <param id="0" name="Object">Wall</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="797077265409376" type="Keyboard">
+                            <param id="0" name="Key">16 (Shift)</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -422,7 +501,19 @@
         <event-group description="" sid="765236128460593" title="Player Actions">
             <sub-events>
                 <event-block sid="267999968213907">
-                    <conditions />
+                    <conditions>
+                        <condition id="2" name="Mouse button is down" sid="730430122046335" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="623531826635823" type="System">
+                            <param id="0" name="Interval (seconds)">0.2</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="628596023026160" type="Player">
+                            <param id="0" name="Instance variable">Mana</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
                     <actions>
                         <action id="0" name="Spawn another object" sid="102738931190916" type="Player">
                             <param id="0" name="Object">powerblast</param>
@@ -433,6 +524,14 @@
                             <param id="0" name="Degrees">random(0,5) - 10</param>
                         </action>
                         <action id="-24" name="Move to top" sid="197542145965892" type="powerblast" />
+                        <action id="-12" name="Subtract from" sid="916906116774193" type="Player">
+                            <param id="0" name="Instance variable">Mana</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-22" name="Set angle toward position" sid="902421303247884" type="Player">
+                            <param id="0" name="X">mouse.X</param>
+                            <param id="1" name="Y">Mouse.Y</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="686850599906066">
@@ -452,12 +551,62 @@
                     </conditions>
                     <actions>
                         <action id="-5" name="Set width" sid="384354679585768" type="ManaBar">
-                            <param id="0" name="Width">Player.Mana</param>
+                            <param id="0" name="Width">Player.Mana *2.83</param>
                         </action>
                         <action id="0" name="Set text" sid="669320820846068" type="Text2">
                             <param id="0" name="Text">&quot;Mana: &quot; &amp; str(Player.Mana)</param>
                         </action>
+                        <action id="-15" name="Set visible" sid="386983723503090" type="AttackMode2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="767053199579929" type="DefenceMode2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="613344928755600">
+                            <conditions>
+                                <condition id="2" name="Mouse button is down" sid="213276357400331" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="454586481488316" type="DefenceMode2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="364613790668752" type="AttackMode2">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="582694276528665">
+                            <conditions>
+                                <condition id="2" name="Mouse button is down" sid="916596404035153" type="Mouse">
+                                    <param id="0" name="Mouse button">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="962412381239971" type="DefenceMode2">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="598482805399387" type="AttackMode2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="138399678286138">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="769812723660331" type="Player">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-26" name="Restart layout" sid="453446472896670" type="System" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -466,6 +615,66 @@
                 <condition id="-2" name="On start of layout" sid="477721428160626" type="System" />
             </conditions>
             <actions />
+        </event-block>
+        <event-block sid="993803891292602">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="152217488936054" type="Keyboard">
+                    <param id="0" name="Key">9 (Tab)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-14" name="Toggle boolean" sid="746477279418786" type="Player">
+                    <param id="0" name="Instance variable">AttackMode</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="613784183841918">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="787548034681428" type="Keyboard">
+                    <param id="0" name="Key">49 (1)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-14" name="Toggle boolean" sid="519782280314389" type="Player">
+                    <param id="0" name="Instance variable">AttackMode</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="724062963813210">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="596791629754995" type="Keyboard">
+                    <param id="0" name="Key">50 (2)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-14" name="Toggle boolean" sid="825270441427867" type="Player">
+                    <param id="0" name="Instance variable">AttackMode</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="376745300044065">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="602666183385957" type="Keyboard">
+                    <param id="0" name="Key">81 (Q)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-14" name="Toggle boolean" sid="828565975413313" type="Player">
+                    <param id="0" name="Instance variable">AttackMode</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="954653991868393">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="764295186248680" type="Keyboard">
+                    <param id="0" name="Key">69 (E)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-14" name="Toggle boolean" sid="458039645505476" type="Player">
+                    <param id="0" name="Instance variable">AttackMode</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>

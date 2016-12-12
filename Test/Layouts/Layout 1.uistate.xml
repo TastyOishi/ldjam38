@@ -5,10 +5,10 @@ It is entirely optional and the project will load without it.  If you are placin
 you probably do not want to add any .uistate.xml files to the repository.-->
     <camera>
         <position-x>396.013</position-x>
-        <position-y>346.964</position-y>
-        <position-z>122.375</position-z>
+        <position-y>523.953</position-y>
+        <position-z>101.136</position-z>
         <lookat-x>396.013</lookat-x>
-        <lookat-y>346.964</lookat-y>
+        <lookat-y>523.953</lookat-y>
         <lookat-z>0</lookat-z>
     </camera>
     <snap-to-grid>1</snap-to-grid>
@@ -23,13 +23,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Margins" />
         <property expanded="1" name="Effects" />
     </properties>
-    <active-layer name="FarBackground" />
+    <active-layer name="Game" />
     <layers>
-        <layer locked="0" name="FarBackground" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="FarBackground" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Background" parallax-in-editor="0" visible="1" />
-        <layer locked="1" name="Game" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="Game" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Shadows" parallax-in-editor="0" visible="1" />
         <layer locked="0" name="Walls" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="Turrets" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Cursors" parallax-in-editor="0" visible="1" />
         <layer locked="0" name="UI" parallax-in-editor="0" visible="1" />
     </layers>

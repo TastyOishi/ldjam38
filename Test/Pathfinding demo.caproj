@@ -10,6 +10,9 @@
     <unique-id>uzos4ezzjulo</unique-id>
     <saved-with-version>23900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -437,6 +440,7 @@
                 <instance-variables>
                     <instance-variable name="Health" sid="181954484046682" type="number" />
                     <instance-variable name="Mana" sid="431530538622019" type="number" />
+                    <instance-variable name="AttackMode" sid="441964135203246" type="boolean" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction" sid="649784680051972">
@@ -448,7 +452,7 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="6" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="972147966619483" speed="5">
-                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-0.png">
+                        <frame duration="1" hotspotX="0.967742" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-0.png">
                             <collision-poly>
                                 <point x="0.193548" y="0.193548" />
                                 <point x="0.483871" y="0.0645161" />
@@ -459,7 +463,7 @@
                                 <point x="0.16129" y="0.483871" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-1.png">
+                        <frame duration="1" hotspotX="1.06452" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-1.png">
                             <collision-poly>
                                 <point x="0.193548" y="0.193548" />
                                 <point x="0.483871" y="0.0645161" />
@@ -471,7 +475,7 @@
                                 <point x="0.16129" y="0.483871" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-2.png">
+                        <frame duration="1" hotspotX="1" hotspotY="0.483871" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-2.png">
                             <collision-poly>
                                 <point x="0.193548" y="0.193548" />
                                 <point x="0.483871" y="0.0645161" />
@@ -483,7 +487,7 @@
                                 <point x="0.129032" y="0.483871" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-3.png">
+                        <frame duration="1" hotspotX="0.967742" hotspotY="0.548387" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-3.png">
                             <collision-poly>
                                 <point x="0.225806" y="0.225806" />
                                 <point x="0.483871" y="0.0645161" />
@@ -495,7 +499,7 @@
                                 <point x="0.0967742" y="0.483871" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-4.png">
+                        <frame duration="1" hotspotX="0.967742" hotspotY="0.580645" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-4.png">
                             <collision-poly>
                                 <point x="0.225806" y="0.225806" />
                                 <point x="0.483871" y="0.0645161" />
@@ -507,7 +511,7 @@
                                 <point x="0.0967742" y="0.483871" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-5.png">
+                        <frame duration="1" hotspotX="0.967742" hotspotY="0.451613" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-5.png">
                             <collision-poly>
                                 <point x="0.225806" y="0.225806" />
                                 <point x="0.483871" y="0.0645161" />
@@ -1299,8 +1303,11 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="Health1" sid="180651001248875">
+            <object-type name="HealthH2" sid="180651001248875">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="h1Visible" sid="472370949657213" type="boolean" />
+                </instance-variables>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="356975852352161" speed="5">
                         <frame duration="1" hotspotX="0.507246" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-Health-1.png">
@@ -1399,6 +1406,15 @@
         <object-type name="Text2" sid="438140192370309">
             <plugin id="Text" />
         </object-type>
+        <object-type name="Audio" sid="833120030797159">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="Keyboard" sid="290318527271126">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Mouse" sid="694444477006934">
+            <plugin id="Mouse" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -1414,9 +1430,27 @@
                 <use-mouse-input>Yes</use-mouse-input>
             </properties>
         </global-instance>
+        <global-instance type="Audio" uid="59">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Keyboard" uid="60" />
+        <global-instance type="Mouse" uid="61" />
     </global-instances>
     <sounds-folder />
-    <music-folder />
+    <music-folder>
+        <file name="song.ogg" />
+    </music-folder>
     <files-folder>
         <file-folder name="Icons">
             <file name="icon-16.png" />
