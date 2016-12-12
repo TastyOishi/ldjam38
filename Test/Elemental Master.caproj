@@ -1,0 +1,1519 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Elemental Master</name>
+    <description></description>
+    <version>1.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website></author-website>
+    <app-id></app-id>
+    <unique-id>uzos4ezzjulo</unique-id>
+    <saved-with-version>23900</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
+        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
+        <behavior author="Scirra" id="shadowcaster" version="1">Shadow Caster</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="brightness">Brightness</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>800</width>
+        <height>650</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Hide address bar">No</prop>
+        <prop name="Loader style">Percentage text</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use iOS retina display">All devices</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="Enemies">
+            <object-type name="BlinkerTargeter" sid="401063771808175">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="763041106157341" speed="5">
+                        <frame duration="1" hotspotX="25.7188" hotspotY="9" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Blinker" sid="494518964807040">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="health" sid="978985619432225" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pathfinding" sid="263250527367718">
+                        <behavior id="Pathfinding" />
+                    </behavior-type>
+                    <behavior-type name="Flash" sid="254271523027883">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="10" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="192237831868498" speed="5">
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Enemy Sprites\Blink Enemy\Blink-Enemy-1.png">
+                            <collision-poly>
+                                <point x="0.225806" y="0.225806" />
+                                <point x="0.483871" y="0.0322581" />
+                                <point x="0.967742" y="0.0322581" />
+                                <point x="0.806452" y="0.483871" />
+                                <point x="0.83871" y="0.83871" />
+                                <point x="0.483871" y="0.806452" />
+                                <point x="0.258065" y="0.741935" />
+                                <point x="0.0322581" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Enemy Sprites\Blink Enemy\Blink-Enemy-2.png">
+                            <collision-poly>
+                                <point x="0.290323" y="0.290323" />
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.935484" y="0.0645161" />
+                                <point x="0.741935" y="0.483871" />
+                                <point x="0.83871" y="0.83871" />
+                                <point x="0.483871" y="0.83871" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.0322581" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Enemy Sprites\Blink Enemy\Blink-Enemy-3.png">
+                            <collision-poly>
+                                <point x="0.290323" y="0.290323" />
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.935484" y="0.0645161" />
+                                <point x="0.741935" y="0.483871" />
+                                <point x="0.83871" y="0.83871" />
+                                <point x="0.483871" y="0.83871" />
+                                <point x="0.290323" y="0.709677" />
+                                <point x="0.0322581" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Enemy Sprites\Blink Enemy\Blink-Enemy-4.png">
+                            <collision-poly>
+                                <point x="0.290323" y="0.290323" />
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.935484" y="0.0645161" />
+                                <point x="0.741935" y="0.483871" />
+                                <point x="0.83871" y="0.83871" />
+                                <point x="0.483871" y="0.83871" />
+                                <point x="0.290323" y="0.709677" />
+                                <point x="0.0322581" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Enemy Sprites\Blink Enemy\Blink-Enemy-5.png">
+                            <collision-poly>
+                                <point x="0.290323" y="0.290323" />
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.935484" y="0.0645161" />
+                                <point x="0.741935" y="0.483871" />
+                                <point x="0.83871" y="0.83871" />
+                                <point x="0.483871" y="0.83871" />
+                                <point x="0.290323" y="0.709677" />
+                                <point x="0.0322581" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Enemy Sprites\Blink Enemy\Blink-Enemy-6.png">
+                            <collision-poly>
+                                <point x="0.258065" y="0.258065" />
+                                <point x="0.483871" y="0.0967742" />
+                                <point x="0.935484" y="0.0645161" />
+                                <point x="0.709677" y="0.483871" />
+                                <point x="0.870968" y="0.870968" />
+                                <point x="0.483871" y="0.903226" />
+                                <point x="0.290323" y="0.709677" />
+                                <point x="0" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Enemy Sprites\Blink Enemy\Blink-Enemy-7.png">
+                            <collision-poly>
+                                <point x="0.290323" y="0.290323" />
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.935484" y="0.0645161" />
+                                <point x="0.741935" y="0.483871" />
+                                <point x="0.83871" y="0.83871" />
+                                <point x="0.483871" y="0.83871" />
+                                <point x="0.290323" y="0.709677" />
+                                <point x="0.0322581" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Enemy Sprites\Blink Enemy\Blink-Enemy-8.png">
+                            <collision-poly>
+                                <point x="0.290323" y="0.290323" />
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.935484" y="0.0645161" />
+                                <point x="0.741935" y="0.483871" />
+                                <point x="0.83871" y="0.83871" />
+                                <point x="0.483871" y="0.83871" />
+                                <point x="0.290323" y="0.709677" />
+                                <point x="0.0322581" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Enemy Sprites\Blink Enemy\Blink-Enemy-9.png">
+                            <collision-poly>
+                                <point x="0.290323" y="0.290323" />
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.935484" y="0.0645161" />
+                                <point x="0.741935" y="0.483871" />
+                                <point x="0.83871" y="0.83871" />
+                                <point x="0.483871" y="0.83871" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.0322581" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Enemy Sprites\Blink Enemy\Blink-Enemy-10.png">
+                            <collision-poly>
+                                <point x="0.290323" y="0.290323" />
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.967742" y="0.0322581" />
+                                <point x="0.741935" y="0.483871" />
+                                <point x="0.83871" y="0.83871" />
+                                <point x="0.483871" y="0.83871" />
+                                <point x="0.290323" y="0.709677" />
+                                <point x="0.0322581" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Enemy" sid="588835944425567">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="health" sid="442564354962011" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pathfinding" sid="933528862027334">
+                        <behavior id="Pathfinding" />
+                    </behavior-type>
+                    <behavior-type name="Flash" sid="789435401543941">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="14" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="217177042581528" speed="18">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Enemy Sprites\Slow Enemy\Slow-Enemy-1.png">
+                            <collision-poly>
+                                <point x="0.2" y="0.2" />
+                                <point x="0.5" y="0.1" />
+                                <point x="0.8" y="0.2" />
+                                <point x="0.6" y="0.6" />
+                                <point x="0.5" y="0.95" />
+                                <point x="0.25" y="0.75" />
+                                <point x="0.15" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.2" y="0.2" />
+                                <point x="0.5" y="0.1" />
+                                <point x="0.8" y="0.2" />
+                                <point x="0.6" y="0.6" />
+                                <point x="0.5" y="0.95" />
+                                <point x="0.25" y="0.75" />
+                                <point x="0.15" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Enemy Sprites\Slow Enemy\Slow-Enemy-2.png">
+                            <collision-poly>
+                                <point x="0.15" y="0.15" />
+                                <point x="0.5" y="0.15" />
+                                <point x="0.8" y="0.2" />
+                                <point x="0.7" y="0.5" />
+                                <point x="0.6" y="0.6" />
+                                <point x="0.5" y="0.95" />
+                                <point x="0.2" y="0.8" />
+                                <point x="0.15" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.15" y="0.15" />
+                                <point x="0.5" y="0.15" />
+                                <point x="0.8" y="0.2" />
+                                <point x="0.7" y="0.5" />
+                                <point x="0.6" y="0.6" />
+                                <point x="0.5" y="0.95" />
+                                <point x="0.2" y="0.8" />
+                                <point x="0.15" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.15" y="0.15" />
+                                <point x="0.5" y="0.15" />
+                                <point x="0.8" y="0.2" />
+                                <point x="0.7" y="0.5" />
+                                <point x="0.6" y="0.6" />
+                                <point x="0.5" y="0.95" />
+                                <point x="0.2" y="0.8" />
+                                <point x="0.15" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.2" y="0.2" />
+                                <point x="0.5" y="0.1" />
+                                <point x="0.8" y="0.2" />
+                                <point x="0.6" y="0.6" />
+                                <point x="0.5" y="0.95" />
+                                <point x="0.25" y="0.75" />
+                                <point x="0.15" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.2" y="0.2" />
+                                <point x="0.5" y="0.1" />
+                                <point x="0.8" y="0.2" />
+                                <point x="0.6" y="0.6" />
+                                <point x="0.5" y="0.95" />
+                                <point x="0.25" y="0.75" />
+                                <point x="0.15" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.15" y="0.5" />
+                                <point x="0.25" y="0.25" />
+                                <point x="0.5" y="0.05" />
+                                <point x="0.6" y="0.4" />
+                                <point x="0.8" y="0.8" />
+                                <point x="0.5" y="0.9" />
+                                <point x="0.2" y="0.8" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.15" y="0.5" />
+                                <point x="0.25" y="0.25" />
+                                <point x="0.5" y="0.05" />
+                                <point x="0.6" y="0.4" />
+                                <point x="0.8" y="0.8" />
+                                <point x="0.5" y="0.9" />
+                                <point x="0.2" y="0.8" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.15" y="0.5" />
+                                <point x="0.2" y="0.2" />
+                                <point x="0.5" y="0.05" />
+                                <point x="0.6" y="0.4" />
+                                <point x="0.7" y="0.5" />
+                                <point x="0.8" y="0.8" />
+                                <point x="0.5" y="0.85" />
+                                <point x="0.15" y="0.85" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.15" y="0.5" />
+                                <point x="0.2" y="0.2" />
+                                <point x="0.5" y="0.05" />
+                                <point x="0.6" y="0.4" />
+                                <point x="0.7" y="0.5" />
+                                <point x="0.8" y="0.8" />
+                                <point x="0.5" y="0.85" />
+                                <point x="0.15" y="0.85" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.15" y="0.5" />
+                                <point x="0.2" y="0.2" />
+                                <point x="0.5" y="0.05" />
+                                <point x="0.6" y="0.4" />
+                                <point x="0.7" y="0.5" />
+                                <point x="0.8" y="0.8" />
+                                <point x="0.5" y="0.85" />
+                                <point x="0.15" y="0.85" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.15" y="0.5" />
+                                <point x="0.25" y="0.25" />
+                                <point x="0.5" y="0.05" />
+                                <point x="0.6" y="0.4" />
+                                <point x="0.8" y="0.8" />
+                                <point x="0.5" y="0.9" />
+                                <point x="0.2" y="0.8" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.15" y="0.5" />
+                                <point x="0.25" y="0.25" />
+                                <point x="0.5" y="0.05" />
+                                <point x="0.6" y="0.4" />
+                                <point x="0.8" y="0.8" />
+                                <point x="0.5" y="0.9" />
+                                <point x="0.2" y="0.8" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="TeleportBounds" sid="788967519365986">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="202325663215124" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Spawner" sid="624231162642636">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="EnemiesSpawned" sid="690288616048132" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="3" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="779493516878958" speed="3">
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.483871" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Enemy Sprites\Spawner Enemy\Spawner-Enemy-1.png">
+                            <collision-poly>
+                                <point x="0.21371" y="0.834677" />
+                                <point x="0.0967742" y="0.516129" />
+                                <point x="0.197581" y="0.330645" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.778226" y="0.233871" />
+                                <point x="0.903226" y="0.516129" />
+                                <point x="0.745968" y="0.862903" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.483871" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Enemy Sprites\Spawner Enemy\Spawner-Enemy-2.png">
+                            <collision-poly>
+                                <point x="0.181452" y="0.762097" />
+                                <point x="0.149194" y="0.528226" />
+                                <point x="0.169355" y="0.209677" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.78629" y="0.225806" />
+                                <point x="0.875" y="0.516129" />
+                                <point x="0.790323" y="0.810484" />
+                                <point x="0.483871" y="0.870968" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.483871" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Enemy Sprites\Spawner Enemy\Spawner-Enemy-3.png">
+                            <collision-poly>
+                                <point x="0.205645" y="0.778226" />
+                                <point x="0.0645161" y="0.516129" />
+                                <point x="0.16129" y="0.16129" />
+                                <point x="0.46371" y="0.153226" />
+                                <point x="0.806452" y="0.193548" />
+                                <point x="0.887097" y="0.516129" />
+                                <point x="0.794355" y="0.810484" />
+                                <point x="0.479839" y="0.862903" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Player Objects">
+            <object-type name="Player" sid="236762041132486">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Health" sid="181954484046682" type="number" />
+                    <instance-variable name="Mana" sid="431530538622019" type="number" />
+                    <instance-variable name="AttackMode" sid="441964135203246" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="8Direction" sid="649784680051972">
+                        <behavior id="EightDir" />
+                    </behavior-type>
+                    <behavior-type name="LineOfSight" sid="969704070997501">
+                        <behavior id="LOS" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="6" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="972147966619483" speed="5">
+                        <frame duration="1" hotspotX="0.967742" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-0.png">
+                            <collision-poly>
+                                <point x="0.193548" y="0.193548" />
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.806452" y="0.193548" />
+                                <point x="0.741935" y="0.741935" />
+                                <point x="0.483871" y="0.967742" />
+                                <point x="0.258065" y="0.741935" />
+                                <point x="0.16129" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="1.06452" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-1.png">
+                            <collision-poly>
+                                <point x="0.193548" y="0.193548" />
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.806452" y="0.193548" />
+                                <point x="0.741935" y="0.483871" />
+                                <point x="0.741935" y="0.741935" />
+                                <point x="0.483871" y="0.967742" />
+                                <point x="0.258065" y="0.741935" />
+                                <point x="0.16129" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="1" hotspotY="0.483871" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-2.png">
+                            <collision-poly>
+                                <point x="0.193548" y="0.193548" />
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.806452" y="0.193548" />
+                                <point x="0.806452" y="0.483871" />
+                                <point x="0.741935" y="0.741935" />
+                                <point x="0.483871" y="0.967742" />
+                                <point x="0.225806" y="0.774194" />
+                                <point x="0.129032" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.967742" hotspotY="0.548387" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-3.png">
+                            <collision-poly>
+                                <point x="0.225806" y="0.225806" />
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.774194" y="0.225806" />
+                                <point x="0.806452" y="0.483871" />
+                                <point x="0.741935" y="0.741935" />
+                                <point x="0.483871" y="0.967742" />
+                                <point x="0.225806" y="0.774194" />
+                                <point x="0.0967742" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.967742" hotspotY="0.580645" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-4.png">
+                            <collision-poly>
+                                <point x="0.225806" y="0.225806" />
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.741935" y="0.258065" />
+                                <point x="0.806452" y="0.483871" />
+                                <point x="0.741935" y="0.741935" />
+                                <point x="0.483871" y="0.967742" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.0967742" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.967742" hotspotY="0.451613" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-5.png">
+                            <collision-poly>
+                                <point x="0.225806" y="0.225806" />
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.741935" y="0.258065" />
+                                <point x="0.806452" y="0.483871" />
+                                <point x="0.741935" y="0.741935" />
+                                <point x="0.483871" y="0.967742" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.0967742" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="powerblast" sid="566364071181090">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="615516940250979">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <effects>
+                    <effect-type name="Brightness">
+                        <effect id="brightness" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="449125185267794" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="SpawnerCircle" sid="221705946322875">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="970899876894365" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Bullet" sid="129870782615925">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="786467668694051">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="910135789431470" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0.6">
+                            <image-point name="Imagepoint 1" x="1" y="0.6" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="BulletImpactParticles" sid="449580105862669">
+                <plugin id="Particles" />
+                <texture />
+            </object-type>
+            <object-type name="SpikeTrap" sid="658709513140790">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="11" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="101847982962797" speed="15">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Spike Trap Frames\Spike Trap Spawn\Spike-Trap-Spawn-1.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Spike Trap Frames\Spike Trap Spawn\Spike-Trap-Spawn-2.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.421875" />
+                                <point x="0.5" y="0.5" />
+                                <point x="0.5" y="0.5" />
+                                <point x="0.40625" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.5" y="0.421875" />
+                                <point x="0.5" y="0.5" />
+                                <point x="0.5" y="0.5" />
+                                <point x="0.40625" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Spike Trap Frames\Spike Trap Spawn\Spike-Trap-Spawn-3.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Spike Trap Frames\Spike Trap Spawn\Spike-Trap-Spawn-4.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.40625" />
+                                <point x="0.90625" y="0.046875" />
+                                <point x="0.5" y="0.453125" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.5" y="0.40625" />
+                                <point x="0.90625" y="0.046875" />
+                                <point x="0.5" y="0.453125" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Spike Trap Frames\Spike Trap Spawn\Spike-Trap-Spawn-6.png">
+                            <collision-poly>
+                                <point x="0.4375" y="0.21875" />
+                                <point x="0.5" y="0.03125" />
+                                <point x="0.90625" y="0.046875" />
+                                <point x="0.40625" y="0.5" />
+                                <point x="0.375" y="0.6875" />
+                                <point x="0.5" y="0.453125" />
+                                <point x="0.53125" y="0.734375" />
+                                <point x="0.09375" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.5625" y="0.78125" />
+                                <point x="0.5" y="0.96875" />
+                                <point x="0.09375" y="0.953125" />
+                                <point x="0.59375" y="0.5" />
+                                <point x="0.625" y="0.3125" />
+                                <point x="0.5" y="0.546875" />
+                                <point x="0.46875" y="0.265625" />
+                                <point x="0.90625" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Spike Trap Frames\Spike Trap Spawn\Spike-Trap-Spawn-5.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="5" loop="1" name="Default2" pingpong="0" repeatcount="1" repeatto="0" sid="787496930855715" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Spike Trap Frames\Spike-Trap-1.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.1875" />
+                                <point x="0.5" y="0.109375" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.5" />
+                                <point x="0.5625" y="0.78125" />
+                                <point x="0.5" y="0.8125" />
+                                <point x="0.03125" y="0.984375" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Spike Trap Frames\Spike-Trap-2.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.1875" />
+                                <point x="0.5" y="0.109375" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.5" />
+                                <point x="0.5625" y="0.78125" />
+                                <point x="0.5" y="0.8125" />
+                                <point x="0.03125" y="0.984375" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Spike Trap Frames\Spike-Trap-3.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.1875" />
+                                <point x="0.5" y="0.109375" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.5" />
+                                <point x="0.5625" y="0.78125" />
+                                <point x="0.5" y="0.8125" />
+                                <point x="0.03125" y="0.984375" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Spike Trap Frames\Spike-Trap-4.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.1875" />
+                                <point x="0.5" y="0.109375" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.5" />
+                                <point x="0.5625" y="0.78125" />
+                                <point x="0.5" y="0.8125" />
+                                <point x="0.03125" y="0.984375" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Spike Trap Frames\Spike-Trap-5.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.1875" />
+                                <point x="0.5" y="0.109375" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.5" />
+                                <point x="0.5625" y="0.78125" />
+                                <point x="0.5" y="0.8125" />
+                                <point x="0.03125" y="0.984375" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="EnemyDeadParticles" sid="940780148680080">
+                <plugin id="Particles" />
+                <texture />
+            </object-type>
+            <object-type name="Turret" sid="933289364475855">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Turret" sid="432549067205577">
+                        <behavior id="Turret" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="854293938514678" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.941176" y="0.5" />
+                            <collision-poly>
+                                <point x="0.176471" y="0.176471" />
+                                <point x="0.558824" y="0.0588235" />
+                                <point x="0.882353" y="0.264706" />
+                                <point x="0.970588" y="0.5" />
+                                <point x="0.882353" y="0.764706" />
+                                <point x="0.558824" y="0.941176" />
+                                <point x="0.205882" y="0.823529" />
+                                <point x="0.0588235" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="PlayerPowerRing" sid="912826223729652">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="23" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="867450497108634" speed="25">
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Ring-1.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.762097" y="0.923387" />
+                                <point x="0.149194" y="0.810484" />
+                                <point x="0.137097" y="0.16129" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-2.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-3.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-4.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-5.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-6.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-7.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-8.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-9.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-10.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-11.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-12.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-13.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-14.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-15.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-16.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-17.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-18.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-19.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-20.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-21.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-22.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Ring\Player-Sprite-23.png">
+                            <collision-poly>
+                                <point x="0.483871" y="0.0645161" />
+                                <point x="0.870968" y="0.129032" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.483871" y="0.129032" />
+                                <point x="0.193548" y="0.806452" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ManaDrop" sid="229332085568797">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="25" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="445137457912160" speed="14">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-1.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-2.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-3.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.234375" />
+                                <point x="0.3125" y="0.171875" />
+                                <point x="0.5" y="0.703125" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-4.png">
+                            <collision-poly>
+                                <point x="0.5625" y="0.140625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.4375" y="0.5" />
+                                <point x="0.5" y="0.703125" />
+                                <point x="0.3125" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-5.png">
+                            <collision-poly>
+                                <point x="0.6875" y="0.171875" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.5" y="0.40625" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-6.png">
+                            <collision-poly>
+                                <point x="0.5625" y="0.140625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.4375" y="0.5" />
+                                <point x="0.5" y="0.703125" />
+                                <point x="0.3125" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-7.png">
+                            <collision-poly>
+                                <point x="0.625" y="0.15625" />
+                                <point x="0.5" y="0.140625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.5" y="0.65625" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-8.png">
+                            <collision-poly>
+                                <point x="0.6875" y="0.171875" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.5" y="0.40625" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-9.png">
+                            <collision-poly>
+                                <point x="0.625" y="0.15625" />
+                                <point x="0.5" y="0.140625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.5" y="0.65625" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-10.png">
+                            <collision-poly>
+                                <point x="0.5625" y="0.140625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.4375" y="0.5" />
+                                <point x="0.5" y="0.703125" />
+                                <point x="0.3125" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-11.png">
+                            <collision-poly>
+                                <point x="0.625" y="0.15625" />
+                                <point x="0.5" y="0.140625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.5" y="0.65625" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-12.png">
+                            <collision-poly>
+                                <point x="0.6875" y="0.171875" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.5" y="0.40625" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-13.png">
+                            <collision-poly>
+                                <point x="0.625" y="0.15625" />
+                                <point x="0.5" y="0.140625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.5" y="0.65625" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-14.png">
+                            <collision-poly>
+                                <point x="0.5625" y="0.140625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.4375" y="0.5" />
+                                <point x="0.5" y="0.703125" />
+                                <point x="0.3125" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-15.png">
+                            <collision-poly>
+                                <point x="0.625" y="0.15625" />
+                                <point x="0.5" y="0.140625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.5" y="0.65625" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-16.png">
+                            <collision-poly>
+                                <point x="0.6875" y="0.171875" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.5" y="0.40625" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-17.png">
+                            <collision-poly>
+                                <point x="0.625" y="0.15625" />
+                                <point x="0.5" y="0.140625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.5" y="0.65625" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-18.png">
+                            <collision-poly>
+                                <point x="0.5625" y="0.140625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.4375" y="0.5" />
+                                <point x="0.5" y="0.703125" />
+                                <point x="0.3125" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-19.png">
+                            <collision-poly>
+                                <point x="0.625" y="0.15625" />
+                                <point x="0.5" y="0.140625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.5" y="0.65625" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-20.png">
+                            <collision-poly>
+                                <point x="0.6875" y="0.171875" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.5" y="0.40625" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-21.png">
+                            <collision-poly>
+                                <point x="0.6875" y="0.171875" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.5" y="0.375" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-22.png">
+                            <collision-poly>
+                                <point x="0.6875" y="0.171875" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.4375" y="0.140625" />
+                                <point x="0.5" y="0.28125" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-23.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Mana Sprite\Mana-24.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Background">
+            <object-type name="GridBackground" sid="145802020905594">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="Floortiles2" sid="663248459611165">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\FloorTIles2.png" />
+                <tiles />
+            </object-type>
+            <object-type name="Shadows" sid="190208979678054">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Shadows.png" />
+                <tiles />
+            </object-type>
+            <object-type name="WallVariation2" sid="178808870447782">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Wall-Variation.jpg" />
+                <tiles />
+            </object-type>
+            <object-type name="Wall" sid="127760289259213">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="532390707026730">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="ShadowCaster" sid="107359847273191">
+                        <behavior id="shadowcaster" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
+            <object-type name="BackWall" sid="334450615167139">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="608056393485231" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.500775" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Back-Wall2.png">
+                            <collision-poly>
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                                <point x="0.2725" y="0.0976744" />
+                                <point x="0.7275" y="0.0976744" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Rocks1" sid="720132014409622">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="395501297679325" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.500775" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Back-Wall3.png">
+                            <collision-poly>
+                                <point x="0.08125" y="0.100775" />
+                                <point x="0.1125" y="0.499225" />
+                                <point x="0" y="0.499225" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Rocks2" sid="597172604908324">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="139724714711445" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.500775" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Back-Wall1.png">
+                            <collision-poly>
+                                <point x="1" y="0.499225" />
+                                <point x="1" y="1" />
+                                <point x="0.88" y="0.499225" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Game GUI">
+            <object-type name="Text" sid="987758996562249">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="9patch" sid="293471065840333">
+                <plugin id="NinePatch" />
+                <texture original-source="C:\Users\Stuart\Pictures\ManaContainer.png" />
+            </object-type>
+            <object-type name="ManaBar" sid="717371692055562">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="220743009020457" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0.5" original-source="C:\Users\Stuart\Pictures\ManaBar.png">
+                            <collision-poly>
+                                <point x="0" y="0.00675676" />
+                                <point x="1" y="0.5" />
+                                <point x="0" y="0.993243" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Healthbar" sid="964166163048289">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="937878719403428" speed="5">
+                        <frame duration="1" hotspotX="1" hotspotY="0.5" original-source="C:\Users\Stuart\Downloads\Healthbar.png">
+                            <collision-poly>
+                                <point x="0" y="0.00675676" />
+                                <point x="1" y="0.5" />
+                                <point x="0" y="0.993243" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Backing" sid="435881022085881">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="100415318391940" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.505952" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-Background.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ManaBarCap" sid="398326719141911">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="333751348932455" speed="5">
+                        <frame duration="1" hotspotX="0.501618" hotspotY="0.514286" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-Mana-Bar.png">
+                            <collision-poly>
+                                <point x="0.00647249" y="0.0571429" />
+                                <point x="0.993528" y="0.0571429" />
+                                <point x="0.993528" y="0.942857" />
+                                <point x="0.498382" y="0.942857" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Health2" sid="522174341568711">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="898923142308864" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-Health-2.png">
+                            <collision-poly>
+                                <point x="0.0757576" y="0.0735294" />
+                                <point x="0.5" y="0.0588235" />
+                                <point x="0.878788" y="0.117647" />
+                                <point x="0.924242" y="0.5" />
+                                <point x="0.5" y="0.985294" />
+                                <point x="0.272727" y="0.735294" />
+                                <point x="0.0909091" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HealthH2" sid="180651001248875">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="h1Visible" sid="472370949657213" type="boolean" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="356975852352161" speed="5">
+                        <frame duration="1" hotspotX="0.507246" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-Health-1.png">
+                            <collision-poly>
+                                <point x="0.0724638" y="0.0833333" />
+                                <point x="0.492754" y="0.0666667" />
+                                <point x="0.898551" y="0.116667" />
+                                <point x="0.898551" y="0.5" />
+                                <point x="0.753623" y="0.716667" />
+                                <point x="0.492754" y="0.983333" />
+                                <point x="0.246377" y="0.716667" />
+                                <point x="0.0869565" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="AttackMode1" sid="366736353470521">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="139351935075734" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-1-Attack.png">
+                            <collision-poly>
+                                <point x="0.0111111" y="0.02" />
+                                <point x="0.988889" y="0.02" />
+                                <point x="0.988889" y="0.98" />
+                                <point x="0.5" y="1" />
+                                <point x="0.0111111" y="0.98" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="AttackMode2" sid="228853866028201">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="838105037554741" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-2-Attack.png">
+                            <collision-poly>
+                                <point x="0.0111111" y="0.02" />
+                                <point x="0.988889" y="0.02" />
+                                <point x="0.988889" y="0.98" />
+                                <point x="0.5" y="1" />
+                                <point x="0.0111111" y="0.98" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="DefenceMode1" sid="677000076691964">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="965385335522271" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.510204" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-1-Defence.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="DefenceMode2" sid="927099158166979">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="945829630855188" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.510204" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-2-Defence.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="UIPaperTexture" sid="970351616977911">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="710806372497310" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-Texture-Overlay.png">
+                            <collision-poly>
+                                <point x="0.16125" y="0.767857" />
+                                <point x="0.88375" y="0.553571" />
+                                <point x="0.92125" y="0.5" />
+                                <point x="0.9175" y="0.607143" />
+                                <point x="0.22" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-type name="Touch" sid="840175940101378">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Tilemap" sid="697645658227687">
+            <plugin id="Tilemap" />
+            <texture />
+            <tiles />
+        </object-type>
+        <object-type name="Tilemap2" sid="452150858838464">
+            <plugin id="Tilemap" />
+            <texture />
+            <tiles />
+        </object-type>
+        <object-type name="Text2" sid="438140192370309">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Audio" sid="833120030797159">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="Keyboard" sid="290318527271126">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Mouse" sid="694444477006934">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Sprite" sid="440455877635155">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="494394674327967" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500775" original-source="C:\Users\tasty\Downloads\Title-Screen.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Particles" sid="116329339648159">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="Sprite2" sid="703733381687602">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="428200578189672">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="629486531268856" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500775" original-source="C:\Users\tasty\Downloads\Tutorial.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite3" sid="861842787355381">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="973539575999334" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500775" original-source="C:\Users\tasty\OneDrive\Documents2\GitHub\ldjam38\Test\Textures\Death-Screen.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite4" sid="429089453459311">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="591092261120970" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500775" original-source="C:\Users\tasty\Downloads\Victory-Screen.png">
+                        <collision-poly>
+                            <point x="0.17" y="0.210853" />
+                            <point x="0.5" y="0.00310078" />
+                            <point x="0.93375" y="0.0821705" />
+                            <point x="1" y="0.499225" />
+                            <point x="0.97125" y="0.964341" />
+                            <point x="0.5" y="1" />
+                            <point x="0.09125" y="0.886822" />
+                            <point x="0.02875" y="0.499225" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+        <layout>Layout 2.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Economy.xml</event-sheet>
+        <event-sheet>Event sheet 2.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Touch" uid="29">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Audio" uid="59">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Keyboard" uid="60" />
+        <global-instance type="Mouse" uid="61" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder>
+        <file name="song.ogg" />
+    </music-folder>
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

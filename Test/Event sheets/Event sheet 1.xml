@@ -69,6 +69,19 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block any="1" sid="195265609490098">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="845384168982931" type="Blinker">
+                                    <param id="0" name="Object">Player</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="666330585728769" type="Player">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="756260475054545">
                             <conditions>
                                 <condition id="1" inverted="1" name="Is overlapping another object" sid="136362745191252" type="BlinkerTargeter">
@@ -246,6 +259,10 @@
                             <param id="1" name="Layer">&quot;Game&quot;</param>
                             <param id="2" name="Image point">0</param>
                         </action>
+                        <action id="-11" name="Subtract from" sid="708165127059881" type="System">
+                            <param id="0" name="Variable">enemiesLeftw</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                         <action id="-9" name="Destroy" sid="791346133335554" type="Spawner" />
                     </actions>
                 </event-block>
@@ -266,6 +283,7 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <variable constant="0" name="enemiesLeftw" sid="239596153169492" static="0" type="number">3</variable>
         <variable constant="0" name="MaxTurrets" sid="292231439093345" static="0" type="number">5</variable>
         <variable constant="0" name="NumberOfTurrets" sid="361901807519445" static="0" type="number">0</variable>
         <event-group description="" sid="709895032384682" title="Turret control">
@@ -281,6 +299,9 @@
                             <param id="2" name="Loop">1</param>
                             <param id="3" name="Volume">-10</param>
                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="841472737717004" type="Sprite4">
+                            <param id="0" name="Visibility">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -473,31 +494,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="715567579818991" title="Game Loop">
-            <sub-events>
-                <event-block sid="497666335221538">
-                    <conditions>
-                        <condition id="1" name="Is overlapping another object" sid="375944282364465" type="Player">
-                            <param id="0" name="Object">Spawner</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="560116739920425" type="Spawner">
-                            <param id="0" name="Instance variable">EnemiesSpawned</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Set text" sid="900700388970607" type="Text">
-                            <param id="0" name="Text">&quot;You Win!&quot;</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="262383362373167" type="System">
-                            <param id="0" name="Seconds">4</param>
-                        </action>
-                        <action id="-26" name="Restart layout" sid="818695496413509" type="System" />
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
+        <event-group description="" sid="715567579818991" title="Game Loop" />
         <event-group description="" sid="765236128460593" title="Player Actions">
             <sub-events>
                 <event-block sid="267999968213907">
@@ -554,7 +551,7 @@
                             <param id="0" name="Width">Player.Mana *2.83</param>
                         </action>
                         <action id="0" name="Set text" sid="669320820846068" type="Text2">
-                            <param id="0" name="Text">&quot;Mana: &quot; &amp; str(Player.Mana)</param>
+                            <param id="0" name="Text">&quot;Health: &quot; &amp; str(Player.Health) </param>
                         </action>
                         <action id="-15" name="Set visible" sid="386983723503090" type="AttackMode2">
                             <param id="0" name="Visibility">0</param>
@@ -564,6 +561,20 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <event-block sid="497666335221538">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="560116739920425" type="System">
+                                    <param id="0" name="Variable">enemiesLeftw</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="182760638612343" type="Sprite4">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="613344928755600">
                             <conditions>
                                 <condition id="2" name="Mouse button is down" sid="213276357400331" type="Mouse">
@@ -594,7 +605,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="138399678286138">
+                        <event-block sid="231755867559739">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="769812723660331" type="Player">
                                     <param id="0" name="Instance variable">Health</param>
@@ -603,8 +614,20 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-26" name="Restart layout" sid="453446472896670" type="System" />
+                                <action id="-15" name="Set visible" sid="798793045063000" type="Sprite3">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="790114354276291">
+                                    <conditions>
+                                        <condition id="1" name="On any click" sid="136756764702129" type="Mouse" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-26" name="Restart layout" sid="121119769223553" type="System" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -674,6 +697,25 @@
                 <action id="-14" name="Toggle boolean" sid="458039645505476" type="Player">
                     <param id="0" name="Instance variable">AttackMode</param>
                 </action>
+            </actions>
+        </event-block>
+        <event-block sid="684286152381864">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="585023491875568" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Sprite4</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="678355850188902" type="Sprite4" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="218127140897279" type="Sprite4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="876926156056029" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="371017341477986" type="System" />
             </actions>
         </event-block>
     </events>
