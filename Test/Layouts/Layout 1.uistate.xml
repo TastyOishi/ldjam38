@@ -4,11 +4,11 @@
 It is entirely optional and the project will load without it.  If you are placing the project under source control,
 you probably do not want to add any .uistate.xml files to the repository.-->
     <camera>
-        <position-x>281.083</position-x>
-        <position-y>138.176</position-y>
-        <position-z>10.5119</position-z>
-        <lookat-x>281.083</lookat-x>
-        <lookat-y>138.176</lookat-y>
+        <position-x>396.013</position-x>
+        <position-y>346.964</position-y>
+        <position-z>122.375</position-z>
+        <lookat-x>396.013</lookat-x>
+        <lookat-y>346.964</lookat-y>
         <lookat-z>0</lookat-z>
     </camera>
     <snap-to-grid>1</snap-to-grid>
@@ -23,12 +23,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Margins" />
         <property expanded="1" name="Effects" />
     </properties>
-    <active-layer name="Background" />
+    <active-layer name="FarBackground" />
     <layers>
         <layer locked="0" name="FarBackground" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Background" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Game" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Shadows" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="Walls" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Cursors" parallax-in-editor="0" visible="1" />
         <layer locked="0" name="UI" parallax-in-editor="0" visible="1" />
     </layers>

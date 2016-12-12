@@ -10,8 +10,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">Layout 1</layout>
-        <event-sheet active="1" order="1">Event sheet 1</event-sheet>
+        <layout active="1" order="0">Layout 1</layout>
+        <event-sheet order="1">Event sheet 1</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -43,8 +43,21 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Bullet/" />
         <folder expanded="1" path="animation-folder/SpikeTrap/" />
         <folder expanded="1" path="animation-folder/Turret/" />
+        <folder expanded="1" path="animation-folder/PlayerPowerRing/" />
+        <folder expanded="1" path="animation-folder/ManaDrop/" />
+        <folder expanded="1" path="animation-folder/BackWall/" />
+        <folder expanded="1" path="animation-folder/Rocks1/" />
+        <folder expanded="1" path="animation-folder/Rocks2/" />
         <folder expanded="1" path="animation-folder/ManaBar/" />
         <folder expanded="1" path="animation-folder/Healthbar/" />
-        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/Backing/" />
+        <folder expanded="1" path="animation-folder/ManaBarCap/" />
+        <folder expanded="1" path="animation-folder/Health2/" />
+        <folder expanded="1" path="animation-folder/Health1/" />
+        <folder expanded="1" path="animation-folder/AttackMode1/" />
+        <folder expanded="1" path="animation-folder/AttackMode2/" />
+        <folder expanded="1" path="animation-folder/DefenceMode1/" />
+        <folder expanded="1" path="animation-folder/DefenceMode2/" />
+        <folder expanded="1" path="animation-folder/UIPaperTexture/" />
     </folders-expanded>
 </c2uistate>
