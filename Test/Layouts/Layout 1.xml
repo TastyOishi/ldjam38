@@ -113,8 +113,8 @@
                         <x>399</x>
                         <y>304</y>
                         <z>0</z>
-                        <width>544</width>
-                        <height>416</height>
+                        <width>538</width>
+                        <height>480</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -965,7 +965,7 @@
                 <instance type="BulletImpactParticles" uid="26">
                     <properties>
                         <rate>10</rate>
-                        <spray-cone>360</spray-cone>
+                        <spray-cone>50</spray-cone>
                         <type>One-shot</type>
                         <initial-particle-properties></initial-particle-properties>
                         <speed>80</speed>
@@ -975,10 +975,10 @@
                         <x-randomiser>0</x-randomiser>
                         <y-randomiser>0</y-randomiser>
                         <speed-randomiser->20</speed-randomiser->
-                        <size-randomiser>2</size-randomiser>
-                        <grow-rate-randomiser>5</grow-rate-randomiser>
+                        <size-randomiser>0</size-randomiser>
+                        <grow-rate-randomiser>0</grow-rate-randomiser>
                         <particle-lifetime-properties></particle-lifetime-properties>
-                        <acceleration>51</acceleration>
+                        <acceleration>-10</acceleration>
                         <gravity>0</gravity>
                         <angle-randomiser>0</angle-randomiser>
                         <speed-randomiser>0</speed-randomiser>
@@ -986,15 +986,6 @@
                         <destroy-mode>Fade to invisible</destroy-mode>
                         <timeout>0.5</timeout>
                     </properties>
-                    <effect-instances>
-                        <effect-instance type="WarpRipple">
-                            <parameters>
-                                <amplitude>0.03</amplitude>
-                                <frequency>3</frequency>
-                                <speed>-2</speed>
-                            </parameters>
-                        </effect-instance>
-                    </effect-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -1049,6 +1040,33 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="Text" uid="28">
+                    <properties>
+                        <text>Click or touch the walls to toggle turrets.  This demo combines both the Pathfinding behavior and Turret behavior.</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-16</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>0</x>
+                        <y>-160</y>
+                        <z>0</z>
+                        <width>784</width>
+                        <height>48</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
                 <instance type="BlinkerTargeter" uid="22">
                     <properties>
                         <initial-visibility>Invisible</initial-visibility>
@@ -1081,7 +1099,7 @@
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>
-                                <speed>66</speed>
+                                <speed>25</speed>
                                 <acceleration>44</acceleration>
                                 <gravity>0</gravity>
                                 <bounce-off-solids>Yes</bounce-off-solids>
@@ -1180,7 +1198,7 @@
                                 <max-speed>200</max-speed>
                                 <acceleration>600</acceleration>
                                 <deceleration>500</deceleration>
-                                <directions>4 directions</directions>
+                                <directions>8 directions</directions>
                                 <set-angle>360 degree (smooth)</set-angle>
                                 <default-controls>Yes</default-controls>
                                 <initial-state>Enabled</initial-state>
@@ -1194,11 +1212,6 @@
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
                         </behavior-instance>
-                        <behavior-instance type="BoundToLayout">
-                            <properties>
-                                <bound-by>Edge</bound-by>
-                            </properties>
-                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1206,8 +1219,8 @@
                         <x>784</x>
                         <y>112</y>
                         <z>0</z>
-                        <width>28</width>
-                        <height>28</height>
+                        <width>31</width>
+                        <height>31</height>
                         <depth>0</depth>
                         <hotspotX>0.967741907</hotspotX>
                         <hotspotY>0.516129017</hotspotY>
@@ -1393,7 +1406,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-399</x>
+                        <x>399</x>
                         <y>327</y>
                         <z>0</z>
                         <width>800</width>
@@ -1569,7 +1582,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>112</x>
-                        <y>572</y>
+                        <y>592</y>
                         <z>0</z>
                         <width>96</width>
                         <height>32</height>
@@ -1849,179 +1862,6 @@
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Sprite5" uid="72">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>378</x>
-                        <y>25</y>
-                        <z>0</z>
-                        <width>704</width>
-                        <height>45</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="UIPaperTexture" uid="70">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>240</x>
-                        <y>12</y>
-                        <z>0</z>
-                        <width>485.680664063</width>
-                        <height>67.995292664</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>0.25</opacity>
-                    </world>
-                </instance>
-                <instance type="UIPaperTexture" uid="71">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>480</x>
-                        <y>16</y>
-                        <z>0</z>
-                        <width>485.680664063</width>
-                        <height>67.995292664</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>0.25</opacity>
-                    </world>
-                </instance>
-                <instance type="Text3" uid="20">
-                    <properties>
-                        <text>Destroy the spawners to win! Shift + Click to teleport! Avoid the blinker!</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>Consolas,-16,400,0</font>
-                        <color>255,255,204</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>48</x>
-                        <y>16</y>
-                        <z>0</z>
-                        <width>720</width>
-                        <height>32</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="9patch" uid="69">
-                    <properties>
-                        <left-margin>16</left-margin>
-                        <right-margin>16</right-margin>
-                        <top-margin>8</top-margin>
-                        <bottom-margin>16</bottom-margin>
-                        <edges>Stretch</edges>
-                        <fill>Stretch</fill>
-                        <initial-visibility>Visible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
-                        <seams>Overlap</seams>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>24</x>
-                        <y>1</y>
-                        <z>0</z>
-                        <width>704</width>
-                        <height>48</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Text" uid="73">
-                    <properties>
-                        <text>Right Click: Place a spike trap (50% mana)</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>Consolas,-11,400,0</font>
-                        <color>0,0,0</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>112</x>
-                        <y>624</y>
-                        <z>0</z>
-                        <width>784</width>
-                        <height>48</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Text" uid="28">
-                    <properties>
-                        <text>Left click: Shoot (2% Mana)  </text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>Consolas,-11,400,0</font>
-                        <color>0,0,0</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>112</x>
-                        <y>608</y>
-                        <z>0</z>
-                        <width>784</width>
-                        <height>48</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

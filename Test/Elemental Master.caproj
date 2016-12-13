@@ -29,13 +29,11 @@
         <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
-        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="shadowcaster" version="1">Shadow Caster</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects>
         <effect author="Scirra" id="brightness">Brightness</effect>
-        <effect author="Scirra" id="warpripple">Warp Ripple</effect>
     </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -46,7 +44,6 @@
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
-    <first-layout>Layout 2</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -453,9 +450,6 @@
                     <behavior-type name="LineOfSight" sid="969704070997501">
                         <behavior id="LOS" />
                     </behavior-type>
-                    <behavior-type name="BoundToLayout" sid="606374690457076">
-                        <behavior id="bound" />
-                    </behavior-type>
                 </behaviors>
                 <animation-folder>
                     <animation framecount="6" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="972147966619483" speed="5">
@@ -531,9 +525,6 @@
                             </collision-poly>
                         </frame>
                     </animation>
-                    <animation framecount="1" loop="0" name="Animation2" pingpong="0" repeatcount="1" repeatto="0" sid="103555669758536" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="powerblast" sid="566364071181090">
@@ -579,11 +570,6 @@
             </object-type>
             <object-type name="BulletImpactParticles" sid="449580105862669">
                 <plugin id="Particles" />
-                <effects>
-                    <effect-type name="WarpRipple">
-                        <effect id="warpripple" />
-                    </effect-type>
-                </effects>
                 <texture />
             </object-type>
             <object-type name="SpikeTrap" sid="658709513140790">
@@ -1156,24 +1142,6 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="showPlayer" sid="669322959951339">
-                <plugin id="Sprite" />
-                <behaviors>
-                    <behavior-type name="Flash" sid="511500656135539">
-                        <behavior id="Flash" />
-                    </behavior-type>
-                </behaviors>
-                <effects>
-                    <effect-type name="Brightness">
-                        <effect id="brightness" />
-                    </effect-type>
-                </effects>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="755679969743374" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
         </object-folder>
         <object-folder name="Background">
             <object-type name="GridBackground" sid="145802020905594">
@@ -1497,17 +1465,6 @@
                             <point x="0.02875" y="0.499225" />
                         </collision-poly>
                     </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="Text3" sid="567242593825435">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="Sprite5" sid="254340574156564">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="607431362743048" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>

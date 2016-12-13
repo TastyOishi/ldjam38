@@ -76,11 +76,6 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Spawn another object" sid="306249604707334" type="Player">
-                                    <param id="0" name="Object">EnemyDeadParticles</param>
-                                    <param id="1" name="Layer">&quot;Game&quot;</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
                                 <action id="-10" name="Set value" sid="666330585728769" type="Player">
                                     <param id="0" name="Instance variable">Health</param>
                                     <param id="1" name="Value">0</param>
@@ -99,11 +94,6 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Spawn another object" sid="202145583928880" type="Blinker">
-                                    <param id="0" name="Object">BulletImpactParticles</param>
-                                    <param id="1" name="Layer">&quot;Game&quot;</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
                                 <action id="-3" name="Set position" sid="535291671584443" type="Blinker">
                                     <param id="0" name="X">BlinkerTargeter.X</param>
                                     <param id="1" name="Y">BlinkerTargeter.Y</param>
@@ -183,7 +173,7 @@
                     <actions>
                         <action id="-12" name="Subtract from" sid="518079146385559" type="Enemy">
                             <param id="0" name="Instance variable">health</param>
-                            <param id="1" name="Value">6</param>
+                            <param id="1" name="Value">5</param>
                         </action>
                         <action id="-9" name="Destroy" sid="425904879809251" type="Bullet" />
                         <action id="0" name="Spawn another object" sid="933196792778341" type="Bullet">
@@ -235,11 +225,6 @@
                             <param id="0" name="Instance variable">EnemiesSpawned</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action id="0" name="Spawn another object" sid="650679809894249" type="Spawner">
-                            <param id="0" name="Object">EnemyDeadParticles</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="Image point">0</param>
-                        </action>
                     </actions>
                 </event-block>
                 <comment>Destroy enemies with no health left, throwing in a particles effect.</comment>
@@ -289,11 +274,6 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Spawn another object" sid="153199662003851" type="Player">
-                            <param id="0" name="Object">EnemyDeadParticles</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="Image point">0</param>
-                        </action>
                         <action id="-12" name="Subtract from" sid="785957528917325" type="Player">
                             <param id="0" name="Instance variable">Health</param>
                             <param id="1" name="Value">1</param>
@@ -492,8 +472,8 @@
                 <comment>Do A Jump</comment>
                 <event-block sid="455870389574165">
                     <conditions>
-                        <condition id="7" name="Cursor is over object" sid="728018473339940" type="Mouse">
-                            <param id="0" name="Object">TeleportBounds</param>
+                        <condition id="3" name="On touched object" sid="728018473339940" type="Touch">
+                            <param id="0" name="Object">GridBackground</param>
                         </condition>
                         <condition id="4" name="Is touching object" sid="829658936446692" type="Touch">
                             <param id="0" name="Object">SpawnerCircle</param>
@@ -506,19 +486,9 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Spawn another object" sid="539072334950314" type="Player">
-                            <param id="0" name="Object">BulletImpactParticles</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="Image point">0</param>
-                        </action>
                         <action id="-3" name="Set position" sid="146814042666317" type="Player">
                             <param id="0" name="X">Touch.X</param>
                             <param id="1" name="Y">Touch.Y</param>
-                        </action>
-                        <action id="0" name="Spawn another object" sid="606593301660730" type="Player">
-                            <param id="0" name="Object">BulletImpactParticles</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="Image point">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -589,7 +559,6 @@
                         <action id="-15" name="Set visible" sid="767053199579929" type="DefenceMode2">
                             <param id="0" name="Visibility">0</param>
                         </action>
-                        <action id="-24" name="Move to top" sid="481495097535268" type="Player" />
                     </actions>
                     <sub-events>
                         <event-block sid="497666335221538">
@@ -609,7 +578,7 @@
                         <event-block sid="613344928755600">
                             <conditions>
                                 <condition id="2" name="Mouse button is down" sid="213276357400331" type="Mouse">
-                                    <param id="0" name="Mouse button">2</param>
+                                    <param id="0" name="Mouse button">0</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -624,7 +593,7 @@
                         <event-block sid="582694276528665">
                             <conditions>
                                 <condition id="2" name="Mouse button is down" sid="916596404035153" type="Mouse">
-                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="0" name="Mouse button">2</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -668,12 +637,7 @@
             <conditions>
                 <condition id="-2" name="On start of layout" sid="477721428160626" type="System" />
             </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="738719839528237" type="System">
-                    <param id="0" name="Variable">enemiesLeftw</param>
-                    <param id="1" name="Value">3</param>
-                </action>
-            </actions>
+            <actions />
         </event-block>
         <event-block sid="993803891292602">
             <conditions>
@@ -748,67 +712,10 @@
                 <action id="-15" name="Set visible" sid="218127140897279" type="Sprite4">
                     <param id="0" name="Visibility">0</param>
                 </action>
+                <action id="-16" name="Wait" sid="876926156056029" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
                 <action id="-26" name="Restart layout" sid="371017341477986" type="System" />
-            </actions>
-        </event-block>
-        <event-block sid="411019211688352">
-            <conditions>
-                <condition id="2" name="Key is down" sid="227501728040922" type="Keyboard">
-                    <param id="0" name="Key">87 (W)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="8Direction" id="7" name="Simulate control" sid="192771022459821" type="Player">
-                    <param id="0" name="Control">2</param>
-                </action>
-                <action id="-8" name="Set angle" sid="599124006043440" type="Player">
-                    <param id="0" name="Angle">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="130252086130077">
-            <conditions>
-                <condition id="2" name="Key is down" sid="932896926331178" type="Keyboard">
-                    <param id="0" name="Key">65 (A)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="8Direction" id="7" name="Simulate control" sid="751328170858039" type="Player">
-                    <param id="0" name="Control">0</param>
-                </action>
-                <action id="-8" name="Set angle" sid="327574738228387" type="Player">
-                    <param id="0" name="Angle">180</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="148643601867366">
-            <conditions>
-                <condition id="2" name="Key is down" sid="811036590044092" type="Keyboard">
-                    <param id="0" name="Key">83 (S)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="8Direction" id="7" name="Simulate control" sid="773694553100696" type="Player">
-                    <param id="0" name="Control">3</param>
-                </action>
-                <action id="-8" name="Set angle" sid="119217753604294" type="Player">
-                    <param id="0" name="Angle">270</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="718707956180119">
-            <conditions>
-                <condition id="2" name="Key is down" sid="892491708623922" type="Keyboard">
-                    <param id="0" name="Key">68 (D)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="8Direction" id="7" name="Simulate control" sid="139552847192574" type="Player">
-                    <param id="0" name="Control">1</param>
-                </action>
-                <action id="-8" name="Set angle" sid="304249487236261" type="Player">
-                    <param id="0" name="Angle">90</param>
-                </action>
             </actions>
         </event-block>
     </events>
