@@ -453,7 +453,7 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="6" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="972147966619483" speed="5">
-                        <frame duration="1" hotspotX="0.967742" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-0.png">
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-0.png">
                             <collision-poly>
                                 <point x="0.193548" y="0.193548" />
                                 <point x="0.483871" y="0.0645161" />
@@ -464,7 +464,7 @@
                                 <point x="0.16129" y="0.483871" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="1.06452" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-1.png">
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-1.png">
                             <collision-poly>
                                 <point x="0.193548" y="0.193548" />
                                 <point x="0.483871" y="0.0645161" />
@@ -476,7 +476,7 @@
                                 <point x="0.16129" y="0.483871" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="1" hotspotY="0.483871" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-2.png">
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-2.png">
                             <collision-poly>
                                 <point x="0.193548" y="0.193548" />
                                 <point x="0.483871" y="0.0645161" />
@@ -488,7 +488,7 @@
                                 <point x="0.129032" y="0.483871" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.967742" hotspotY="0.548387" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-3.png">
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-3.png">
                             <collision-poly>
                                 <point x="0.225806" y="0.225806" />
                                 <point x="0.483871" y="0.0645161" />
@@ -500,7 +500,7 @@
                                 <point x="0.0967742" y="0.483871" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.967742" hotspotY="0.580645" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-4.png">
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-4.png">
                             <collision-poly>
                                 <point x="0.225806" y="0.225806" />
                                 <point x="0.483871" y="0.0645161" />
@@ -512,7 +512,7 @@
                                 <point x="0.0967742" y="0.483871" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.967742" hotspotY="0.451613" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-5.png">
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-5.png">
                             <collision-poly>
                                 <point x="0.225806" y="0.225806" />
                                 <point x="0.483871" y="0.0645161" />
