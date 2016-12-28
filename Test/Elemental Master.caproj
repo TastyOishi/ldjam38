@@ -47,12 +47,14 @@
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Low quality</prop>
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">Letterbox scale</prop>
         <prop name="Hide address bar">No</prop>
         <prop name="Loader style">Percentage text</prop>
         <prop name="Preview browser">(default)</prop>
-        <prop name="Sampling">Linear</prop>
+        <prop name="Sampling">Point</prop>
+        <prop name="Use high-DPI display">No</prop>
         <prop name="Use iOS retina display">All devices</prop>
     </configuration-settings>
     <object-folder>
@@ -1289,7 +1291,7 @@
             <object-type name="Health2" sid="522174341568711">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="898923142308864" speed="5">
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="898923142308864" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-Health-2.png">
                             <collision-poly>
                                 <point x="0.0757576" y="0.0735294" />
@@ -1299,6 +1301,18 @@
                                 <point x="0.5" y="0.985294" />
                                 <point x="0.272727" y="0.735294" />
                                 <point x="0.0909091" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507246" hotspotY="0.5" original-source="C:\Users\Stuart\Documents\GitHub\ldjam38\Test\Animations\HealthH2\Default\000.png">
+                            <collision-poly>
+                                <point x="0.0724638" y="0.0833333" />
+                                <point x="0.492754" y="0.0666667" />
+                                <point x="0.898551" y="0.116667" />
+                                <point x="0.898551" y="0.5" />
+                                <point x="0.753623" y="0.716667" />
+                                <point x="0.492754" y="0.983333" />
+                                <point x="0.246377" y="0.716667" />
+                                <point x="0.0869565" y="0.5" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -1445,7 +1459,7 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="973539575999334" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.500775" original-source="C:\Users\tasty\OneDrive\Documents2\GitHub\ldjam38\Test\Textures\Death-Screen.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\tasty\OneDrive\Documents2\GitHub\ldjam38\Test\Textures\Death-Screen.png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -1453,7 +1467,7 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="591092261120970" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.500775" original-source="C:\Users\tasty\Downloads\Victory-Screen.png">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\tasty\Downloads\Victory-Screen.png">
                         <collision-poly>
                             <point x="0.17" y="0.210853" />
                             <point x="0.5" y="0.00310078" />
@@ -1469,15 +1483,28 @@
             </animation-folder>
         </object-type>
     </object-folder>
-    <families />
+    <families>
+        <family name="Enemies" plugin-id="Sprite" sid="913095386630042">
+            <members>
+                <member>Blinker</member>
+                <member>Enemy</member>
+                <member>Spawner</member>
+            </members>
+            <behaviors>
+                <behavior-type name="LineOfSight" sid="617366420103875">
+                    <behavior id="LOS" />
+                </behavior-type>
+            </behaviors>
+        </family>
+    </families>
     <layout-folder>
         <layout>Layout 1.xml</layout>
         <layout>Layout 2.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
-        <event-sheet>Economy.xml</event-sheet>
         <event-sheet>Event sheet 2.xml</event-sheet>
+        <event-sheet>Player Control.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="29">
