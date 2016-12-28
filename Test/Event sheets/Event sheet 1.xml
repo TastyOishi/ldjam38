@@ -48,37 +48,27 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-3" name="Set position" sid="595215568202696" type="BlinkerTargeter">
-                            <param id="0" name="X">round((blinker.X + (random(64) -32 ) - 16) / 32) * 32 + 16</param>
-                            <param id="1" name="Y">round((blinker.Y + (random(64) -32 ) - 16) / 32) * 32 + 16</param>
+                        <action id="-3" name="Set position" sid="766397376702996" type="BlinkerTargeter">
+                            <param id="0" name="X">Floortiles2.SnapX(random(128,647))</param>
+                            <param id="1" name="Y">Floortiles2.SnapX(random(96, 511))</param>
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="753134438174027">
-                            <conditions>
-                                <condition id="-4" name="Is outside layout" sid="448748819788408" type="BlinkerTargeter" />
-                            </conditions>
-                            <actions>
-                                <action id="-3" name="Set position" sid="542395621356183" type="BlinkerTargeter">
-                                    <param id="0" name="X">352</param>
-                                    <param id="1" name="Y">384</param>
-                                </action>
-                            </actions>
-                        </event-block>
                         <event-block any="1" sid="594603560883737">
                             <conditions>
-                                <condition id="0" name="On collision with another object" sid="898622456130221" type="BlinkerTargeter">
+                                <condition id="1" name="Is overlapping another object" sid="898622456130221" type="BlinkerTargeter">
                                     <param id="0" name="Object">Wall</param>
                                 </condition>
-                                <condition id="0" name="On collision with another object" sid="224548924009260" type="Blinker">
+                                <condition id="1" name="Is overlapping another object" sid="224548924009260" type="Blinker">
                                     <param id="0" name="Object">Wall</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-3" name="Set position" sid="432204346125176" type="BlinkerTargeter">
-                                    <param id="0" name="X">round((blinker.X + (random(64) -32 ) - 16) / 32) * 32 + 16</param>
-                                    <param id="1" name="Y">round((blinker.Y + (random(64) -32 ) - 16) / 32) * 32 + 16</param>
+                                <action id="-3" name="Set position" sid="357979483999970" type="BlinkerTargeter">
+                                    <param id="0" name="X">Floortiles2.SnapX(random(128,647))</param>
+                                    <param id="1" name="Y">Floortiles2.SnapX(random(96, 511))</param>
                                 </action>
+                                <action id="-24" name="Move to top" sid="196503273053834" type="BlinkerTargeter" />
                             </actions>
                         </event-block>
                         <event-block any="1" sid="195265609490098">
@@ -102,7 +92,7 @@
                                 <condition id="-8" name="Compare two values" sid="495413293107182" type="System">
                                     <param id="0" name="First value">random(0,100)</param>
                                     <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Second value">80</param>
+                                    <param id="2" name="Second value">98</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -359,14 +349,26 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="697654114278042">
+            <conditions>
+                <condition id="-18" name="On created" sid="333814995265473" type="Enemy" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="315615153659106" type="Enemy">
+                    <param id="0" name="X">Floortiles2.SnapX(random(100,400))</param>
+                    <param id="1" name="Y">Floortiles2.SnapY(random(100,400))</param>
+                </action>
+                <action behavior="Pathfinding" id="1" name="Move along path" sid="301745524870739" type="Enemy" />
+            </actions>
+        </event-block>
         <event-block sid="107704323617971">
             <conditions>
                 <condition behavior="Pathfinding" id="5" name="On arrived" sid="100842078876012" type="Enemy" />
             </conditions>
             <actions>
                 <action behavior="Pathfinding" id="0" name="Find path" sid="511857691807582" type="Enemy">
-                    <param id="0" name="X">Tilemap.SnapX(random(100,400))</param>
-                    <param id="1" name="Y">Tilemap.SnapY(random(100,400))</param>
+                    <param id="0" name="X">Floortiles2.SnapX(random(100,400))</param>
+                    <param id="1" name="Y">Floortiles2.SnapY(random(100,400))</param>
                 </action>
                 <action behavior="Pathfinding" id="1" name="Move along path" sid="271444522895823" type="Enemy" />
             </actions>
@@ -378,8 +380,8 @@
             </conditions>
             <actions>
                 <action behavior="Pathfinding" id="0" name="Find path" sid="300760102124617" type="Enemy">
-                    <param id="0" name="X">Tilemap.SnapX(random(100,400))</param>
-                    <param id="1" name="Y">Tilemap.SnapY(random(100,400))</param>
+                    <param id="0" name="X">Floortiles2.SnapX(random(100,400))</param>
+                    <param id="1" name="Y">Floortiles2.SnapY(random(100,400))</param>
                 </action>
                 <action behavior="Pathfinding" id="1" name="Move along path" sid="857561853893542" type="Enemy" />
             </actions>

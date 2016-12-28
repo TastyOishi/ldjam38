@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">Layout 1</layout>
+        <event-sheet active="1" order="1">Event sheet 1</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1">
+        <family expanded="0" name="Enemies" />
+    </families-expanded>
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/Enemies/" />
+        <folder expanded="1" path="object-folder/Player Objects/" />
+        <folder expanded="1" path="object-folder/Background/" />
+        <folder expanded="1" path="object-folder/Game GUI/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="1" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/BlinkerTargeter/" />
+        <folder expanded="1" path="animation-folder/Blinker/" />
+        <folder expanded="1" path="animation-folder/Enemy/" />
+        <folder expanded="1" path="animation-folder/TeleportBounds/" />
+        <folder expanded="1" path="animation-folder/Spawner/" />
+        <folder expanded="1" path="animation-folder/Player/" />
+        <folder expanded="1" path="animation-folder/powerblast/" />
+        <folder expanded="1" path="animation-folder/SpawnerCircle/" />
+        <folder expanded="1" path="animation-folder/Bullet/" />
+        <folder expanded="1" path="animation-folder/SpikeTrap/" />
+        <folder expanded="1" path="animation-folder/Turret/" />
+        <folder expanded="1" path="animation-folder/PlayerPowerRing/" />
+        <folder expanded="1" path="animation-folder/ManaDrop/" />
+        <folder expanded="1" path="animation-folder/BackWall/" />
+        <folder expanded="1" path="animation-folder/Rocks1/" />
+        <folder expanded="1" path="animation-folder/Rocks2/" />
+        <folder expanded="1" path="animation-folder/ManaBar/" />
+        <folder expanded="1" path="animation-folder/Healthbar/" />
+        <folder expanded="1" path="animation-folder/Backing/" />
+        <folder expanded="1" path="animation-folder/ManaBarCap/" />
+        <folder expanded="1" path="animation-folder/Health2/" />
+        <folder expanded="1" path="animation-folder/HealthH2/" />
+        <folder expanded="1" path="animation-folder/AttackMode1/" />
+        <folder expanded="1" path="animation-folder/AttackMode2/" />
+        <folder expanded="1" path="animation-folder/DefenceMode1/" />
+        <folder expanded="1" path="animation-folder/DefenceMode2/" />
+        <folder expanded="1" path="animation-folder/UIPaperTexture/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/Sprite2/" />
+        <folder expanded="1" path="animation-folder/Sprite3/" />
+        <folder expanded="1" path="animation-folder/Sprite4/" />
+    </folders-expanded>
+</c2uistate>

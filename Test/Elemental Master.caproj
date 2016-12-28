@@ -1482,6 +1482,9 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="CurrentPos" sid="202185527374422">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Enemies" plugin-id="Sprite" sid="913095386630042">

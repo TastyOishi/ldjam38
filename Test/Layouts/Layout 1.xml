@@ -97,7 +97,7 @@
                         <height>18</height>
                         <max-width>25</max-width>
                         <max-height>18</max-height>
-                        <data>-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,5,4,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,5,4,-1,-1,-1,-1,-1,4,-1,4,-1,-1,-1,-1,-1,-1,-1,-1,2,4,-1,-1,-1,-1,0,4,4,4,0,0,0,4,4,4,4,0,1,-1,-1,-1,-1,4,4,4,-1,0,1,4,4,4,-1,-1,4,4,4,-1,-1,-1,-1,4,4,5,5,1,4,4,0,0,0,1,4,1,4,4,-1,-1,-1,-1,1,4,0,4,0,0,-1,-1,4,-1,-1,0,5,4,-1,-1,-1,-1,5,0,1,4,0,1,5,0,1,2,0,0,0,4,-1,-1,-1,0,0,-1,4,4,-1,-1,1,-1,4,-1,-1,-1,-1,4,-1,-1,-1,0,0,4,0,4,4,-1,0,5,0,-1,0,0,1,4,-1,-1,-1,0,4,0,1,4,0,-1,0,-1,1,-1,1,-1,2,4,-1,-1,-1,0,1,-1,4,-1,0,-1,4,-1,1,4,4,-1,4,4,-1,-1,-1,4,4,-1,0,4,4,4,1,-1,2,-1,0,-1,4,4,-1,-1,-1,4,4,4,1,4,2,4,2,-1,0,-1,1,-1,0,4,-1,-1,-1,-1,5,4,2,-1,1,-1,0,-1,4,-1,0,-1,0,4,-1,-1,-1,-1,0,-1,1,5,5,5,0,-1,0,1,4,-1,1,4,-1,-1,-1,-1,0,-1,5,5,0,-1,0,-1,1,-1,0,-1,1,4,-1,-1,-1,0,1,4,5,0,0,0,1,-1,4,1,5,-1,4,-1,-1,-1,-1,0,5,4,-1,5,4,4,4,-1,-1,0,4,4,0,-1,-1,-1,-1,-1,0,5,5,4,5,1,0,1,0,4,5,0,0,0,-1,-1,-1,-1,5,4,-1,-1,-1,-1,-1,-1,4,-1,-1,-1,-1,-1,-1,-1,-1,-1,4,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,2,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1</data>
+                        <data>-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,5,4,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,5,4,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,2,4,-1,-1,-1,-1,0,4,4,4,0,0,0,4,4,4,4,0,1,-1,-1,-1,-1,-1,4,-1,-1,-1,1,4,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,4,5,5,1,4,4,0,0,0,1,4,1,4,4,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,5,4,-1,-1,-1,-1,5,0,1,4,0,1,5,0,1,2,0,0,0,4,-1,-1,-1,-1,0,-1,-1,-1,-1,-1,1,-1,-1,-1,-1,-1,-1,4,-1,-1,-1,-1,0,-1,0,4,4,-1,0,5,0,-1,0,0,1,4,-1,-1,-1,-1,4,-1,1,-1,0,-1,0,-1,1,-1,1,-1,2,4,-1,-1,-1,-1,1,-1,4,-1,0,-1,4,-1,1,-1,4,-1,4,4,-1,-1,-1,-1,4,-1,0,-1,4,-1,1,-1,2,-1,0,-1,4,4,-1,-1,-1,-1,4,-1,1,-1,2,-1,2,-1,0,-1,1,-1,0,4,-1,-1,-1,-1,5,-1,2,-1,1,-1,0,-1,4,-1,0,-1,0,4,-1,-1,-1,-1,0,-1,1,-1,5,-1,0,-1,0,-1,4,-1,1,4,-1,-1,-1,-1,0,-1,5,-1,0,-1,0,-1,1,-1,0,-1,1,4,-1,-1,-1,-1,1,4,5,-1,0,0,1,-1,4,1,5,-1,4,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,0,-1,-1,-1,-1,-1,0,5,5,4,5,1,0,1,0,4,5,0,0,0,-1,-1,-1,-1,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,4,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,2,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1</data>
                     </tilemap-data>
                 </instance>
                 <instance type="TeleportBounds" uid="37">
@@ -812,7 +812,7 @@
                             <properties>
                                 <obstacles>Solids</obstacles>
                                 <range>55</range>
-                                <cone-of-view>180</cone-of-view>
+                                <cone-of-view>270</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
                         </behavior-instance>
@@ -847,7 +847,7 @@
                             <properties>
                                 <obstacles>Solids</obstacles>
                                 <range>55</range>
-                                <cone-of-view>180</cone-of-view>
+                                <cone-of-view>270</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
                         </behavior-instance>
@@ -897,7 +897,7 @@
                             <properties>
                                 <obstacles>Solids</obstacles>
                                 <range>55</range>
-                                <cone-of-view>180</cone-of-view>
+                                <cone-of-view>270</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
                         </behavior-instance>
@@ -1066,55 +1066,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Text" uid="28">
-                    <properties>
-                        <text>Click or touch the walls to toggle turrets.  This demo combines both the Pathfinding behavior and Turret behavior.</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>Arial,-16</font>
-                        <color>0,0,0</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>0</x>
-                        <y>-160</y>
-                        <z>0</z>
-                        <width>784</width>
-                        <height>48</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="BlinkerTargeter" uid="22">
-                    <properties>
-                        <initial-visibility>Invisible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>1206</x>
-                        <y>576</y>
-                        <z>0</z>
-                        <width>32</width>
-                        <height>32</height>
-                        <depth>0</depth>
-                        <hotspotX>25.71875</hotspotX>
-                        <hotspotY>9</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="powerblast" uid="23">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -1171,7 +1122,7 @@
                             <properties>
                                 <obstacles>Solids</obstacles>
                                 <range>55</range>
-                                <cone-of-view>180</cone-of-view>
+                                <cone-of-view>270</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
                         </behavior-instance>
@@ -1206,7 +1157,7 @@
                             <properties>
                                 <obstacles>Solids</obstacles>
                                 <range>55</range>
-                                <cone-of-view>180</cone-of-view>
+                                <cone-of-view>270</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
                         </behavior-instance>
@@ -1242,9 +1193,9 @@
                         <behavior-instance type="8Direction">
                             <properties>
                                 <max-speed>200</max-speed>
-                                <acceleration>600</acceleration>
-                                <deceleration>500</deceleration>
-                                <directions>8 directions</directions>
+                                <acceleration>555555</acceleration>
+                                <deceleration>555555</deceleration>
+                                <directions>4 directions</directions>
                                 <set-angle>360 degree (smooth)</set-angle>
                                 <default-controls>Yes</default-controls>
                                 <initial-state>Enabled</initial-state>
@@ -1270,6 +1221,50 @@
                         <depth>0</depth>
                         <hotspotX>0.516129017</hotspotX>
                         <hotspotY>0.516129017</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Sprite3" uid="20">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>384</x>
+                        <y>848</y>
+                        <z>0</z>
+                        <width>832.743835449</width>
+                        <height>671.399719238</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Sprite4" uid="44">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>384</x>
+                        <y>848</y>
+                        <z>0</z>
+                        <width>822.770507813</width>
+                        <height>663.358703613</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -1833,6 +1828,55 @@
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="CurrentPos" uid="28">
+                    <properties>
+                        <text>Text</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-16</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>208</x>
+                        <y>576</y>
+                        <z>0</z>
+                        <width>200</width>
+                        <height>30</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="BlinkerTargeter" uid="22">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1206</x>
+                        <y>576</y>
+                        <z>0</z>
+                        <width>32</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>25.71875</hotspotX>
+                        <hotspotY>9</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
