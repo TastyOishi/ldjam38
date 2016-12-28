@@ -29,6 +29,7 @@
         <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="shadowcaster" version="1">Shadow Caster</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -451,6 +452,9 @@
                     </behavior-type>
                     <behavior-type name="LineOfSight" sid="969704070997501">
                         <behavior id="LOS" />
+                    </behavior-type>
+                    <behavior-type name="BoundToLayout" sid="506604562135014">
+                        <behavior id="bound" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
@@ -1417,9 +1421,6 @@
             <plugin id="Tilemap" />
             <texture />
             <tiles />
-        </object-type>
-        <object-type name="Text2" sid="438140192370309">
-            <plugin id="Text" />
         </object-type>
         <object-type name="Audio" sid="833120030797159">
             <plugin id="Audio" />

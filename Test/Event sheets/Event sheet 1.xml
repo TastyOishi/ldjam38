@@ -17,6 +17,18 @@
                         <condition id="-2" name="On start of layout" sid="102597143131489" type="System" />
                     </conditions>
                     <actions>
+                        <action id="-3" name="Create object" sid="848345242392826" type="System">
+                            <param id="0" name="Object to create">Spawner</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">Floortiles2.SnapX(random(128,647))</param>
+                            <param id="3" name="Y">Floortiles2.SnapY(random(96, 511))</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="338773310033796" type="System">
+                            <param id="0" name="Object to create">Spawner</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">Floortiles2.SnapX(random(128,647))</param>
+                            <param id="3" name="Y">Floortiles2.SnapY(random(96, 511))</param>
+                        </action>
                         <action behavior="Pathfinding" id="0" name="Find path" sid="274019565678754" type="Blinker">
                             <param id="0" name="X">Player.X</param>
                             <param id="1" name="Y">Player.Y</param>
@@ -50,7 +62,7 @@
                     <actions>
                         <action id="-3" name="Set position" sid="766397376702996" type="BlinkerTargeter">
                             <param id="0" name="X">Floortiles2.SnapX(random(128,647))</param>
-                            <param id="1" name="Y">Floortiles2.SnapX(random(96, 511))</param>
+                            <param id="1" name="Y">Floortiles2.SnapY(random(96, 511))</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -59,16 +71,41 @@
                                 <condition id="1" name="Is overlapping another object" sid="898622456130221" type="BlinkerTargeter">
                                     <param id="0" name="Object">Wall</param>
                                 </condition>
-                                <condition id="1" name="Is overlapping another object" sid="224548924009260" type="Blinker">
-                                    <param id="0" name="Object">Wall</param>
-                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-3" name="Set position" sid="357979483999970" type="BlinkerTargeter">
                                     <param id="0" name="X">Floortiles2.SnapX(random(128,647))</param>
-                                    <param id="1" name="Y">Floortiles2.SnapX(random(96, 511))</param>
+                                    <param id="1" name="Y">Floortiles2.SnapY(random(96, 511))</param>
                                 </action>
                                 <action id="-24" name="Move to top" sid="196503273053834" type="BlinkerTargeter" />
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="731141933052047">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="364911111704919" type="Blinker">
+                                    <param id="0" name="Object">Wall</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="390490285326340" type="Blinker">
+                                    <param id="0" name="X">Floortiles2.SnapX(random(128,647))</param>
+                                    <param id="1" name="Y">Floortiles2.SnapY(random(96, 511))</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="418626709091186" type="Blinker" />
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="789584013275506">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="937395902978053" type="Spawner">
+                                    <param id="0" name="Object">Wall</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="626165163596519" type="Spawner">
+                                    <param id="0" name="X">Floortiles2.SnapX(random(128,647))</param>
+                                    <param id="1" name="Y">Floortiles2.SnapY(random(96, 511))</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="806532772657327" type="Spawner" />
                             </actions>
                         </event-block>
                         <event-block any="1" sid="195265609490098">

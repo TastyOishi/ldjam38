@@ -4,6 +4,18 @@
     <name>Player Control</name>
     <events>
         <variable constant="0" name="MaxPlayerHealth" sid="657248872554204" static="0" type="number">15</variable>
+        <event-group description="" sid="433459004688276" title="Globals">
+            <sub-events>
+                <event-block sid="861723247215718">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="959893928854481" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-24" name="Move to top" sid="136081299434758" type="Player" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="530124517471001" title="Player UI">
             <sub-events>
                 <event-group description="" sid="566608929541583" title="Defeat" />
@@ -236,9 +248,6 @@
                         <action id="-5" name="Set width" sid="538780282508838" type="ManaBar">
                             <param id="0" name="Width">Player.Mana *2.83</param>
                         </action>
-                        <action id="0" name="Set text" sid="732285537790008" type="Text2">
-                            <param id="0" name="Text">&quot;Health: &quot; &amp; str(Player.Health) </param>
-                        </action>
                         <action id="-15" name="Set visible" sid="144268097919432" type="AttackMode2">
                             <param id="0" name="Visibility">0</param>
                         </action>
@@ -303,36 +312,69 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="116318070383660">
-            <conditions>
-                <condition id="-2" name="On start of layout" sid="752442505378764" type="System" />
-            </conditions>
-            <actions />
+        <event-group description="" sid="149195278843739" title="Hearts">
             <sub-events>
-                <event-block sid="766283437874774">
+                <event-block sid="504207259599427">
                     <conditions>
-                        <condition id="-10" name="For" sid="638295168095284" type="System">
+                        <condition id="-2" name="On start of layout" sid="419267666384381" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="711820693464432" type="Health2" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="766283437874774">
+                            <conditions>
+                                <condition id="-10" name="For" sid="638295168095284" type="System">
+                                    <param id="0" name="Name">&quot;genHearts&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">MaxPlayerHealth</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="732274887784821" type="System">
+                                    <param id="0" name="First value">Health2.Count</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">MaxPlayerHealth</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="567622808728277" type="System">
+                                    <param id="0" name="Object to create">Health2</param>
+                                    <param id="1" name="Layer">7</param>
+                                    <param id="2" name="X">Health2.X + (loopindex * 15) % 8 * 15</param>
+                                    <param id="3" name="Y">health2.Y + (loopindex  &gt; 8 ? 15 : 0)</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="510075533035762" type="Health2">
+                                    <param id="0" name="Frame number">loopindex &lt;= player.health ? 1 : 0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="389931764106463">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="101962411273339" type="System" />
+                        <condition id="-10" name="For" sid="335977262854128" type="System">
                             <param id="0" name="Name">&quot;genHearts&quot;</param>
                             <param id="1" name="Start index">1</param>
                             <param id="2" name="End index">MaxPlayerHealth</param>
                         </condition>
-                        <condition id="-8" name="Compare two values" sid="732274887784821" type="System">
+                        <condition id="-8" name="Compare two values" sid="824045498337899" type="System">
                             <param id="0" name="First value">Health2.Count</param>
                             <param id="1" name="Comparison">3</param>
                             <param id="2" name="Second value">MaxPlayerHealth</param>
                         </condition>
+                        <condition id="-13" name="Pick nth instance" sid="266703676489336" type="System">
+                            <param id="0" name="Object">Health2</param>
+                            <param id="1" name="Instance">loopindex</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action id="-3" name="Create object" sid="567622808728277" type="System">
-                            <param id="0" name="Object to create">Health2</param>
-                            <param id="1" name="Layer">7</param>
-                            <param id="2" name="X">Health2.X + (loopindex * 15) % 8 * 15</param>
-                            <param id="3" name="Y">health2.Y + (loopindex  &gt; 8 ? 15 : 0)</param>
+                        <action id="5" name="Set frame" sid="250550720914367" type="Health2">
+                            <param id="0" name="Frame number">loopindex &lt;= player.health ? 1 : 0</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
-        </event-block>
+        </event-group>
         <event-group description="" sid="165972469814955" title="Blink">
             <sub-events>
                 <comment>Do A Jump</comment>
