@@ -72,7 +72,7 @@
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
-                </instance>
+                </instance> 
             </instances>
             <effects />
         </layer>
@@ -127,7 +127,7 @@
             <use-render-cells>0</use-render-cells>
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
-            <instances>
+            <instances> 
                 <instance type="PauseFade" uid="29">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
