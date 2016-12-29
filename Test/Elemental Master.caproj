@@ -26,7 +26,6 @@
         <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
-        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
         <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
@@ -73,17 +72,6 @@
             </object-type>
             <object-type name="Blinker" sid="494518964807040">
                 <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="health" sid="978985619432225" type="number" />
-                </instance-variables>
-                <behaviors>
-                    <behavior-type name="Pathfinding" sid="263250527367718">
-                        <behavior id="Pathfinding" />
-                    </behavior-type>
-                    <behavior-type name="Flash" sid="254271523027883">
-                        <behavior id="Flash" />
-                    </behavior-type>
-                </behaviors>
                 <animation-folder>
                     <animation framecount="10" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="192237831868498" speed="5">
                         <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Enemy Sprites\Blink Enemy\Blink-Enemy-1.png">
@@ -211,17 +199,6 @@
             </object-type>
             <object-type name="Enemy" sid="588835944425567">
                 <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="health" sid="442564354962011" type="number" />
-                </instance-variables>
-                <behaviors>
-                    <behavior-type name="Pathfinding" sid="933528862027334">
-                        <behavior id="Pathfinding" />
-                    </behavior-type>
-                    <behavior-type name="Flash" sid="789435401543941">
-                        <behavior id="Flash" />
-                    </behavior-type>
-                </behaviors>
                 <animation-folder>
                     <animation framecount="14" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="217177042581528" speed="18">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Enemy Sprites\Slow Enemy\Slow-Enemy-1.png">
@@ -1252,7 +1229,6 @@
                         <type>PauseFade</type>
                         <type>mnlLvlHell</type>
                         <type>mnuIntro</type>
-                        <type>mnuLevel</type>
                         <type>mnuLvl1</type>
                         <type>mnuLvl2</type>
                         <type>mnuResume</type>
@@ -1269,7 +1245,6 @@
                         <type>PauseFade</type>
                         <type>mnlLvlHell</type>
                         <type>mnuIntro</type>
-                        <type>mnuLevel</type>
                         <type>mnuLvl1</type>
                         <type>mnuLvl2</type>
                         <type>mnuResume</type>
@@ -1277,15 +1252,6 @@
                 </object-type>
                 <object-type global="1" name="mnuLevel" sid="742178874758712">
                     <plugin id="Text" />
-                    <container>
-                        <type>PauseFade</type>
-                        <type>mnlLvlHell</type>
-                        <type>mnuIntro</type>
-                        <type>mnuLevel</type>
-                        <type>mnuLvl1</type>
-                        <type>mnuLvl2</type>
-                        <type>mnuResume</type>
-                    </container>
                 </object-type>
                 <object-type global="1" name="mnuLvl1" sid="125595669462376">
                     <plugin id="Text" />
@@ -1293,7 +1259,6 @@
                         <type>PauseFade</type>
                         <type>mnlLvlHell</type>
                         <type>mnuIntro</type>
-                        <type>mnuLevel</type>
                         <type>mnuLvl1</type>
                         <type>mnuLvl2</type>
                         <type>mnuResume</type>
@@ -1305,7 +1270,6 @@
                         <type>PauseFade</type>
                         <type>mnlLvlHell</type>
                         <type>mnuIntro</type>
-                        <type>mnuLevel</type>
                         <type>mnuLvl1</type>
                         <type>mnuLvl2</type>
                         <type>mnuResume</type>
@@ -1317,7 +1281,6 @@
                         <type>PauseFade</type>
                         <type>mnlLvlHell</type>
                         <type>mnuIntro</type>
-                        <type>mnuLevel</type>
                         <type>mnuLvl1</type>
                         <type>mnuLvl2</type>
                         <type>mnuResume</type>
@@ -1329,7 +1292,6 @@
                         <type>PauseFade</type>
                         <type>mnlLvlHell</type>
                         <type>mnuIntro</type>
-                        <type>mnuLevel</type>
                         <type>mnuLvl1</type>
                         <type>mnuLvl2</type>
                         <type>mnuResume</type>
@@ -1611,7 +1573,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Sprite3" sid="861842787355381">
+        <object-type global="1" name="Sprite3" sid="861842787355381">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="973539575999334" speed="5">
@@ -1641,14 +1603,96 @@
         <object-type global="1" name="Array" sid="747858396527449">
             <plugin id="Arr" />
         </object-type>
+        <object-type name="AttackCursor" sid="218314340562501">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="586009572320235" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\tasty\OneDrive\Documents2\GitHub\ldjam38\Test\Textures\Attack-Cursor.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="0.5" y="0.0625" />
+                            <point x="0.53125" y="0.46875" />
+                            <point x="0.6875" y="0.5" />
+                            <point x="0.8125" y="0.8125" />
+                            <point x="0.5" y="1" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BulidCursorRed" sid="371590414068846">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="962566947160219" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\tasty\OneDrive\Documents2\GitHub\ldjam38\Test\Textures\Bulid-Cursor-Red.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="0.5" y="0.0625" />
+                            <point x="0.8125" y="0.1875" />
+                            <point x="0.96875" y="0.5" />
+                            <point x="0.8125" y="0.8125" />
+                            <point x="0.5" y="1" />
+                            <point x="0.1875" y="0.8125" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="JumpCursor" sid="159026119729711">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="241355195034278" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\tasty\OneDrive\Documents2\GitHub\ldjam38\Test\Textures\Jump-Cursor.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="0.5" y="0.0625" />
+                            <point x="0.8125" y="0.1875" />
+                            <point x="0.59375" y="0.5" />
+                            <point x="0.8125" y="0.8125" />
+                            <point x="0.5" y="0.5625" />
+                            <point x="0.1875" y="0.8125" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BlinkRadius" sid="418035413347603">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="796939593782081" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\tasty\OneDrive\Documents2\GitHub\ldjam38\Test\Textures\Blink-Radius.png">
+                        <collision-poly>
+                            <point x="0.148" y="0.148" />
+                            <point x="0.5" y="0" />
+                            <point x="0.16" y="0.84" />
+                            <point x="0.02" y="0.5" />
+                            <point x="0.848" y="0.848" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148" y="0.852" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="WinUpdate" sid="192682278451478">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families>
-        <family name="Enemies" plugin-id="Sprite" sid="913095386630042">
+        <family name="allEna" plugin-id="Sprite" sid="913095386630042">
             <members>
                 <member>Blinker</member>
                 <member>Enemy</member>
                 <member>Spawner</member>
             </members>
+            <instance-variables>
+                <instance-variable name="Health" sid="542565291912278" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="LineOfSight" sid="617366420103875">
                     <behavior id="LOS" />
@@ -1672,6 +1716,22 @@
                 </behavior-type>
             </behaviors>
         </family>
+        <family name="enaWalkers" plugin-id="Sprite" sid="638961321503789">
+            <members>
+                <member>Blinker</member>
+                <member>Enemy</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Pathfinding" sid="892190127387212">
+                    <behavior id="Pathfinding" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="Menu" plugin-id="Sprite" sid="762575484456494">
+            <members>
+                <member>PauseFade</member>
+            </members>
+        </family>
     </families>
     <layout-folder>
         <layout>Layout 1.xml</layout>
@@ -1685,6 +1745,8 @@
         <event-sheet>Player Control.xml</event-sheet>
         <event-sheet>MainMenu.xml</event-sheet>
         <event-sheet>Test Layout.xml</event-sheet>
+        <event-sheet>GameEvents.xml</event-sheet>
+        <event-sheet>Enemies.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="60">

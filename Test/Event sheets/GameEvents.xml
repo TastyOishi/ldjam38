@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GameEvents</name>
+    <events>
+        <event-block sid="244858983576871">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="326593860466027" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="563980687408685">
+                    <conditions />
+                    <actions>
+                        <action id="-41" name="Wait for signal" sid="318032905628143" type="System">
+                            <param id="0" name="Tag">&quot;levelLost&quot;</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="218815814881404" type="System">
+                            <param id="0" name="Time scale">0</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="692889672748142" type="System">
+                            <param id="0" name="Object to create">Sprite3</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;UI&quot;)</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="831054193712227">
+                    <conditions />
+                    <actions>
+                        <action id="-41" name="Wait for signal" sid="942866867722800" type="System">
+                            <param id="0" name="Tag">&quot;levelWon&quot;</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="905686523429881" type="System">
+                            <param id="0" name="Time scale">0</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="190957792461305" type="System">
+                            <param id="0" name="Object to create">Sprite4</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;UI&quot;)</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="484194310266005">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="497475465742230" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Sprite4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-42" name="Signal" sid="218339468163223" type="System">
+                    <param id="0" name="Tag">&quot;nextLevel&quot;</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="978410096658253" type="System">
+                    <param id="0" name="Time scale">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="991048513735720" type="Sprite4" />
+            </actions>
+        </event-block>
+        <event-block sid="603898534845278">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="926798180332665" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Sprite3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="288089996284565" type="System" />
+                <action id="-13" name="Set time scale" sid="541170879326831" type="System">
+                    <param id="0" name="Time scale">1</param>
+                </action>
+                <action id="-21" name="Reset global variables" sid="226124970322195" type="System" />
+                <action id="-9" name="Destroy" sid="227495648792934" type="Sprite3" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -22,52 +22,31 @@
         </event-group>
         <event-group description="" sid="530124517471001" title="Player UI">
             <sub-events>
-                <event-group description="" sid="566608929541583" title="Defeat" />
-                <event-block sid="884790398528424">
+                <event-block sid="116802422987883">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="913431028937039" type="Player">
-                            <param id="0" name="Instance variable">Health</param>
-                            <param id="1" name="Comparison">3</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
+                        <condition id="-1" name="Every tick" sid="108177461778525" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-15" name="Set visible" sid="505301879872080" type="Sprite3">
-                            <param id="0" name="Visibility">1</param>
+                        <action id="-5" name="Set width" sid="711001091086546" type="ManaBar">
+                            <param id="0" name="Width">Player.Mana *2.83</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="203071765103931" type="AttackMode2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="590248113322029" type="DefenceMode2">
+                            <param id="0" name="Visibility">0</param>
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="987753251974806">
-                            <conditions>
-                                <condition id="1" name="On any click" sid="970563427881997" type="Mouse" />
-                            </conditions>
+                        <event-block sid="924966446048518">
+                            <conditions />
                             <actions>
-                                <action id="-2" name="Go to layout" sid="842709547614479" type="System">
-                                    <param id="0" name="Layout">Layout 1</param>
+                                <action id="-15" name="Set visible" sid="722310247694652" type="Sprite4">
+                                    <param id="0" name="Visibility">1</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
-                </event-block>
-                <event-group description="" sid="819256185240816" title="Victory Screen" />
-                <event-block sid="104311150731430">
-                    <conditions>
-                        <condition id="6" name="On object clicked" sid="153678317833258" type="Mouse">
-                            <param id="0" name="Mouse button">0</param>
-                            <param id="1" name="Click type">0</param>
-                            <param id="2" name="Object clicked">Sprite4</param>
-                        </condition>
-                        <condition id="-9" name="Is visible" sid="227099165675672" type="Sprite4" />
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="200881275576426" type="Sprite4" />
-                        <action id="-16" name="Wait" sid="708488601548785" type="System">
-                            <param id="0" name="Seconds">1.0</param>
-                        </action>
-                        <action id="-2" name="Go to layout" sid="388448648559191" type="System">
-                            <param id="0" name="Layout">Layout 1</param>
-                        </action>
-                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
@@ -225,23 +204,21 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-12" name="Subtract from" sid="534919938357751" type="Enemy">
-                                    <param id="0" name="Instance variable">health</param>
-                                    <param id="1" name="Value">5</param>
-                                </action>
+                                <action id="-9" name="Destroy" sid="776462929865694" type="powerblast" />
                             </actions>
                         </event-block>
                         <event-block sid="384081790437960">
                             <conditions>
                                 <condition id="0" name="On collision with another object" sid="621751781691249" type="powerblast">
-                                    <param id="0" name="Object">Spawner</param>
+                                    <param id="0" name="Object">allEna</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-12" name="Subtract from" sid="808253793052692" type="Spawner">
-                                    <param id="0" name="Instance variable">EnemiesSpawned</param>
+                                <action id="-12" name="Subtract from" sid="808253793052692" type="allEna">
+                                    <param id="0" name="Instance variable">Health</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
+                                <action id="-9" name="Destroy" sid="753723407741926" type="powerblast" />
                             </actions>
                         </event-block>
                     </sub-events>
@@ -362,139 +339,73 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-block sid="901932455918350">
-                    <conditions>
-                        <condition id="-1" name="Every tick" sid="940307138175016" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-5" name="Set width" sid="538780282508838" type="ManaBar">
-                            <param id="0" name="Width">Player.Mana *2.83</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="144268097919432" type="AttackMode2">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="985777002297347" type="DefenceMode2">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block sid="596408892058747">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="273726659970943" type="System">
-                                    <param id="0" name="Variable">enemiesLeftw</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-15" name="Set visible" sid="653395585683301" type="Sprite4">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
                 <event-block sid="495330821570966">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="910684302786964" type="System" />
                     </conditions>
                     <actions />
                 </event-block>
-            </sub-events>
-        </event-group>
-        <event-block sid="378683943142757">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="733827282781671" type="SpikeTrap">
-                    <param id="0" name="Object">Enemy</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-12" name="Subtract from" sid="154334391546603" type="Enemy">
-                    <param id="0" name="Instance variable">health</param>
-                    <param id="1" name="Value">15</param>
-                </action>
-                <action id="0" name="Spawn another object" sid="815168927176253" type="Enemy">
-                    <param id="0" name="Object">EnemyDeadParticles</param>
-                    <param id="1" name="Layer">&quot;Game&quot;</param>
-                    <param id="2" name="Image point">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="660924828914271">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="373625674374356" type="Player">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Value">loopindex</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="5" name="Set frame" sid="636143519539328" type="Health2">
-                    <param id="0" name="Frame number">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-group description="" sid="149195278843739" title="Hearts">
-            <sub-events>
-                <event-block sid="504207259599427">
+                <event-block sid="378683943142757">
                     <conditions>
-                        <condition id="-2" name="On start of layout" sid="419267666384381" type="System" />
+                        <condition id="0" name="On collision with another object" sid="733827282781671" type="SpikeTrap">
+                            <param id="0" name="Object">Enemy</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="711820693464432" type="Health2" />
+                        <action id="0" name="Spawn another object" sid="815168927176253" type="Enemy">
+                            <param id="0" name="Object">EnemyDeadParticles</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
                     </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="134457058038754" title="Cursors">
+            <sub-events>
+                <event-block any="1" sid="307286890440007">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="855861506735979" type="System" />
+                    </conditions>
+                    <actions />
                     <sub-events>
-                        <event-block sid="766283437874774">
+                        <event-block sid="706398607692684">
                             <conditions>
-                                <condition id="-10" name="For" sid="638295168095284" type="System">
-                                    <param id="0" name="Name">&quot;genHearts&quot;</param>
-                                    <param id="1" name="Start index">1</param>
-                                    <param id="2" name="End index">MaxPlayerHealth</param>
-                                </condition>
-                                <condition id="-8" name="Compare two values" sid="732274887784821" type="System">
-                                    <param id="0" name="First value">Health2.Count</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Second value">MaxPlayerHealth</param>
+                                <condition id="2" name="Key is down" sid="927955536008540" type="Keyboard">
+                                    <param id="0" name="Key">16 (Shift)</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-3" name="Create object" sid="567622808728277" type="System">
-                                    <param id="0" name="Object to create">Health2</param>
-                                    <param id="1" name="Layer">LayerIndex(&quot;UI&quot;)</param>
-                                    <param id="2" name="X">Health2.X + (loopindex * 15) % 8 * 15</param>
-                                    <param id="3" name="Y">health2.Y + (loopindex  &gt; 8 ? 15 : 0)</param>
+                                <action id="1" name="Set cursor from sprite" sid="557557066638044" type="Mouse">
+                                    <param id="0" name="Sprite">JumpCursor</param>
                                 </action>
-                                <action id="5" name="Set frame" sid="510075533035762" type="Health2">
-                                    <param id="0" name="Frame number">loopindex &lt;= player.health ? 1 : 0</param>
+                            </actions>
+                        </event-block>
+                        <event-block sid="782222253965422">
+                            <conditions>
+                                <condition id="2" inverted="1" name="Key is down" sid="379167527098184" type="Keyboard">
+                                    <param id="0" name="Key">16 (Shift)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set cursor from sprite" sid="603096400960629" type="Mouse">
+                                    <param id="0" name="Sprite">AttackCursor</param>
                                 </action>
-                                <action id="-24" name="Move to top" sid="415263535624707" type="Health2" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="220419264778452">
+                            <conditions>
+                                <condition id="2" name="Mouse button is down" sid="985679155078095" type="Mouse">
+                                    <param id="0" name="Mouse button">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set cursor from sprite" sid="529652335986755" type="Mouse">
+                                    <param id="0" name="Sprite">BulidCursorRed</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
-                </event-block>
-                <event-block sid="389931764106463">
-                    <conditions>
-                        <condition id="-1" name="Every tick" sid="101962411273339" type="System" />
-                        <condition id="-10" name="For" sid="335977262854128" type="System">
-                            <param id="0" name="Name">&quot;genHearts&quot;</param>
-                            <param id="1" name="Start index">1</param>
-                            <param id="2" name="End index">MaxPlayerHealth</param>
-                        </condition>
-                        <condition id="-8" name="Compare two values" sid="824045498337899" type="System">
-                            <param id="0" name="First value">Health2.Count</param>
-                            <param id="1" name="Comparison">3</param>
-                            <param id="2" name="Second value">MaxPlayerHealth</param>
-                        </condition>
-                        <condition id="-13" name="Pick nth instance" sid="266703676489336" type="System">
-                            <param id="0" name="Object">Health2</param>
-                            <param id="1" name="Instance">loopindex</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="5" name="Set frame" sid="250550720914367" type="Health2">
-                            <param id="0" name="Frame number">loopindex &lt;= player.health ? 1 : 0</param>
-                        </action>
-                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
@@ -515,6 +426,9 @@
                         <condition id="2" name="Key is down" sid="917508857374606" type="Keyboard">
                             <param id="0" name="Key">16 (Shift)</param>
                         </condition>
+                        <condition id="7" name="Cursor is over object" sid="359928030211529" type="Mouse">
+                            <param id="0" name="Object">TeleportBounds</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-3" name="Set position" sid="931158139236378" type="Player">
@@ -523,6 +437,102 @@
                         </action>
                     </actions>
                 </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="153687682590569" title="Health">
+            <sub-events>
+                <event-block sid="884790398528424">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="913431028937039" type="Player">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-42" name="Signal" sid="710449071337090" type="System">
+                            <param id="0" name="Tag">&quot;levelLost&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" sid="941688298545808" title="Hearts">
+                    <sub-events>
+                        <event-block sid="972149960639469">
+                            <conditions>
+                                <condition id="-2" name="On start of layout" sid="823869405891148" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="607379792154504" type="Health2" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="331535601157801">
+                                    <conditions>
+                                        <condition id="-10" name="For" sid="798331794145999" type="System">
+                                            <param id="0" name="Name">&quot;genHearts&quot;</param>
+                                            <param id="1" name="Start index">1</param>
+                                            <param id="2" name="End index">MaxPlayerHealth</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="347073920201269" type="System">
+                                            <param id="0" name="First value">Health2.Count</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">MaxPlayerHealth</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="886830508406214" type="System">
+                                            <param id="0" name="Object to create">Health2</param>
+                                            <param id="1" name="Layer">LayerIndex(&quot;UI&quot;)</param>
+                                            <param id="2" name="X">Health2.X + (loopindex * 15) % 8 * 15</param>
+                                            <param id="3" name="Y">health2.Y + (loopindex  &gt; 8 ? 15 : 0)</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="373265189547722" type="Health2">
+                                            <param id="0" name="Frame number">loopindex &lt;= player.health ? 1 : 0</param>
+                                        </action>
+                                        <action id="-24" name="Move to top" sid="217208731033054" type="Health2" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="655440111447008">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="850495472043862" type="System" />
+                                <condition id="-10" name="For" sid="763232758222827" type="System">
+                                    <param id="0" name="Name">&quot;genHearts&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">MaxPlayerHealth</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="266396476119709" type="System">
+                                    <param id="0" name="First value">Health2.Count</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">MaxPlayerHealth</param>
+                                </condition>
+                                <condition id="-13" name="Pick nth instance" sid="378162159808809" type="System">
+                                    <param id="0" name="Object">Health2</param>
+                                    <param id="1" name="Instance">loopindex</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="332287566776735" type="Health2">
+                                    <param id="0" name="Frame number">loopindex &lt;= player.health ? 1 : 0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="641585699530279">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="608484904781446" type="Player">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">loopindex</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="697116532292595" type="Health2">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
             </sub-events>
         </event-group>
         <event-group description="" sid="269416870179319" title="Mana">
