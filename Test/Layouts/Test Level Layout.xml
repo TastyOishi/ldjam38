@@ -6338,7 +6338,7 @@
             </instances>
             <effects />
         </layer>
-        <layer name="Menu" sid="811311371536521">
+        <layer name="menu" sid="811311371536521">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>

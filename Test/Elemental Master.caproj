@@ -10,8 +10,8 @@
     <unique-id>uzos4ezzjulo</unique-id>
     <saved-with-version>23900</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
@@ -1221,18 +1221,10 @@
                 <object-type global="1" name="PauseFade" sid="591171640079183">
                     <plugin id="Sprite" />
                     <behaviors>
-                        <behavior-type name="Anchor" sid="450994473927371">
+                        <behavior-type name="Anchor" sid="899845240367136">
                             <behavior id="Anchor" />
                         </behavior-type>
                     </behaviors>
-                    <container>
-                        <type>PauseFade</type>
-                        <type>mnlLvlHell</type>
-                        <type>mnuIntro</type>
-                        <type>mnuLvl1</type>
-                        <type>mnuLvl2</type>
-                        <type>mnuResume</type>
-                    </container>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="386183310564298" speed="5">
                             <frame duration="1" hotspotX="0" hotspotY="0" />
@@ -1241,61 +1233,26 @@
                 </object-type>
                 <object-type global="1" name="mnuResume" sid="184693742938017">
                     <plugin id="Text" />
-                    <container>
-                        <type>PauseFade</type>
-                        <type>mnlLvlHell</type>
-                        <type>mnuIntro</type>
-                        <type>mnuLvl1</type>
-                        <type>mnuLvl2</type>
-                        <type>mnuResume</type>
-                    </container>
                 </object-type>
                 <object-type global="1" name="mnuLevel" sid="742178874758712">
                     <plugin id="Text" />
+                    <behaviors>
+                        <behavior-type name="Anchor" sid="301978810206855">
+                            <behavior id="Anchor" />
+                        </behavior-type>
+                    </behaviors>
                 </object-type>
                 <object-type global="1" name="mnuLvl1" sid="125595669462376">
                     <plugin id="Text" />
-                    <container>
-                        <type>PauseFade</type>
-                        <type>mnlLvlHell</type>
-                        <type>mnuIntro</type>
-                        <type>mnuLvl1</type>
-                        <type>mnuLvl2</type>
-                        <type>mnuResume</type>
-                    </container>
                 </object-type>
                 <object-type global="1" name="mnuLvl2" sid="599480778096161">
                     <plugin id="Text" />
-                    <container>
-                        <type>PauseFade</type>
-                        <type>mnlLvlHell</type>
-                        <type>mnuIntro</type>
-                        <type>mnuLvl1</type>
-                        <type>mnuLvl2</type>
-                        <type>mnuResume</type>
-                    </container>
                 </object-type>
                 <object-type global="1" name="mnlLvlHell" sid="422764214067171">
                     <plugin id="Text" />
-                    <container>
-                        <type>PauseFade</type>
-                        <type>mnlLvlHell</type>
-                        <type>mnuIntro</type>
-                        <type>mnuLvl1</type>
-                        <type>mnuLvl2</type>
-                        <type>mnuResume</type>
-                    </container>
                 </object-type>
                 <object-type global="1" name="mnuIntro" sid="607132673879833">
                     <plugin id="Text" />
-                    <container>
-                        <type>PauseFade</type>
-                        <type>mnlLvlHell</type>
-                        <type>mnuIntro</type>
-                        <type>mnuLvl1</type>
-                        <type>mnuLvl2</type>
-                        <type>mnuResume</type>
-                    </container>
                 </object-type>
             </object-folder>
             <object-type name="Text" sid="987758996562249">
@@ -1600,9 +1557,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type global="1" name="Array" sid="747858396527449">
-            <plugin id="Arr" />
-        </object-type>
         <object-type name="AttackCursor" sid="218314340562501">
             <plugin id="Sprite" />
             <animation-folder>
@@ -1679,8 +1633,8 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="WinUpdate" sid="192682278451478">
-            <plugin id="Text" />
+        <object-type name="Function" sid="128303557168804">
+            <plugin id="Function" />
         </object-type>
     </object-folder>
     <families>
@@ -1711,7 +1665,7 @@
                 <instance-variable name="Action" sid="224321801380230" type="string" />
             </instance-variables>
             <behaviors>
-                <behavior-type name="Anchor" sid="972026780185995">
+                <behavior-type name="Anchor" sid="475471230641505">
                     <behavior id="Anchor" />
                 </behavior-type>
             </behaviors>
@@ -1726,11 +1680,6 @@
                     <behavior id="Pathfinding" />
                 </behavior-type>
             </behaviors>
-        </family>
-        <family name="Menu" plugin-id="Sprite" sid="762575484456494">
-            <members>
-                <member>PauseFade</member>
-            </members>
         </family>
     </families>
     <layout-folder>
@@ -1747,6 +1696,7 @@
         <event-sheet>Test Layout.xml</event-sheet>
         <event-sheet>GameEvents.xml</event-sheet>
         <event-sheet>Enemies.xml</event-sheet>
+        <event-sheet>ObjectHell.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="60">
@@ -1770,6 +1720,7 @@
         </global-instance>
         <global-instance type="Keyboard" uid="63" />
         <global-instance type="Mouse" uid="119" />
+        <global-instance type="Function" uid="256" />
     </global-instances>
     <sounds-folder />
     <music-folder>

@@ -8,76 +8,130 @@
                 <condition id="-2" name="On start of layout" sid="630256851719998" type="System" />
             </conditions>
             <actions>
+                <action id="0" name="Call function" sid="681813953974077" type="Function">
+                    <param id="0" name="Name">&quot;hideMenu&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
                 <action id="5" name="Set web font" sid="475922845921736" type="MenuText">
                     <param id="0" name="Family name">&quot;xenophoneregular&quot;</param>
                     <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="753853381932535" type="PauseFade">
+                    <param id="0" name="Layer">LayerIndex(&quot;menu&quot;)</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="945379589034004" type="MenuText">
+                    <param id="0" name="Layer">LayerIndex(&quot;menu&quot;)</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="626828534238683" type="mnuLevel">
+                    <param id="0" name="Layer">LayerIndex(&quot;menu&quot;)</param>
                 </action>
             </actions>
         </event-block>
         <comment></comment>
         <comment>Menu Triggers</comment>
-        <event-block sid="448763736312723">
+        <event-block sid="321275496451176">
             <conditions>
-                <condition id="-1" name="Every tick" sid="903981158516485" type="System" />
+                <condition id="0" name="On function" sid="627699050093045" type="Function">
+                    <param id="0" name="Name">&quot;menuAction&quot;</param>
+                </condition>
             </conditions>
-            <actions />
+            <actions>
+                <action id="0" name="Call function" sid="842872382960402" type="Function">
+                    <param id="0" name="Name">&quot;hideMenu&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
             <sub-events>
-                <event-block sid="561856534881737">
-                    <conditions />
+                <comment>Resume just uses the default hideMenu</comment>
+                <event-block sid="197808270483004">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="647163266781509" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;gotointro&quot;</param>
+                        </condition>
+                    </conditions>
                     <actions>
-                        <action id="-41" name="Wait for signal" sid="258729337585877" type="System">
-                            <param id="0" name="Tag">&quot;gotohell&quot;</param>
-                        </action>
-                        <action id="-2" name="Go to layout" sid="162245755477337" type="System">
-                            <param id="0" name="Layout">Object Hell</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="138898275786949">
-                    <conditions />
-                    <actions>
-                        <action id="-41" name="Wait for signal" sid="753063620280738" type="System">
-                            <param id="0" name="Tag">&quot;gotointro&quot;</param>
-                        </action>
                         <action id="-2" name="Go to layout" sid="447378709228451" type="System">
                             <param id="0" name="Layout">Layout 2</param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="539097334721475">
-                    <conditions />
+                <event-block sid="545033116364814">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="788724906803695" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;gotolvl1&quot;</param>
+                        </condition>
+                    </conditions>
                     <actions>
-                        <action id="-41" name="Wait for signal" sid="256263654806121" type="System">
-                            <param id="0" name="Tag">&quot;gotolvl1&quot;</param>
-                        </action>
                         <action id="-2" name="Go to layout" sid="788287266185782" type="System">
                             <param id="0" name="Layout">Layout 1</param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="259609928898649">
-                    <conditions />
+                <event-block sid="216704784745031">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="934723489716942" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;gotolvl2&quot;</param>
+                        </condition>
+                    </conditions>
                     <actions>
-                        <action id="-41" name="Wait for signal" sid="569619676905611" type="System">
-                            <param id="0" name="Tag">&quot;gotolvl2&quot;</param>
-                        </action>
                         <action id="-2" name="Go to layout" sid="416767050709842" type="System">
                             <param id="0" name="Layout">Test Level Layout</param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="544757967782793">
-                    <conditions />
+                <event-block sid="598444402989624">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="207910424885463" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;gotohell&quot;</param>
+                        </condition>
+                    </conditions>
                     <actions>
-                        <action id="-41" name="Wait for signal" sid="896853004478747" type="System">
-                            <param id="0" name="Tag">&quot;resume&quot;</param>
-                        </action>
-                        <action id="-42" name="Signal" sid="283866998650322" type="System">
-                            <param id="0" name="Tag">&quot;menuHide&quot;</param>
+                        <action id="-2" name="Go to layout" sid="162245755477337" type="System">
+                            <param id="0" name="Layout">Object Hell</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="363327627035696">
+            <conditions>
+                <condition id="0" name="On function" sid="700935907934539" type="Function">
+                    <param id="0" name="Name">&quot;showMenu&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="403064794152035" type="System">
+                    <param id="0" name="Layer">LayerIndex(&quot;menu&quot;)</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="514725418592683" type="System">
+                    <param id="0" name="Time scale">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="576279712836384">
+            <conditions>
+                <condition id="0" name="On function" sid="342986541766266" type="Function">
+                    <param id="0" name="Name">&quot;hideMenu&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="560962862915973" type="System">
+                    <param id="0" name="Layer">LayerIndex(&quot;menu&quot;)</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="826342673719496" type="System">
+                    <param id="0" name="Time scale">1</param>
+                </action>
+            </actions>
         </event-block>
         <comment>&#x0D;&#x0A;Menu Show Hide</comment>
         <event-block sid="906063089128797">
@@ -88,58 +142,31 @@
             </conditions>
             <actions />
             <sub-events>
-                <event-block sid="299471584358627">
+                <event-block sid="484752363421931">
                     <conditions>
-                        <condition id="-9" name="Is visible" sid="405283212286186" type="PauseFade" />
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="770554705810578" type="System">
+                            <param id="0" name="Layer">LayerIndex(&quot;menu&quot;)</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action id="-42" name="Signal" sid="179325026879214" type="System">
-                            <param id="0" name="Tag">&quot;menuShow&quot;</param>
+                        <action id="0" name="Call function" sid="882573090852822" type="Function">
+                            <param id="0" name="Name">&quot;showMenu&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="891670974611375">
+                <event-block sid="355177044844866">
                     <conditions>
-                        <condition id="-8" name="Compare two values" sid="822050909354204" type="System">
-                            <param id="0" name="First value">PauseFade.Count</param>
-                            <param id="1" name="Comparison">1</param>
-                            <param id="2" name="Second value">0</param>
-                        </condition>
-                        <condition id="-9" name="Is visible" sid="321539935854578" type="PauseFade" />
+                        <condition id="-22" name="Else" sid="364471090561978" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-42" name="Signal" sid="694035305813937" type="System">
-                            <param id="0" name="Tag">&quot;menuHide&quot;</param>
+                        <action id="0" name="Call function" sid="140078383472206" type="Function">
+                            <param id="0" name="Name">&quot;hideMenu&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
-        </event-block>
-        <comment></comment>
-        <comment>Menu Show Hide Logic</comment>
-        <event-block sid="978484542571317">
-            <conditions />
-            <actions>
-                <action id="-41" name="Wait for signal" sid="219623853403149" type="System">
-                    <param id="0" name="Tag">&quot;menuHide&quot;</param>
-                </action>
-                <action id="-13" name="Set time scale" sid="826342673719496" type="System">
-                    <param id="0" name="Time scale">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="670283103131896">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="475108442913161" type="System" />
-            </conditions>
-            <actions>
-                <action id="-41" name="Wait for signal" sid="469787549864815" type="System">
-                    <param id="0" name="Tag">&quot;menuShow&quot;</param>
-                </action>
-                <action id="-13" name="Set time scale" sid="514725418592683" type="System">
-                    <param id="0" name="Time scale">0</param>
-                </action>
-            </actions>
         </event-block>
         <comment></comment>
         <comment>Menu Text Items</comment>
@@ -174,10 +201,17 @@
                     <param id="1" name="Click type">0</param>
                     <param id="2" name="Object clicked">MenuText</param>
                 </condition>
+                <condition id="-9" name="Layer is visible" sid="468142739583825" type="System">
+                    <param id="0" name="Layer">LayerIndex(&quot;menu&quot;)</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="-42" name="Signal" sid="242545748223141" type="System">
                     <param id="0" name="Tag">MenuText.Action</param>
+                </action>
+                <action id="0" name="Call function" sid="989835575177451" type="Function">
+                    <param id="0" name="Name">&quot;menuAction&quot;</param>
+                    <param id="1" name="Parameter {n}">MenuText.Action</param>
                 </action>
             </actions>
         </event-block>

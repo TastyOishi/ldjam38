@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 2</name>
     <events>
+        <include>MainMenu</include>
         <event-block sid="903399783141544">
             <conditions>
                 <condition id="-1" name="Every tick" sid="153028258835746" type="System" />
