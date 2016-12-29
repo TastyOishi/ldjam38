@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MainMenu</name>
+    <events>
+        <comment>Menu JSON</comment>
+        <event-block sid="292250682424284">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="822419867542953" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
+        <comment>&#x0D;&#x0A;Menu Show Hide</comment>
+        <event-block sid="906063089128797">
+            <conditions>
+                <condition id="3" name="On key released" sid="905450162479321" type="Keyboard">
+                    <param id="0" name="Key">27 (Esc)</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="299471584358627">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="405283212286186" type="System">
+                            <param id="0" name="First value">PauseFade.Count</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-42" name="Signal" sid="179325026879214" type="System">
+                            <param id="0" name="Tag">&quot;menuShow&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="891670974611375">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="822050909354204" type="System">
+                            <param id="0" name="First value">PauseFade.Count</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-42" name="Signal" sid="694035305813937" type="System">
+                            <param id="0" name="Tag">&quot;menuHide&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment></comment>
+        <comment>Menu Show Hide Logic</comment>
+        <event-block sid="670283103131896">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="475108442913161" type="System" />
+            </conditions>
+            <actions>
+                <action id="-41" name="Wait for signal" sid="469787549864815" type="System">
+                    <param id="0" name="Tag">&quot;menuShow&quot;</param>
+                </action>
+                <action id="-3" name="Create object" sid="782108035438267" type="System">
+                    <param id="0" name="Object to create">PauseFade</param>
+                    <param id="1" name="Layer">LayerIndex(&quot;menu&quot;)</param>
+                    <param id="2" name="X">0</param>
+                    <param id="3" name="Y">0</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="514725418592683" type="System">
+                    <param id="0" name="Time scale">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="978484542571317">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="397376963910070" type="System" />
+            </conditions>
+            <actions>
+                <action id="-41" name="Wait for signal" sid="219623853403149" type="System">
+                    <param id="0" name="Tag">&quot;menuHide&quot;</param>
+                </action>
+                <action id="-9" name="Destroy" sid="554791084389768" type="PauseFade" />
+                <action id="-13" name="Set time scale" sid="826342673719496" type="System">
+                    <param id="0" name="Time scale">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <comment>Menu Text Items</comment>
+        <event-block sid="175676895604260">
+            <conditions>
+                <condition id="-18" name="On created" sid="630256851719998" type="mnuResume" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set web font" sid="475922845921736" type="mnuResume">
+                    <param id="0" name="Family name">&quot;xenophoneregular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="961104624438954" type="mnuResume">
+                    <param id="0" name="Layer">LayerIndex(&quot;menu&quot;)</param>
+                </action>
+                <action id="-24" name="Move to top" sid="892729122027443" type="mnuResume" />
+            </actions>
+        </event-block>
+        <event-block sid="267250433410012">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="602896894697692" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">MenuText</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-42" name="Signal" sid="283866998650322" type="System">
+                    <param id="0" name="Tag">&quot;menuHide&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="458401987903285">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="944430447381766" type="Mouse">
+                    <param id="0" name="Object">PauseFade</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set font color" sid="330951538657201" type="MenuText">
+                    <param id="0" name="Color">rgb(255, 255, 255)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="353115266883318">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="406018796143681" type="Mouse">
+                    <param id="0" name="Object">MenuText</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set font color" sid="147433213327800" type="MenuText">
+                    <param id="0" name="Color">rgb(0, 155, 78)</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

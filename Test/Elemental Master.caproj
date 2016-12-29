@@ -10,6 +10,7 @@
     <unique-id>uzos4ezzjulo</unique-id>
     <saved-with-version>23900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
@@ -22,6 +23,7 @@
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
@@ -47,7 +49,7 @@
     <preview-effects>1</preview-effects>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
-        <prop name="Clear background">Yes</prop>
+        <prop name="Clear background">No</prop>
         <prop name="Downscaling">Low quality</prop>
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">Letterbox scale</prop>
@@ -1234,6 +1236,30 @@
             </object-type>
         </object-folder>
         <object-folder name="Game GUI">
+            <object-folder name="Main Menu">
+                <object-type global="1" name="PauseFade" sid="591171640079183">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>PauseFade</type>
+                        <type>mnuResume</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="386183310564298" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type global="1" name="mnuResume" sid="184693742938017">
+                    <plugin id="Text" />
+                    <instance-variables>
+                        <instance-variable name="Action" sid="371330855701710" type="string" />
+                    </instance-variables>
+                    <container>
+                        <type>PauseFade</type>
+                        <type>mnuResume</type>
+                    </container>
+                </object-type>
+            </object-folder>
             <object-type name="Text" sid="987758996562249">
                 <plugin id="Text" />
             </object-type>
@@ -1271,6 +1297,11 @@
             </object-type>
             <object-type name="Backing" sid="435881022085881">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="171880021753762">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="100415318391940" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.505952" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-Background.png">
@@ -1472,7 +1503,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Sprite4" sid="429089453459311">
+        <object-type global="1" name="Sprite4" sid="429089453459311">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="591092261120970" speed="5">
@@ -1491,8 +1522,8 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="CurrentPos" sid="202185527374422">
-            <plugin id="Text" />
+        <object-type global="1" name="Array" sid="747858396527449">
+            <plugin id="Arr" />
         </object-type>
     </object-folder>
     <families>
@@ -1508,15 +1539,22 @@
                 </behavior-type>
             </behaviors>
         </family>
+        <family name="MenuText" plugin-id="Text" sid="871766507931220">
+            <members>
+                <member>mnuResume</member>
+            </members>
+        </family>
     </families>
     <layout-folder>
         <layout>Layout 1.xml</layout>
         <layout>Layout 2.xml</layout>
+        <layout>Object Hell.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
         <event-sheet>Event sheet 2.xml</event-sheet>
         <event-sheet>Player Control.xml</event-sheet>
+        <event-sheet>MainMenu.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="29">
@@ -1554,5 +1592,11 @@
             <file name="icon-256.png" />
             <file name="loading-logo.png" />
         </file-folder>
+        <file name="stylesheet.css" />
+        <file name="xenophone-demo.html" />
+        <file name="xenophone-webfont.eot" />
+        <file name="xenophone-webfont.svg" />
+        <file name="xenophone-webfont.ttf" />
+        <file name="xenophone-webfont.woff" />
     </files-folder>
 </c2project>
