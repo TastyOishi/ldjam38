@@ -511,11 +511,11 @@
                                 <point x="0.225806" y="0.225806" />
                                 <point x="0.483871" y="0.0645161" />
                                 <point x="0.741935" y="0.258065" />
-                                <point x="0.806452" y="0.483871" />
+                                <point x="0.915323" y="0.512097" />
                                 <point x="0.741935" y="0.741935" />
                                 <point x="0.483871" y="0.967742" />
                                 <point x="0.193548" y="0.806452" />
-                                <point x="0.0967742" y="0.483871" />
+                                <point x="0.0604839" y="0.516129" />
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.516129" hotspotY="0.516129" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Player Sprites\Body\Player-Body-5.png">
@@ -547,7 +547,15 @@
                 </effects>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="449125185267794" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.456" y="0.252" />
+                                <point x="0.744" y="0.476" />
+                                <point x="0.624" y="0.788" />
+                                <point x="0.312" y="0.776" />
+                                <point x="0.188" y="0.5" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>

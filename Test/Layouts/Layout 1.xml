@@ -1076,7 +1076,7 @@
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>
-                                <speed>25</speed>
+                                <speed>66</speed>
                                 <acceleration>44</acceleration>
                                 <gravity>0</gravity>
                                 <bounce-off-solids>Yes</bounce-off-solids>

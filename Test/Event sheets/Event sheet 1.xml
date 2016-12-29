@@ -289,7 +289,7 @@
                     <actions>
                         <action id="-3" name="Create object" sid="667236633355436" type="System">
                             <param id="0" name="Object to create">SpikeTrap</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="1" name="Layer">&quot;Background&quot;</param>
                             <param id="2" name="X">round((Touch.X - 16) / 32) * 32 + 16</param>
                             <param id="3" name="Y">round((Touch.Y - 16) / 32) * 32 + 16</param>
                         </action>
