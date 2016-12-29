@@ -1166,7 +1166,7 @@
         <object-folder name="Background">
             <object-type name="GridBackground" sid="145802020905594">
                 <plugin id="TiledBg" />
-                <texture />
+                <texture original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Level-Designs.jpg" />
             </object-type>
             <object-type name="Floortiles2" sid="663248459611165">
                 <plugin id="Tilemap" />
@@ -1243,6 +1243,11 @@
             <object-folder name="Main Menu">
                 <object-type global="1" name="PauseFade" sid="591171640079183">
                     <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Anchor" sid="450994473927371">
+                            <behavior id="Anchor" />
+                        </behavior-type>
+                    </behaviors>
                     <container>
                         <type>PauseFade</type>
                         <type>mnlLvlHell</type>
@@ -1340,6 +1345,11 @@
             </object-type>
             <object-type name="ManaBar" sid="717371692055562">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="142690854397369">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="220743009020457" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0.5" original-source="C:\Users\Stuart\Pictures\ManaBar.png">
@@ -1388,6 +1398,11 @@
             </object-type>
             <object-type name="ManaBarCap" sid="398326719141911">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="904689219842708">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="333751348932455" speed="5">
                         <frame duration="1" hotspotX="0.501618" hotspotY="0.514286" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-Mana-Bar.png">
@@ -1404,6 +1419,11 @@
             </object-type>
             <object-type name="Health2" sid="522174341568711">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="209798963297266">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="898923142308864" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-Health-2.png">
@@ -1456,6 +1476,11 @@
             </object-type>
             <object-type name="AttackMode1" sid="366736353470521">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="721507928774835">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="139351935075734" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-1-Attack.png">
@@ -1472,6 +1497,11 @@
             </object-type>
             <object-type name="AttackMode2" sid="228853866028201">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="820047561952617">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="838105037554741" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-2-Attack.png">
@@ -1488,6 +1518,11 @@
             </object-type>
             <object-type name="DefenceMode1" sid="677000076691964">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="898633470665459">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="965385335522271" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.510204" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-1-Defence.png" />
@@ -1496,6 +1531,11 @@
             </object-type>
             <object-type name="DefenceMode2" sid="927099158166979">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="576064269738907">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="945829630855188" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.510204" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-2-Defence.png" />
@@ -1504,6 +1544,11 @@
             </object-type>
             <object-type name="UIPaperTexture" sid="970351616977911">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="521208426829105">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="710806372497310" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\HUD\HUD-Texture-Overlay.png">
@@ -1621,12 +1666,17 @@
             <instance-variables>
                 <instance-variable name="Action" sid="224321801380230" type="string" />
             </instance-variables>
+            <behaviors>
+                <behavior-type name="Anchor" sid="972026780185995">
+                    <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
         </family>
     </families>
     <layout-folder>
         <layout>Layout 1.xml</layout>
+        <layout>Test Level Layout.xml</layout>
         <layout>Layout 2.xml</layout>
-        <layout>Test Layout.xml</layout>
         <layout>Object Hell.xml</layout>
     </layout-folder>
     <event-folder>
@@ -1637,12 +1687,12 @@
         <event-sheet>Test Layout.xml</event-sheet>
     </event-folder>
     <global-instances>
-        <global-instance type="Touch" uid="34">
+        <global-instance type="Touch" uid="60">
             <properties>
                 <use-mouse-input>Yes</use-mouse-input>
             </properties>
         </global-instance>
-        <global-instance type="Audio" uid="59">
+        <global-instance type="Audio" uid="61">
             <properties>
                 <timescale-audio>Off</timescale-audio>
                 <saveload>All</saveload>
@@ -1656,8 +1706,8 @@
                 <roll-off-factor>1</roll-off-factor>
             </properties>
         </global-instance>
-        <global-instance type="Keyboard" uid="60" />
-        <global-instance type="Mouse" uid="61" />
+        <global-instance type="Keyboard" uid="63" />
+        <global-instance type="Mouse" uid="119" />
     </global-instances>
     <sounds-folder />
     <music-folder>

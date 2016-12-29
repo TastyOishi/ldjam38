@@ -52,8 +52,8 @@
                 <action id="-41" name="Wait for signal" sid="569619676905611" type="System">
                     <param id="0" name="Tag">&quot;gotolvl2&quot;</param>
                 </action>
-                <action id="-2" name="Go to layout" sid="602607734930935" type="System">
-                    <param id="0" name="Layout">Test Layout</param>
+                <action id="-2" name="Go to layout" sid="416767050709842" type="System">
+                    <param id="0" name="Layout">Test Level Layout</param>
                 </action>
             </actions>
         </event-block>
@@ -68,6 +68,7 @@
                 <action id="-42" name="Signal" sid="283866998650322" type="System">
                     <param id="0" name="Tag">&quot;menuHide&quot;</param>
                 </action>
+                <action id="-9" name="Destroy" sid="453558764267553" type="PauseFade" />
             </actions>
         </event-block>
         <comment>&#x0D;&#x0A;Menu Show Hide</comment>
@@ -204,10 +205,10 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="-9" name="Destroy" sid="571195926233662" type="PauseFade" />
                 <action id="-42" name="Signal" sid="242545748223141" type="System">
                     <param id="0" name="Tag">MenuText.Action</param>
                 </action>
-                <action id="-9" name="Destroy" sid="571195926233662" type="PauseFade" />
             </actions>
         </event-block>
     </events>

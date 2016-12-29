@@ -1,4 +1,5 @@
-*.backup1
-*.uistate.xml
-*.backup1
+**/*.backup1
+**/*.uistate.xml
+**/*.backup1
 Test/Elemental Master.uistate.xml
+**/*.backup1
