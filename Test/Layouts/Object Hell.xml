@@ -73,7 +73,62 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="PauseFade" uid="28">
+            </instances>
+            <effects />
+        </layer>
+        <layer name="Layer 1" sid="933139087070463">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances />
+            <effects />
+        </layer>
+        <layer name="Layer 2" sid="632986937621143">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances />
+            <effects />
+        </layer>
+        <layer name="Menu" sid="263884217841338">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>1</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="PauseFade" uid="29">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -83,8 +138,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>2</x>
-                        <y>-1</y>
+                        <x>-1</x>
+                        <y>188</y>
                         <z>0</z>
                         <width>800</width>
                         <height>675</height>
@@ -108,15 +163,42 @@
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
-                        <Action>resume</Action>
+                        <Action></Action>
                     </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-4</x>
+                        <y>192</y>
+                        <z>0</z>
+                        <width>800</width>
+                        <height>121</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="mnuLevel" uid="69">
+                    <properties>
+                        <text>Level:</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-64,400,0</font>
+                        <color>255,153,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>1</x>
-                        <y>-1</y>
+                        <y>330</y>
                         <z>0</z>
-                        <width>800</width>
+                        <width>239</width>
                         <height>121</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -125,9 +207,9 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="mnuResume" uid="47">
+                <instance type="mnuLvl1" uid="47">
                     <properties>
-                        <text>Go To Start</text>
+                        <text>1</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-64,400,0</font>
                         <color>255,153,0</color>
@@ -138,15 +220,15 @@
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
-                        <Action>resume</Action>
+                        <Action>gotolvl1</Action>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-2</x>
-                        <y>118</y>
+                        <x>373</x>
+                        <y>321</y>
                         <z>0</z>
-                        <width>800</width>
+                        <width>94</width>
                         <height>121</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -155,9 +237,9 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="mnuResume" uid="48">
+                <instance type="mnuLvl2" uid="62">
                     <properties>
-                        <text>Exit</text>
+                        <text>2</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-64,400,0</font>
                         <color>255,153,0</color>
@@ -168,15 +250,15 @@
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
-                        <Action>resume</Action>
+                        <Action>gotolvl2</Action>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>3</x>
-                        <y>395</y>
+                        <x>506</x>
+                        <y>318</y>
                         <z>0</z>
-                        <width>800</width>
+                        <width>94</width>
                         <height>121</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -185,9 +267,9 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="mnuResume" uid="62">
+                <instance type="mnlLvlHell" uid="70">
                     <properties>
-                        <text>Layout Hell</text>
+                        <text>Hell</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-64,400,0</font>
                         <color>255,153,0</color>
@@ -198,15 +280,15 @@
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
-                        <Action>resume</Action>
+                        <Action>gotohell</Action>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>4</x>
-                        <y>256</y>
+                        <x>583</x>
+                        <y>327</y>
                         <z>0</z>
-                        <width>367</width>
+                        <width>191</width>
                         <height>121</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -215,9 +297,9 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="mnuResume" uid="63">
+                <instance type="mnuIntro" uid="48">
                     <properties>
-                        <text>Level One</text>
+                        <text>intro</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-64,400,0</font>
                         <color>255,153,0</color>
@@ -228,15 +310,15 @@
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
-                        <Action>resume</Action>
+                        <Action>gotointro</Action>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>401</x>
-                        <y>249</y>
+                        <x>237</x>
+                        <y>321</y>
                         <z>0</z>
-                        <width>367</width>
+                        <width>191</width>
                         <height>121</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -246,24 +328,6 @@
                     </world>
                 </instance>
             </instances>
-            <effects />
-        </layer>
-        <layer name="Layer 1" sid="933139087070463">
-            <initially-visible>1</initially-visible>
-            <background-color>255,255,255</background-color>
-            <transparent>1</transparent>
-            <parallax>
-                <x>1</x>
-                <y>1</y>
-            </parallax>
-            <zoom-rate>1</zoom-rate>
-            <opacity>1</opacity>
-            <force-own-texture>0</force-own-texture>
-            <global>0</global>
-            <use-render-cells>0</use-render-cells>
-            <blend-mode>0</blend-mode>
-            <effect-fallback>0</effect-fallback>
-            <instances />
             <effects />
         </layer>
     </layers>

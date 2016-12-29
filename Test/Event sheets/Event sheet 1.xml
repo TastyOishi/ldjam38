@@ -166,7 +166,7 @@
                                 <condition id="-14" name="Compare variable" sid="798384265033351" type="System">
                                     <param id="0" name="Variable">EnemySpawnTime</param>
                                     <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">0.5</param>
+                                    <param id="2" name="Value">0.05</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -264,125 +264,6 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="709895032384682" title="Turret control">
-            <sub-events>
-                <event-block sid="911149896133819">
-                    <conditions>
-                        <condition id="6" name="On object clicked" sid="449674129658138" type="Mouse">
-                            <param id="0" name="Mouse button">2</param>
-                            <param id="1" name="Click type">0</param>
-                            <param id="2" name="Object clicked">GridBackground</param>
-                        </condition>
-                        <condition id="7" name="Cursor is over object" sid="410459379076016" type="Mouse">
-                            <param id="0" name="Object">SpawnerCircle</param>
-                        </condition>
-                        <condition id="7" inverted="1" name="Cursor is over object" sid="547907859283652" type="Mouse">
-                            <param id="0" name="Object">Wall</param>
-                        </condition>
-                        <condition id="7" inverted="1" name="Cursor is over object" sid="138027926908604" type="Mouse">
-                            <param id="0" name="Object">SpikeTrap</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Create object" sid="667236633355436" type="System">
-                            <param id="0" name="Object to create">SpikeTrap</param>
-                            <param id="1" name="Layer">&quot;Background&quot;</param>
-                            <param id="2" name="X">round((Touch.X - 16) / 32) * 32 + 16</param>
-                            <param id="3" name="Y">round((Touch.Y - 16) / 32) * 32 + 16</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="665949367833562">
-                    <conditions>
-                        <condition id="-1" name="Every tick" sid="706435474935212" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Set position" sid="219154218844165" type="SpawnerCircle">
-                            <param id="0" name="X">Player.X</param>
-                            <param id="1" name="Y">Player.Y</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-block sid="447915897578092">
-            <conditions>
-                <condition id="-18" name="On created" sid="485471190307076" type="SpikeTrap" />
-            </conditions>
-            <actions>
-                <action id="-12" name="Subtract from" sid="527393256201970" type="Player">
-                    <param id="0" name="Instance variable">Mana</param>
-                    <param id="1" name="Value">50</param>
-                </action>
-            </actions>
-            <sub-events>
-                <event-block sid="274432826521220">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="576758805401247" type="Player">
-                            <param id="0" name="Instance variable">Mana</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="818323928237042" type="SpikeTrap" />
-                        <action id="-11" name="Add to" sid="367779500815121" type="Player">
-                            <param id="0" name="Instance variable">Mana</param>
-                            <param id="1" name="Value">50</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="904865670633124">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="742570934830785" type="Player">
-                            <param id="0" name="Instance variable">Mana</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="3" name="Start" sid="275916370584496" type="SpikeTrap">
-                            <param id="0" name="From">1</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="203094568964717" type="System">
-                            <param id="0" name="Seconds">5</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="789580457681473" type="SpikeTrap">
-                            <param id="0" name="Opacity">50</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="603303930683042" type="System">
-                            <param id="0" name="Seconds">1.0</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="997407814662977" type="SpikeTrap">
-                            <param id="0" name="Opacity">0</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="313355556139671" type="System">
-                            <param id="0" name="Seconds">0.55</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="929528321723516" type="SpikeTrap">
-                            <param id="0" name="Opacity">25</param>
-                        </action>
-                        <action id="-9" name="Destroy" sid="565614148349672" type="SpikeTrap" />
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="939506666144603">
-            <conditions>
-                <condition id="4" name="On finished" sid="610051836971076" type="SpikeTrap">
-                    <param id="0" name="Animation">&quot;Default&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="179440881763920" type="SpikeTrap">
-                    <param id="0" name="Animation">&quot;default2&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="3" name="Start" sid="753055928732983" type="SpikeTrap">
-                    <param id="0" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="697654114278042">
             <conditions>
                 <condition id="-18" name="On created" sid="333814995265473" type="Enemy" />
@@ -410,7 +291,6 @@
         <event-block sid="603801971090790">
             <conditions>
                 <condition behavior="Pathfinding" id="1" name="On failed to find path" sid="504640312866969" type="Enemy" />
-                <condition id="-1" name="Every tick" sid="814884251008339" type="System" />
             </conditions>
             <actions>
                 <action behavior="Pathfinding" id="0" name="Find path" sid="300760102124617" type="Enemy">

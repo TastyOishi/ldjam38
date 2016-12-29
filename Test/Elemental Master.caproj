@@ -1245,6 +1245,11 @@
                     <plugin id="Sprite" />
                     <container>
                         <type>PauseFade</type>
+                        <type>mnlLvlHell</type>
+                        <type>mnuIntro</type>
+                        <type>mnuLevel</type>
+                        <type>mnuLvl1</type>
+                        <type>mnuLvl2</type>
                         <type>mnuResume</type>
                     </container>
                     <animation-folder>
@@ -1255,11 +1260,73 @@
                 </object-type>
                 <object-type global="1" name="mnuResume" sid="184693742938017">
                     <plugin id="Text" />
-                    <instance-variables>
-                        <instance-variable name="Action" sid="371330855701710" type="string" />
-                    </instance-variables>
                     <container>
                         <type>PauseFade</type>
+                        <type>mnlLvlHell</type>
+                        <type>mnuIntro</type>
+                        <type>mnuLevel</type>
+                        <type>mnuLvl1</type>
+                        <type>mnuLvl2</type>
+                        <type>mnuResume</type>
+                    </container>
+                </object-type>
+                <object-type global="1" name="mnuLevel" sid="742178874758712">
+                    <plugin id="Text" />
+                    <container>
+                        <type>PauseFade</type>
+                        <type>mnlLvlHell</type>
+                        <type>mnuIntro</type>
+                        <type>mnuLevel</type>
+                        <type>mnuLvl1</type>
+                        <type>mnuLvl2</type>
+                        <type>mnuResume</type>
+                    </container>
+                </object-type>
+                <object-type global="1" name="mnuLvl1" sid="125595669462376">
+                    <plugin id="Text" />
+                    <container>
+                        <type>PauseFade</type>
+                        <type>mnlLvlHell</type>
+                        <type>mnuIntro</type>
+                        <type>mnuLevel</type>
+                        <type>mnuLvl1</type>
+                        <type>mnuLvl2</type>
+                        <type>mnuResume</type>
+                    </container>
+                </object-type>
+                <object-type global="1" name="mnuLvl2" sid="599480778096161">
+                    <plugin id="Text" />
+                    <container>
+                        <type>PauseFade</type>
+                        <type>mnlLvlHell</type>
+                        <type>mnuIntro</type>
+                        <type>mnuLevel</type>
+                        <type>mnuLvl1</type>
+                        <type>mnuLvl2</type>
+                        <type>mnuResume</type>
+                    </container>
+                </object-type>
+                <object-type global="1" name="mnlLvlHell" sid="422764214067171">
+                    <plugin id="Text" />
+                    <container>
+                        <type>PauseFade</type>
+                        <type>mnlLvlHell</type>
+                        <type>mnuIntro</type>
+                        <type>mnuLevel</type>
+                        <type>mnuLvl1</type>
+                        <type>mnuLvl2</type>
+                        <type>mnuResume</type>
+                    </container>
+                </object-type>
+                <object-type global="1" name="mnuIntro" sid="607132673879833">
+                    <plugin id="Text" />
+                    <container>
+                        <type>PauseFade</type>
+                        <type>mnlLvlHell</type>
+                        <type>mnuIntro</type>
+                        <type>mnuLevel</type>
+                        <type>mnuLvl1</type>
+                        <type>mnuLvl2</type>
                         <type>mnuResume</type>
                     </container>
                 </object-type>
@@ -1545,8 +1612,15 @@
         </family>
         <family name="MenuText" plugin-id="Text" sid="871766507931220">
             <members>
+                <member>mnlLvlHell</member>
+                <member>mnuIntro</member>
+                <member>mnuLvl1</member>
+                <member>mnuLvl2</member>
                 <member>mnuResume</member>
             </members>
+            <instance-variables>
+                <instance-variable name="Action" sid="224321801380230" type="string" />
+            </instance-variables>
         </family>
     </families>
     <layout-folder>

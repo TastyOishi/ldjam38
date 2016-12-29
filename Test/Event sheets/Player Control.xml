@@ -246,6 +246,122 @@
                         </event-block>
                     </sub-events>
                 </event-group>
+                <event-group description="" sid="668522719762075" title="Spike Trap">
+                    <sub-events>
+                        <event-block sid="486430520331539">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="484358722635257" type="Mouse">
+                                    <param id="0" name="Mouse button">2</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">GridBackground</param>
+                                </condition>
+                                <condition id="7" name="Cursor is over object" sid="906148507520112" type="Mouse">
+                                    <param id="0" name="Object">SpawnerCircle</param>
+                                </condition>
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="241171981746994" type="Mouse">
+                                    <param id="0" name="Object">Wall</param>
+                                </condition>
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="691174144934266" type="Mouse">
+                                    <param id="0" name="Object">SpikeTrap</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="800595883800375" type="System">
+                                    <param id="0" name="Object to create">SpikeTrap</param>
+                                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                                    <param id="2" name="X">round((Touch.X - 16) / 32) * 32 + 16</param>
+                                    <param id="3" name="Y">round((Touch.Y - 16) / 32) * 32 + 16</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="567418025960397">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="422196585722439" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="949044273394596" type="SpawnerCircle">
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="606660029705422">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="793119761149033" type="SpikeTrap">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="219125181266560" type="SpikeTrap">
+                                    <param id="0" name="Animation">&quot;default2&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="396856197128692">
+                            <conditions>
+                                <condition id="-18" name="On created" sid="260462444345811" type="SpikeTrap" />
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="767529689766603" type="Player">
+                                    <param id="0" name="Instance variable">Mana</param>
+                                    <param id="1" name="Value">50</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="819843817614833">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="617584366735507" type="Player">
+                                            <param id="0" name="Instance variable">Mana</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="716600395172992" type="SpikeTrap" />
+                                        <action id="-11" name="Add to" sid="713691168674041" type="Player">
+                                            <param id="0" name="Instance variable">Mana</param>
+                                            <param id="1" name="Value">50</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="405548985737862">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="708217920896614" type="Player">
+                                            <param id="0" name="Instance variable">Mana</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="3" name="Start" sid="862162633597729" type="SpikeTrap">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="727188431403976" type="System">
+                                            <param id="0" name="Seconds">5</param>
+                                        </action>
+                                        <action id="-16" name="Set opacity" sid="679393612890744" type="SpikeTrap">
+                                            <param id="0" name="Opacity">50</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="995591314163851" type="System">
+                                            <param id="0" name="Seconds">1.0</param>
+                                        </action>
+                                        <action id="-16" name="Set opacity" sid="831987516285393" type="SpikeTrap">
+                                            <param id="0" name="Opacity">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="489138721471421" type="System">
+                                            <param id="0" name="Seconds">0.55</param>
+                                        </action>
+                                        <action id="-16" name="Set opacity" sid="254601500931084" type="SpikeTrap">
+                                            <param id="0" name="Opacity">25</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="524156013211219" type="SpikeTrap" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
                 <event-block sid="901932455918350">
                     <conditions>
                         <condition id="-1" name="Every tick" sid="940307138175016" type="System" />
@@ -344,13 +460,14 @@
                             <actions>
                                 <action id="-3" name="Create object" sid="567622808728277" type="System">
                                     <param id="0" name="Object to create">Health2</param>
-                                    <param id="1" name="Layer">7</param>
+                                    <param id="1" name="Layer">LayerIndex(&quot;UI&quot;)</param>
                                     <param id="2" name="X">Health2.X + (loopindex * 15) % 8 * 15</param>
                                     <param id="3" name="Y">health2.Y + (loopindex  &gt; 8 ? 15 : 0)</param>
                                 </action>
                                 <action id="5" name="Set frame" sid="510075533035762" type="Health2">
                                     <param id="0" name="Frame number">loopindex &lt;= player.health ? 1 : 0</param>
                                 </action>
+                                <action id="-24" name="Move to top" sid="415263535624707" type="Health2" />
                             </actions>
                         </event-block>
                     </sub-events>
