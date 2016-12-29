@@ -11,7 +11,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">Layout 1</layout>
-        <event-sheet active="1" order="1">Event sheet 1</event-sheet>
+        <event-sheet order="1">Event sheet 1</event-sheet>
+        <event-sheet active="1" order="2">Test Layout</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -21,6 +22,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </properties>
     <families-expanded root="1">
         <family expanded="0" name="Enemies" />
+        <family expanded="0" name="MenuText" />
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
@@ -28,6 +30,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/Player Objects/" />
         <folder expanded="1" path="object-folder/Background/" />
         <folder expanded="1" path="object-folder/Game GUI/" />
+        <folder expanded="1" path="object-folder/Game GUI/Main Menu/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
@@ -50,6 +53,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/BackWall/" />
         <folder expanded="1" path="animation-folder/Rocks1/" />
         <folder expanded="1" path="animation-folder/Rocks2/" />
+        <folder expanded="1" path="animation-folder/PauseFade/" />
         <folder expanded="1" path="animation-folder/ManaBar/" />
         <folder expanded="1" path="animation-folder/Healthbar/" />
         <folder expanded="1" path="animation-folder/Backing/" />

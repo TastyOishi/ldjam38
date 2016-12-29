@@ -32,6 +32,7 @@
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="shadowcaster" version="1">Shadow Caster</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -457,6 +458,9 @@
                     </behavior-type>
                     <behavior-type name="BoundToLayout" sid="506604562135014">
                         <behavior id="bound" />
+                    </behavior-type>
+                    <behavior-type name="ScrollTo" sid="671509630315342">
+                        <behavior id="scrollto" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
@@ -1174,11 +1178,6 @@
                 <texture original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Shadows.png" />
                 <tiles />
             </object-type>
-            <object-type name="WallVariation2" sid="178808870447782">
-                <plugin id="Tilemap" />
-                <texture original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\Wall-Variation.jpg" />
-                <tiles />
-            </object-type>
             <object-type name="Wall" sid="127760289259213">
                 <plugin id="TiledBg" />
                 <behaviors>
@@ -1233,6 +1232,11 @@
                         </frame>
                     </animation>
                 </animation-folder>
+            </object-type>
+            <object-type name="WallVariation" sid="882722485188607">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\admin\Documents\GitHub\ldjam38\Test\Textures\WallVariation.png" />
+                <tiles />
             </object-type>
         </object-folder>
         <object-folder name="Game GUI">
@@ -1548,6 +1552,7 @@
     <layout-folder>
         <layout>Layout 1.xml</layout>
         <layout>Layout 2.xml</layout>
+        <layout>Test Layout.xml</layout>
         <layout>Object Hell.xml</layout>
     </layout-folder>
     <event-folder>
@@ -1555,9 +1560,10 @@
         <event-sheet>Event sheet 2.xml</event-sheet>
         <event-sheet>Player Control.xml</event-sheet>
         <event-sheet>MainMenu.xml</event-sheet>
+        <event-sheet>Test Layout.xml</event-sheet>
     </event-folder>
     <global-instances>
-        <global-instance type="Touch" uid="29">
+        <global-instance type="Touch" uid="34">
             <properties>
                 <use-mouse-input>Yes</use-mouse-input>
             </properties>
