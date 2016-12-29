@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Test Layout</name>
+    <events>
+        <include>Player Control</include>
+        <variable constant="0" name="EnemiesLeft2" sid="391663494235946" static="0" type="number">5</variable>
+        <variable constant="0" name="EnemiesSpawned2" sid="273102843204372" static="0" type="number">1</variable>
+        <variable comment="Seconds interval between spawning a new enemy." constant="0" name="EnemySpawnTime2" sid="468766645632017" static="0" type="number">2</variable>
+        <variable constant="0" name="enemiesLeftw2" sid="429856076868460" static="0" type="number">3</variable>
+        <variable constant="0" name="MaxTurrets2" sid="408861092021372" static="0" type="number">5</variable>
+        <variable constant="0" name="NumberOfTurrets2" sid="538369382027446" static="0" type="number">0</variable>
+        <event-group description="" sid="421956479678771" title="Init2">
+            <sub-events>
+                <event-block sid="241136508883037">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="367488768961288" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="907473579045375" type="System">
+                            <param id="0" name="Object to create">Spawner</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">Floortiles2.SnapX(random(128,647))</param>
+                            <param id="3" name="Y">Floortiles2.SnapY(random(96, 511))</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="804767987040280" type="System">
+                            <param id="0" name="Object to create">Spawner</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">Floortiles2.SnapX(random(128,647))</param>
+                            <param id="3" name="Y">Floortiles2.SnapY(random(96, 511))</param>
+                        </action>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="809705605567966" type="Blinker">
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
+                        </action>
+                        <action behavior="Pathfinding" id="1" name="Move along path" sid="854917999019185" type="Blinker" />
+                        <action id="0" name="Play" sid="529282946911286" type="Audio">
+                            <param id="0" name="Audio file">song</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="324641265468099" type="Sprite4">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="987829130306404" type="Sprite4">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="834713106672845" title="Enemy control2">
+            <sub-events>
+                <event-block sid="133111424748340">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="249004906367141" type="System">
+                            <param id="0" name="Interval (seconds)">0.5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="993469759998653" type="BlinkerTargeter">
+                            <param id="0" name="X">Floortiles2.SnapX(random(128,647))</param>
+                            <param id="1" name="Y">Floortiles2.SnapY(random(96, 511))</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block any="1" sid="806205929031173">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="234056789494364" type="BlinkerTargeter">
+                                    <param id="0" name="Object">Wall</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="300830011628750" type="BlinkerTargeter">
+                                    <param id="0" name="X">Floortiles2.SnapX(random(128,647))</param>
+                                    <param id="1" name="Y">Floortiles2.SnapY(random(96, 511))</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="998822053196415" type="BlinkerTargeter" />
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="627587923424841">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="714651891732123" type="Blinker">
+                                    <param id="0" name="Object">Wall</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="441736751655728" type="Blinker">
+                                    <param id="0" name="X">Floortiles2.SnapX(random(128,647))</param>
+                                    <param id="1" name="Y">Floortiles2.SnapY(random(96, 511))</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="518896684943499" type="Blinker" />
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="245834280327570">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="586653930329673" type="Spawner">
+                                    <param id="0" name="Object">Wall</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="572157586292633" type="Spawner">
+                                    <param id="0" name="X">Floortiles2.SnapX(random(128,647))</param>
+                                    <param id="1" name="Y">Floortiles2.SnapY(random(96, 511))</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="615700947074390" type="Spawner" />
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="923419245064259">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="799398877420774" type="Blinker">
+                                    <param id="0" name="Object">Player</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="149440464224394" type="Player">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="620320358749397">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="649383846530896" type="BlinkerTargeter">
+                                    <param id="0" name="Object">Wall</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="357718842607512" type="System">
+                                    <param id="0" name="First value">random(0,100)</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">98</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="316714733969048" type="Blinker">
+                                    <param id="0" name="X">BlinkerTargeter.X</param>
+                                    <param id="1" name="Y">BlinkerTargeter.Y</param>
+                                </action>
+                                <action behavior="Pathfinding" id="0" name="Find path" sid="635871075037567" type="Blinker">
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
+                                </action>
+                                <action behavior="Pathfinding" id="1" name="Move along path" sid="629109429185127" type="Blinker" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Every 2 seconds, but gradually reducing the interval, spawn a new enemy and move it to the target.</comment>
+                <event-block sid="745041955732543">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="635276315107367" type="System">
+                            <param id="0" name="Interval (seconds)">EnemySpawnTime</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="676494144923278" type="System">
+                            <param id="0" name="Variable">EnemiesSpawned</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">EnemiesLeft</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="253199762547425" type="Spawner">
+                            <param id="0" name="Object">Enemy</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Every time an enemy spawn, the spawn interval reduces slightly.  This makes them very gradually come faster!  Make sure it doesn&apos;t go below every 0.5 seconds though.</comment>
+                        <event-block sid="403087638865619">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="566689033419674" type="System">
+                                    <param id="0" name="Variable">EnemySpawnTime</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="637342930441742" type="System">
+                                    <param id="0" name="Variable">EnemySpawnTime</param>
+                                    <param id="1" name="Value">0.01</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Once a path has been found, start moving along it.</comment>
+                <event-block sid="269540839532331">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="803339360618673" type="Enemies">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="172068296964881" type="System">
+                            <param id="0" name="Interval (seconds)">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="177789260705136" type="Enemy">
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
+                        </action>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="195345765735657" type="Blinker">
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="803856849008029">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="0" name="On path found" sid="539133573574607" type="Enemy" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="1" name="Move along path" sid="164951593301988" type="Enemy" />
+                    </actions>
+                </event-block>
+                <comment>When bullets hit enemies, make it subtract from health and spawn some particles.</comment>
+                <comment>Destroy enemies with no health left, throwing in a particles effect.</comment>
+                <event-block sid="279761508910289">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="970490235923889" type="Enemy">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="808274619221762" type="Enemy">
+                            <param id="0" name="Object">EnemyDeadParticles</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="693281802124594" type="Enemy" />
+                    </actions>
+                </event-block>
+                <event-block sid="254968641280652">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="475032160691097" type="Spawner">
+                            <param id="0" name="Instance variable">EnemiesSpawned</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="192168305049537" type="Spawner">
+                            <param id="0" name="Object">EnemyDeadParticles</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="409705686257685" type="System">
+                            <param id="0" name="Variable">enemiesLeftw</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="182796647624347" type="Spawner" />
+                    </actions>
+                </event-block>
+                <comment>When an enemy reaches the target, destroy it, but also pick a random turret and destroy that.</comment>
+                <event-block sid="240916403971013">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="932880861017045" type="Enemy">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="359426676481524" type="Player">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="378810501322611" type="Enemy" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="754332910991042" title="Turret control2">
+            <sub-events>
+                <event-block sid="536978780259023">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="650999707449135" type="Mouse">
+                            <param id="0" name="Mouse button">2</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">GridBackground</param>
+                        </condition>
+                        <condition id="7" name="Cursor is over object" sid="985485355436443" type="Mouse">
+                            <param id="0" name="Object">SpawnerCircle</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Cursor is over object" sid="160886130299468" type="Mouse">
+                            <param id="0" name="Object">Wall</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="829295718135471" type="System">
+                            <param id="0" name="Object to create">SpikeTrap</param>
+                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                            <param id="2" name="X">round((Touch.X - 16) / 32) * 32 + 16</param>
+                            <param id="3" name="Y">round((Touch.Y - 16) / 32) * 32 + 16</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="710896411518259">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="361822215105261" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="985519851055326" type="SpawnerCircle">
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="454165453956404">
+            <conditions>
+                <condition id="-18" name="On created" sid="374646522598811" type="SpikeTrap" />
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="408171276612156" type="Player">
+                    <param id="0" name="Instance variable">Mana</param>
+                    <param id="1" name="Value">50</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="759665832074935">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="812535780520827" type="Player">
+                            <param id="0" name="Instance variable">Mana</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="248941634146467" type="SpikeTrap" />
+                        <action id="-11" name="Add to" sid="143127826026952" type="Player">
+                            <param id="0" name="Instance variable">Mana</param>
+                            <param id="1" name="Value">50</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="233168236348797">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="840352698025222" type="Player">
+                            <param id="0" name="Instance variable">Mana</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Start" sid="147063156845417" type="SpikeTrap">
+                            <param id="0" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="795487742677276" type="System">
+                            <param id="0" name="Seconds">5</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="871785737020326" type="SpikeTrap">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="282456590823792" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="341367177160658" type="SpikeTrap">
+                            <param id="0" name="Opacity">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="397624596678361" type="System">
+                            <param id="0" name="Seconds">0.55</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="735998915393223" type="SpikeTrap">
+                            <param id="0" name="Opacity">25</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="343257286318505" type="SpikeTrap" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="914731696244982">
+            <conditions>
+                <condition id="4" name="On finished" sid="473299679595121" type="SpikeTrap">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="954740948281838" type="SpikeTrap">
+                    <param id="0" name="Animation">&quot;default2&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="3" name="Start" sid="347364642790994" type="SpikeTrap">
+                    <param id="0" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="628466322788682">
+            <conditions>
+                <condition id="-18" name="On created" sid="700487565850845" type="Enemy" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="882605384196789" type="Enemy">
+                    <param id="0" name="X">Floortiles2.SnapX(random(100,400))</param>
+                    <param id="1" name="Y">Floortiles2.SnapY(random(100,400))</param>
+                </action>
+                <action behavior="Pathfinding" id="1" name="Move along path" sid="614822447431965" type="Enemy" />
+            </actions>
+        </event-block>
+        <event-block sid="222845378647485">
+            <conditions>
+                <condition behavior="Pathfinding" id="5" name="On arrived" sid="442229373736489" type="Enemy" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="238482092433956" type="Enemy">
+                    <param id="0" name="X">Floortiles2.SnapX(random(100,400))</param>
+                    <param id="1" name="Y">Floortiles2.SnapY(random(100,400))</param>
+                </action>
+                <action behavior="Pathfinding" id="1" name="Move along path" sid="898330713776521" type="Enemy" />
+            </actions>
+        </event-block>
+        <event-block sid="916080393155169">
+            <conditions>
+                <condition behavior="Pathfinding" id="1" name="On failed to find path" sid="708308727357925" type="Enemy" />
+                <condition id="-1" name="Every tick" sid="222067133331861" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="129843107467457" type="Enemy">
+                    <param id="0" name="X">Floortiles2.SnapX(random(100,400))</param>
+                    <param id="1" name="Y">Floortiles2.SnapY(random(100,400))</param>
+                </action>
+                <action behavior="Pathfinding" id="1" name="Move along path" sid="573420593373698" type="Enemy" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
