@@ -1722,7 +1722,22 @@
         <global-instance type="Mouse" uid="119" />
         <global-instance type="Function" uid="256" />
     </global-instances>
-    <sounds-folder />
+    <sounds-folder>
+        <file name="Walk0.m4a" />
+        <file name="Walk0.ogg" />
+        <file name="Walk1.m4a" />
+        <file name="Walk1.ogg" />
+        <file name="Walk3.m4a" />
+        <file name="Walk3.ogg" />
+        <file name="Walk4.m4a" />
+        <file name="Walk4.ogg" />
+        <file name="Laser.m4a" />
+        <file name="Laser.ogg" />
+        <file name="Teleport.m4a" />
+        <file name="Teleport.ogg" />
+        <file name="Hurt.m4a" />
+        <file name="Hurt.ogg" />
+    </sounds-folder>
     <music-folder>
         <file name="song.ogg" />
         <file name="Overture2 Mixdown.m4a" />
