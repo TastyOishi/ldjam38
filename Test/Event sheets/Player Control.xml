@@ -4,6 +4,43 @@
     <name>Player Control</name>
     <events>
         <variable constant="0" name="MaxPlayerHealth" sid="657248872554204" static="0" type="number">15</variable>
+        <event-block sid="662311040386078">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="691705106983550" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="478190818563951" type="Health2" />
+                <action id="-9" name="Destroy" sid="357915771618311" type="SpawnerHat" />
+            </actions>
+            <sub-events>
+                <event-block sid="694648180322672">
+                    <conditions>
+                        <condition id="-10" name="For" sid="959018420078674" type="System">
+                            <param id="0" name="Name">&quot;genHearts&quot;</param>
+                            <param id="1" name="Start index">1</param>
+                            <param id="2" name="End index">MaxPlayerHealth</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="787312495909022" type="System">
+                            <param id="0" name="First value">Health2.Count</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">MaxPlayerHealth</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="136043468500165" type="System">
+                            <param id="0" name="Object to create">Health2</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;UI&quot;)</param>
+                            <param id="2" name="X">Health2.X + (loopindex * 15) % 8 * 15</param>
+                            <param id="3" name="Y">health2.Y + (loopindex  &gt; 8 ? 15 : 0)</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="879109806393992" type="Health2">
+                            <param id="0" name="Frame number">loopindex &lt;= player.health ? 1 : 0</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="418995535780809" type="Health2" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
         <event-group description="" sid="433459004688276" title="Globals">
             <sub-events>
                 <event-block sid="861723247215718">
@@ -12,6 +49,7 @@
                     </conditions>
                     <actions>
                         <action id="-24" name="Move to top" sid="136081299434758" type="Player" />
+                        <action id="-24" name="Move to top" sid="155136627926885" type="SpawnerHat" />
                         <action id="-22" name="Set angle toward position" sid="258066245139536" type="Player">
                             <param id="0" name="X">mouse.X</param>
                             <param id="1" name="Y">mouse.Y</param>
@@ -148,12 +186,35 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="196891703232194" title="Powerups">
+            <sub-events>
+                <event-block sid="947990408535683">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="952775941211124" type="Player">
+                            <param id="0" name="Object">WallDestroyer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="138810811735521" type="Wall">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">15</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="996898330268666" type="WallDestroyer" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="311392775533593" title="Player Actions">
             <sub-events>
                 <event-group description="" sid="230680267641088" title="Powerblast">
                     <sub-events>
                         <event-block sid="961341236935378">
                             <conditions>
+                                <condition id="-8" name="Compare two values" sid="267701536998017" type="System">
+                                    <param id="0" name="First value">SpawnerHat.Count</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
                                 <condition id="2" name="Mouse button is down" sid="473858573046025" type="Mouse">
                                     <param id="0" name="Mouse button">0</param>
                                 </condition>
@@ -196,7 +257,7 @@
                                         <action id="0" name="Play" sid="579892457304535" type="Audio">
                                             <param id="0" name="Audio file">Laser</param>
                                             <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">-5</param>
+                                            <param id="3" name="Volume">-15</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
                                     </actions>
@@ -234,6 +295,45 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="627612102528820">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="857971415709390" type="powerblast">
+                                    <param id="0" name="Object">Wall</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="963039406378643" type="Wall">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">15</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="321233384420512" type="Wall">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="525342670929463" type="powerblast" />
+                                <action id="0" name="Play" sid="468392393203042" type="Audio">
+                                    <param id="0" name="Audio file">Hurt</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-15</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="957360029029642">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="971314064597719" type="Wall">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="523626919323043" type="Wall" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
                         <event-block sid="617518850572750">
                             <conditions>
                                 <condition id="0" name="On collision with another object" sid="588287636258618" type="powerblast">
@@ -243,6 +343,289 @@
                             <actions>
                                 <action id="-9" name="Destroy" sid="776462929865694" type="powerblast" />
                             </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="170420743818600" title="Frenemy">
+                    <sub-events>
+                        <event-block sid="375538961991125">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="490790464282486" type="Keyboard">
+                                    <param id="0" name="Key">69 (E)</param>
+                                </condition>
+                                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="993218631105676" type="Player">
+                                    <param id="0" name="Object">Spawner</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="431518086796566" type="SpawnerCircle">
+                                    <param id="0" name="Object">Spawner</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="634955537886644" type="Player">
+                                    <param id="0" name="Object">SpawnerHat</param>
+                                    <param id="1" name="Layer">LayerIndex(&quot;Game&quot;)</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="281727674335395" type="SpawnerHat">
+                                    <param id="0" name="Pin to">Player</param>
+                                    <param id="1" name="Mode">0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="418340185930036" type="Spawner" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="703108551221158">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="689345409244479" type="Keyboard">
+                                    <param id="0" name="Key">69 (E)</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="314712295275154" type="SpawnerCircle">
+                                    <param id="0" name="Object">Blinker</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="521163341742505" type="Player">
+                                    <param id="0" name="Object">Blinker</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="970211197370910" type="Player">
+                                    <param id="0" name="Pin to">Blinker</param>
+                                    <param id="1" name="Mode">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-group description="" sid="475519148813224" title="Ma Hat">
+                            <sub-events>
+                                <event-block sid="796369302212219">
+                                    <conditions>
+                                        <condition id="2" name="Mouse button is down" sid="754438487549799" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                        </condition>
+                                        <condition id="-6" name="Every X seconds" sid="633674558410134" type="System">
+                                            <param id="0" name="Interval (seconds)">0.1</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="258578848090737" type="Player">
+                                            <param id="0" name="Instance variable">Mana</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="673794693868654" type="System">
+                                            <param id="0" name="First value">SpawnerHat.Count</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="414669740223372" type="Player">
+                                            <param id="0" name="Object">Frenemy</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-18" name="Rotate clockwise" sid="870862437776247" type="Frenemy">
+                                            <param id="0" name="Degrees">random(0,5) - 10</param>
+                                        </action>
+                                        <action id="-24" name="Move to top" sid="751344521486310" type="Frenemy" />
+                                        <action id="-12" name="Subtract from" sid="922094930019477" type="Player">
+                                            <param id="0" name="Instance variable">Mana</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                        <action id="-22" name="Set angle toward position" sid="637424630982297" type="Player">
+                                            <param id="0" name="X">mouse.X</param>
+                                            <param id="1" name="Y">Mouse.Y</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="923609763563856">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="474212375158331" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.238254</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="396431408040893" type="Audio">
+                                                    <param id="0" name="Audio file">Laser</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-15</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="976033914366859">
+                                    <conditions>
+                                        <condition id="-18" name="On created" sid="906154986685655" type="Frenemy" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="695522955069506">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-16" name="Wait" sid="918036128323370" type="System">
+                                                    <param id="0" name="Seconds">5</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="275835913797415" type="Frenemy" />
+                                                <action id="0" name="Spawn another object" sid="388999981014603" type="Frenemy">
+                                                    <param id="0" name="Object">EnemyDeadParticles</param>
+                                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="660042229452227">
+                                    <conditions>
+                                        <condition id="0" name="On collision with another object" sid="121517345934549" type="Frenemy">
+                                            <param id="0" name="Object">allEna</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="534713446149713" type="allEna">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="820037035546360" type="Frenemy" />
+                                        <action id="0" name="Play" sid="159636360836438" type="Audio">
+                                            <param id="0" name="Audio file">Hurt</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-15</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="352592826668830">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="670547399436206" type="System">
+                                            <param id="0" name="Interval (seconds)">0.2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="262402811126512">
+                                            <conditions>
+                                                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="271380198721584" type="Frenemy">
+                                                    <param id="0" name="Object">allEna</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Pathfinding" id="0" name="Find path" sid="331130147024190" type="Frenemy">
+                                                    <param id="0" name="X">allEna.X</param>
+                                                    <param id="1" name="Y">allEna.Y</param>
+                                                </action>
+                                                <action behavior="Pathfinding" id="1" name="Move along path" sid="373330915327825" type="Frenemy" />
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="370037634920916">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="936750669557850" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Pathfinding" id="0" name="Find path" sid="913739404771094" type="Frenemy">
+                                                    <param id="0" name="X">Floortiles2.SnapX(random(128,647))</param>
+                                                    <param id="1" name="Y">Floortiles2.SnapX(random(28,547))</param>
+                                                </action>
+                                                <action behavior="Pathfinding" id="1" name="Move along path" sid="379816615878354" type="Frenemy" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="947589908924489">
+                                    <conditions>
+                                        <condition id="0" name="On collision with another object" sid="451076753422539" type="Frenemy">
+                                            <param id="0" name="Object">Wall</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="487357005795250" type="Wall">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">15</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="318283706756371" type="Wall">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="699870850901086" type="Frenemy" />
+                                        <action id="0" name="Play" sid="948255569359302" type="Audio">
+                                            <param id="0" name="Audio file">Hurt</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-15</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="461449836583327">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="394727571553637" type="Wall">
+                                                    <param id="0" name="Instance variable">Health</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Destroy" sid="882418383511086" type="Wall" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="512825685171843">
+                                    <conditions>
+                                        <condition id="0" name="On collision with another object" sid="872322778396587" type="powerblast">
+                                            <param id="0" name="Object">Enemy</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="179717712136408" type="Frenemy" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="165972469814955" title="Blink">
+                    <sub-events>
+                        <comment>Do A Jump</comment>
+                        <event-block sid="959917110699191">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="442565149753412" type="Touch">
+                                    <param id="0" name="Object">GridBackground</param>
+                                </condition>
+                                <condition id="4" name="Is touching object" sid="672933416744620" type="Touch">
+                                    <param id="0" name="Object">SpawnerCircle</param>
+                                </condition>
+                                <condition id="4" inverted="1" name="Is touching object" sid="986332795444885" type="Touch">
+                                    <param id="0" name="Object">Wall</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="917508857374606" type="Keyboard">
+                                    <param id="0" name="Key">16 (Shift)</param>
+                                </condition>
+                                <condition id="7" name="Cursor is over object" sid="359928030211529" type="Mouse">
+                                    <param id="0" name="Object">TeleportBounds</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="931158139236378" type="Player">
+                                    <param id="0" name="X">Touch.X</param>
+                                    <param id="1" name="Y">Touch.Y</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="491559027746881">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="617528867745951" type="System">
+                                            <param id="0" name="Interval (seconds)">0.238254</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="768061390355062" type="Audio">
+                                            <param id="0" name="Audio file">Teleport</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-25</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-group>
@@ -362,20 +745,18 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-block sid="495330821570966">
-                    <conditions>
-                        <condition id="-2" name="On start of layout" sid="910684302786964" type="System" />
-                    </conditions>
-                    <actions />
-                </event-block>
                 <event-block sid="378683943142757">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="733827282781671" type="SpikeTrap">
-                            <param id="0" name="Object">Enemy</param>
+                            <param id="0" name="Object">allEna</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Spawn another object" sid="815168927176253" type="Enemy">
+                        <action id="-12" name="Subtract from" sid="116322207941446" type="allEna">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="815168927176253" type="allEna">
                             <param id="0" name="Object">EnemyDeadParticles</param>
                             <param id="1" name="Layer">&quot;Game&quot;</param>
                             <param id="2" name="Image point">0</param>
@@ -432,53 +813,6 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="165972469814955" title="Blink">
-            <sub-events>
-                <comment>Do A Jump</comment>
-                <event-block sid="959917110699191">
-                    <conditions>
-                        <condition id="3" name="On touched object" sid="442565149753412" type="Touch">
-                            <param id="0" name="Object">GridBackground</param>
-                        </condition>
-                        <condition id="4" name="Is touching object" sid="672933416744620" type="Touch">
-                            <param id="0" name="Object">SpawnerCircle</param>
-                        </condition>
-                        <condition id="4" inverted="1" name="Is touching object" sid="986332795444885" type="Touch">
-                            <param id="0" name="Object">Wall</param>
-                        </condition>
-                        <condition id="2" name="Key is down" sid="917508857374606" type="Keyboard">
-                            <param id="0" name="Key">16 (Shift)</param>
-                        </condition>
-                        <condition id="7" name="Cursor is over object" sid="359928030211529" type="Mouse">
-                            <param id="0" name="Object">TeleportBounds</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Set position" sid="931158139236378" type="Player">
-                            <param id="0" name="X">Touch.X</param>
-                            <param id="1" name="Y">Touch.Y</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block sid="491559027746881">
-                            <conditions>
-                                <condition id="-6" name="Every X seconds" sid="617528867745951" type="System">
-                                    <param id="0" name="Interval (seconds)">0.238254</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Play" sid="768061390355062" type="Audio">
-                                    <param id="0" name="Audio file">Teleport</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-15</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-            </sub-events>
-        </event-group>
         <event-group description="" sid="153687682590569" title="Health">
             <sub-events>
                 <event-block sid="884790398528424">
@@ -497,42 +831,6 @@
                 </event-block>
                 <event-group description="" sid="941688298545808" title="Hearts">
                     <sub-events>
-                        <event-block sid="972149960639469">
-                            <conditions>
-                                <condition id="-2" name="On start of layout" sid="823869405891148" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Destroy" sid="607379792154504" type="Health2" />
-                            </actions>
-                            <sub-events>
-                                <event-block sid="331535601157801">
-                                    <conditions>
-                                        <condition id="-10" name="For" sid="798331794145999" type="System">
-                                            <param id="0" name="Name">&quot;genHearts&quot;</param>
-                                            <param id="1" name="Start index">1</param>
-                                            <param id="2" name="End index">MaxPlayerHealth</param>
-                                        </condition>
-                                        <condition id="-8" name="Compare two values" sid="347073920201269" type="System">
-                                            <param id="0" name="First value">Health2.Count</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Second value">MaxPlayerHealth</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-3" name="Create object" sid="886830508406214" type="System">
-                                            <param id="0" name="Object to create">Health2</param>
-                                            <param id="1" name="Layer">LayerIndex(&quot;UI&quot;)</param>
-                                            <param id="2" name="X">Health2.X + (loopindex * 15) % 8 * 15</param>
-                                            <param id="3" name="Y">health2.Y + (loopindex  &gt; 8 ? 15 : 0)</param>
-                                        </action>
-                                        <action id="5" name="Set frame" sid="373265189547722" type="Health2">
-                                            <param id="0" name="Frame number">loopindex &lt;= player.health ? 1 : 0</param>
-                                        </action>
-                                        <action id="-24" name="Move to top" sid="217208731033054" type="Health2" />
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
                         <event-block sid="655440111447008">
                             <conditions>
                                 <condition id="-1" name="Every tick" sid="850495472043862" type="System" />
@@ -541,11 +839,6 @@
                                     <param id="1" name="Start index">1</param>
                                     <param id="2" name="End index">MaxPlayerHealth</param>
                                 </condition>
-                                <condition id="-8" name="Compare two values" sid="266396476119709" type="System">
-                                    <param id="0" name="First value">Health2.Count</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Second value">MaxPlayerHealth</param>
-                                </condition>
                                 <condition id="-13" name="Pick nth instance" sid="378162159808809" type="System">
                                     <param id="0" name="Object">Health2</param>
                                     <param id="1" name="Instance">loopindex</param>
@@ -553,21 +846,7 @@
                             </conditions>
                             <actions>
                                 <action id="5" name="Set frame" sid="332287566776735" type="Health2">
-                                    <param id="0" name="Frame number">loopindex &lt;= player.health ? 1 : 0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="641585699530279">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="608484904781446" type="Player">
-                                    <param id="0" name="Instance variable">Health</param>
-                                    <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Value">loopindex</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="5" name="Set frame" sid="697116532292595" type="Health2">
-                                    <param id="0" name="Frame number">1</param>
+                                    <param id="0" name="Frame number">loopindex &lt; player.health ? 1 : 0</param>
                                 </action>
                             </actions>
                         </event-block>

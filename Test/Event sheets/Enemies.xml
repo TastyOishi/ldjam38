@@ -99,7 +99,7 @@
                                         <action behavior="Pathfinding" id="1" name="Move along path" sid="971379966703939" type="enaWalkers" />
                                     </actions>
                                 </event-block>
-                                <event-block any="1" sid="591021091005352">
+                                <event-block any="1" disabled="1" sid="591021091005352">
                                     <conditions>
                                         <condition id="0" name="On collision with another object" sid="801206060817004" type="Blinker">
                                             <param id="0" name="Object">Player</param>
@@ -198,6 +198,38 @@
                                 </event-block>
                             </sub-events>
                         </event-group>
+                        <event-group description="" sid="679683258392764" title="Caster">
+                            <sub-events>
+                                <event-block sid="136729789760545">
+                                    <conditions>
+                                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="432607194548322" type="enemyCaster">
+                                            <param id="0" name="Object">Player</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="516457143725143">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="178608510138420" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-22" name="Set angle toward position" sid="125623191481805" type="enemyCaster">
+                                                    <param id="0" name="X">Player.X</param>
+                                                    <param id="1" name="Y">Player.Y</param>
+                                                </action>
+                                                <action id="0" name="Spawn another object" sid="137545844629902" type="enemyCaster">
+                                                    <param id="0" name="Object">enemyBlast</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
                     </sub-events>
                 </event-group>
                 <event-group description="" sid="817909014992244" title="Spawner">
@@ -238,5 +270,13 @@
                 </event-group>
             </sub-events>
         </event-group>
+        <event-block sid="479167939752060">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="236537572175785" type="Wall" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" sid="449498572279516" type="enaWalkers" />
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
