@@ -27,7 +27,7 @@
                             <param id="3" name="Y">Floortiles2.SnapY(random(96, 511))</param>
                         </action>
                         <action id="0" name="Play" sid="201172841364762" type="Audio">
-                            <param id="0" name="Audio file">song</param>
+                            <param id="0" name="Audio file">Overture2 Mixdown</param>
                             <param id="2" name="Loop">1</param>
                             <param id="3" name="Volume">-10</param>
                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
@@ -79,7 +79,7 @@
                             <param id="0" name="Tag">&quot;nextLevel&quot;</param>
                         </action>
                         <action id="-2" name="Go to layout" sid="406674760857445" type="System">
-                            <param id="0" name="Layout">Test Level Layout</param>
+                            <param id="0" name="Layout">Layout 1</param>
                         </action>
                     </actions>
                 </event-block>

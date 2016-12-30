@@ -1725,6 +1725,8 @@
     <sounds-folder />
     <music-folder>
         <file name="song.ogg" />
+        <file name="Overture2 Mixdown.m4a" />
+        <file name="Overture2 Mixdown.ogg" />
     </music-folder>
     <files-folder>
         <file-folder name="Icons">
